@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- start header_html_inc -->
 <html lang="en">
 <head>
 	<LINK REL="SHORTCUT ICON" href="/images/needs_something_here_favicon.ico.png">
@@ -11,70 +10,86 @@
 	<link href="/bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/bootstrap-5.0.0-beta3-dist/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="/bootstrap-5.0.0-beta3-dist/css/jquery.dataTables.min.css" rel="stylesheet">
-	<link href="/css/main.css" rel="stylesheet">
+	<!--<link href="/css/main.css" rel="stylesheet">-->
 </head>
 <body>
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">My Page</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+				
+					<!-- Confluence Dropdown -->
+					<li class="dropdown">
+						<a target="_blank" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Confluence<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a target="_blank" href="https://wiki.sys.comcast.net/display/CDXOC/CDXOC+Home">CDXOC</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a target="_blank" href="https://beacontrack.comcast.net">Beacon Track</a></li>
+						</ul>
+					</li>
+
+					<!-- CXOC Dropdown -->
+					<li class="dropdown">
+						<a target="_blank" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CXOC<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a target="_blank" href="https://machevid00.cable.comcast.com/scripts/MDTA/MDTA.php">Account List</a></li>  
+						</ul>
+					</li>
+
+					<!-- HFC Dropdown>-->
+					<li class="dropdown">
+						<a target="_blank" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HFC<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a target="_blank" href="https://beacontrack.comcast.net">Beacon Track</a></li>
+						</ul>
+					</li>
+					
+					<!-- NSD Dropdown-->
+					<li class="dropdown">
+						<a target="_blank" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NSD<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a target="_blank" href="http://paoaklmcpath01.cable.comcast.com/access.php">Access List</a></li>
+						</ul>
+					</li>
+					
+					<!-- VSD Dropdown-->
+					<li class="dropdown">
+						<a target="_blank" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Video<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a target="_blank" href="http://172.21.1.11/IQVMSWebApp/main/loginView.action">Beltway iVMS</a></li>
+						</ul>
+					</li>
+					
+				<!-- IPSD Dropdown-->
+					<li class="dropdown">
+						<a target="_blank" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">IPSD<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a target="_blank" href="http://10.52.51.137/arris_config/">Arris CMTS Tools</a></li>
+						</ul>
+					</li>
+					
+				<!--Common universal links-->
+
+					<li><a target="_blank" href="https://kamos.cable.comcast.com/kamos/">Divisional Kamos</a></li>
+				</ul>
+	 		</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
 	<div class="col-sm-2">
-	<div class="p-3 bg-white" style="width: 280px;">
-  <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-    <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-    <span class="fs-5 fw-semibold">Collapsible</span>
-  </a>
-  <ul class="list-unstyled ps-0">
-    <li class="mb-1">
-      <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-        Home
-      </button>
-      <div class="collapse show" id="home-collapse" style="">
-        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-          <li><a href="#" class="link-dark rounded">Overview</a></li>
-          <li><a href="#" class="link-dark rounded">Updates</a></li>
-          <li><a href="#" class="link-dark rounded">Reports</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="mb-1">
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-        Dashboard
-      </button>
-      <div class="collapse" id="dashboard-collapse">
-        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-          <li><a href="#" class="link-dark rounded">Overview</a></li>
-          <li><a href="#" class="link-dark rounded">Weekly</a></li>
-          <li><a href="#" class="link-dark rounded">Monthly</a></li>
-          <li><a href="#" class="link-dark rounded">Annually</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="mb-1">
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-        Orders
-      </button>
-      <div class="collapse" id="orders-collapse">
-        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-          <li><a href="#" class="link-dark rounded">New</a></li>
-          <li><a href="#" class="link-dark rounded">Processed</a></li>
-          <li><a href="#" class="link-dark rounded">Shipped</a></li>
-          <li><a href="#" class="link-dark rounded">Returned</a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="border-top my-3"></li>
-    <li class="mb-1">
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-        Account
-      </button>
-      <div class="collapse" id="account-collapse">
-        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-          <li><a href="#" class="link-dark rounded">New...</a></li>
-          <li><a href="#" class="link-dark rounded">Profile</a></li>
-          <li><a href="#" class="link-dark rounded">Settings</a></li>
-          <li><a href="#" class="link-dark rounded">Sign out</a></li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-</div>
+	
 	</div>
 	
 	<div class="col-sm-10"> 
