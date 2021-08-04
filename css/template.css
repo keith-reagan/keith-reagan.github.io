@@ -1,0 +1,258 @@
+/*
+	Keith Reagan
+	template.css for protfolio
+*/	
+
+header, hgroup, nav, footer, figure, figcaption, aside, section, article {
+	display: block;
+}
+
+body { /*  specific body styling, makes the background image repeat in the x direction and gives a min width of 600px */
+	background-repeat: repeat-x;
+    background-color: #f2f2f2; 
+    /*background-color: #ddeeff;*/
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	min-width: 600px;
+	height: 100%;
+}
+
+#wrapper {  /*  creates the space around the main content of the page  */
+	width: 90%; 
+	height: 100%;
+	margin: 10px auto; 
+	background-color: #9ac6e0;
+	border: 1pt solid #616161;
+}
+
+
+nav { /*  styles the nav panel off to the left of the main conent  */
+	float: left;
+	width: 100%;
+	height: 100%;
+	background-color: #9ac6e0;
+	text-decoration: none;
+	margin-bottom: 1em;
+/*	position:absolute; */
+	
+}
+	nav ul { /*  styling for nav links, removes bullets  */
+		list-style-type: none;
+		/*font-size: 1.2em;*/
+		padding: 0;
+	}
+	/*  general link styling */
+	nav a:visited {
+		/*color: #344873;*/
+	}
+	nav a:hover {
+		/*color: #FFFFFF;*/
+	}
+
+
+	.navbar {
+		padding-top: 0;
+		padding-bottom: 0;
+		font-size: 14px;
+		border-bottom: 1pt solid #616161
+	}
+	.dropdown-toggle::after {
+		margin-top: .5em;
+		vertical-align: .15em;
+		font-size: 14px;
+	}	
+	.dropdown-item {
+		font-size: 14px;
+	}
+	.bg-light {
+		background-color: #9ac6e0!important;
+		color: black;
+	}
+	.navbar-light .navbar-nav .nav-link .container-fluid {
+		color: black;
+		/*background-color: #ddeeff;*/
+	}	
+	.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: rgba(0,0,0,.7);
+	}
+
+	.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+li {
+ /* formats bullets so the text aligns more with them and not indented on a new line */
+  list-style-position: inside;
+}
+
+	li a { /*  styling for links in nav area  */
+	  display: block;
+	  color: white;
+	  text-decoration: none;
+	  padding: 0em 1em;
+	}
+
+h1,
+h2 { /* general formatting for h1 + h2 */
+	font-family: Georgia, "Times New Roman", serif;
+}
+
+	h1 { /*  specific styling for h1, makes the image not repeat and resize with the window */
+		color: white;
+		margin-bottom: 0;
+		padding: 10px;
+		background-repeat: no-repeat;
+		background-size: 100% 100%; 
+
+	}
+	h2 { /*  more specific h2 styling */
+		color: #3399CC;
+		margin-top: 0;
+	}
+
+div#content { /*  styling the main piece of content text  */
+	/*margin-left: 12em;*/
+	background-color: white;
+	padding: 1.25em;
+}
+
+div#content ul { /*  changing bullets to image in list */
+	/*list-style-image: url('marker.gif');*/
+}
+
+/* table formatting */
+table {
+	caption-side: top;
+	margin-left: 10%;
+    margin-right: 10%;
+	width: 80%;
+	border: 1pt solid #616161;
+	border-spacing: 0;
+
+}
+
+table caption {
+	background-color: #9ac6e0;
+	color: white;
+	font-style: italic;
+	padding-top: .5em;
+    padding-bottom: .5em;
+	margin-top: .5em;
+	border: 1pt solid #616161;
+	border-bottom: 0pt;
+}
+
+thead { /* added in the thead styling  */
+	padding: .5em;
+}
+
+th {/* added in the table styling  */
+	
+	padding: .5em;
+	text-align: left;
+	background: #f2f2f2;
+}
+
+td {/* added in the table data styling  */
+	padding: .5em;
+	
+}
+		tr:nth-child(even) { /* styling for table making every other even row another color */
+			background: #f2f2f2;
+	}
+	
+code  {
+	margin-left: 15%;
+	margin-right: 15%;
+	border: 1pt solid;
+}
+
+	.coding {
+    color: #ddd;
+	display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #444;
+    -webkit-text-size-adjust: none;
+}
+
+
+fieldset { /* styling for the fieldsets */
+	background-color: #e8f2fc;
+    margin-bottom: 10px;
+	border: 1px solid #00569f;
+}
+
+
+label { /* styling for the labels, making them all the same width */
+	width: 140px;
+	display: inline-block;
+    text-align: right;
+    vertical-align: top;
+}
+
+	label#aboutYou, #aboutBaking, #classAmnt, #additionalClasses, #questionOne, #questionTwo { /* aligning label txt to the left for specific labels */
+		text-align: left;
+		width: auto;
+	}
+	
+	#favMonth, #linkedIn, #favWeek { /* making the specific label widths 205px */
+
+		width: 205px;
+	}
+
+textarea { /* styling for the text area to fill the width of the page */
+	width: 100%;
+}
+
+	
+	textarea.address { /* styling for the text area for address to make it 230x50px */
+		width: 230px;
+		height: 50px;
+	}
+
+
+
+	.contact, .install, .type, .weekdayClass, .weekendClass, .firstTime, .firstClass { /* styling for the check and radio buttons to make them inline */
+		display: inline-block;
+		width: auto;
+	}
+
+img[src*="round_1"] {  /*  floats roll image to the left of the text content */
+	float: left;
+	padding: 0 1em 1em 0;
+}
+
+span { /*  changes text color for "Piece of Bread Bakery" entries on the page */
+	color: #3399CC
+}
+
+#contact { /*  styling for contact info above the footer */
+	font-size: 90%;
+}
+dt { /* not sure why this was initially in here, I don't see any dt or dd tags in the HTML */
+	color: #000033;
+}
+footer { /*  styling for footer, center aligning the text and clearing the float to force it to the bottom of the page */
+	color: white;
+	text-align: center;
+	font-family: Georgia, "Times New Roman", serif;
+	/*background-color: #f2f2f2;*/
+	background-color: #f2f7fc;
+	color: black;
+	height: 4em;
+    padding-top: 1.25em;
+    padding-bottom: 2.5em;
+	clear: left;
+}
+	footer>a { /*  styling for the footer email link */
+		color: black;
+		font-style: italic;	
+	}
+
+	img#social_icon {
+	    width: 16px;
+	    height: 16px;
+	    margin-left: 3px;
+	    margin-bottom: 3px;
+	}

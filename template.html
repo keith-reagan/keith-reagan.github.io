@@ -75,9 +75,66 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 			<div id="content">
-				<center><h3>Welcome to the portfolio site for Keith Reagan</h3></center><br>
-				<p>Greetings, choose a link above to take a look into a few of my projects</p>
+				<table id="table1"> <!--  table -->
+					<caption>A table</caption>
+					<thead> <!-- header for the table -->
+						<tr>
+							<th scope="col">Col1</th>
+							<th scope="col">Col2</th>
+						</tr>
+					</thead>
+					<tbody> <!-- begin main content of the table -->
+						<tr>
+							<td>some data for Col1</td>
+							<td>some data for Col2</td>
+						</tr>
+						<tr>
+							<td>some data for Col1</td>
+							<td>some data for Col2</td>
+						</tr>	
+						<tr>
+							<td>some data for Col1</td>
+							<td>some data for Col2</td>
+						</tr>	
+						<tr>
+							<td>some data for Col1</td>
+							<td>some data for Col2</td>
+						</tr>	
+						<tr>
+							<td>some data for Col1</td>
+							<td>some data for Col2</td>
+						</tr>	
+						<tr>
+							<td>some data for Col1</td>
+							<td>some data for Col2</td>
+						</tr>							
+					</tbody>
+				</table>
+				<div>
+					<pre>
+						<code class="coding">#!/bin/bash
+if [ $# -lt 1 ]
+then
+	echo "Enter name for your script"
+	read filename
+else
+	filename=$1
+fi
+case $filename in 
+	*.sh)
+		echo "Creating: $filename"
+		touch $filename
+		chmod 755 $filename;;
+	*)
+		echo "Creating: $filename".sh""
+		touch $filename".sh"
+		chmod 755 $filename".sh"
+esac
+echo "File created"		</code>
+					</pre>
+				</div>
 			</div>
+
 			<footer>
 				Created 2021 by <a href="mailto:reagan.keith@gmail.com">Keith Reagan</a> <a href="https://linkedin.com/in/keith-reagan-8a35a8a2"><img alt="LinkedIn" id="social_icon" src="images/social_icon.png">  </a>
 			</footer>
