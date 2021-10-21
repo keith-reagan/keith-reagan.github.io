@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+	Keith Reagan
+	template.html for portfolio
+    -->
+<head>
+	<LINK REL="SHORTCUT ICON" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+	<title>Welcome to my portfolio page</title>
+	<!-- Bootstrap core CSS -->
+	<link href="../bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/template.css" rel="stylesheet"> <!-- Custom styling sheet -->
+	<script src="../bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div id="wrapper">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html">My Portfolio</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Coding</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<!--<li><a class="dropdown-item" target="_blank" href="#">Coding</a></li>-->
+								<li><a class="dropdown-item" target="_blank" href="scriptmaker.html">Basic Shell Script Maker</a></li>
+								<li><hr class="dropdown-divider"></li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hardware</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" target="_blank" href="pc_build.html">PC Build</a></li>
+								<li><a class="dropdown-item" target="_blank" href="server_build.html">Server Build</a></li>
+							</ul>
+						</li>						
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gaming</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" target="_blank" href="7d2d_mods.html">7D2D Mods</a></li>
+								<!--<li><a class="dropdown-item" target="_blank" href="snes.html">SNES Mod</a></li>-->
+								<li><a class="dropdown-item" target="_blank" href="smb.html">Super Mario Bros Mod</a></li>
+							</ul>
+						</li>	
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Server</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" target="_blank" href="linux.html">Linux</a></li>
+								<li><a class="dropdown-item" target="_blank" href="windows.html">Windows</a></li>
+							</ul>
+						</li>	
+							
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+			<div id="content">
+				<center><h3>Basic Shell Script Maker</h3></center><br>
+				<p>This is a short script I had created to make empty shell scripts for my Intro to Linux Class. I might not sound like much but it did save some time with assignments</p>
+			</div>
+			
+			<div>
+					<pre>
+						<code class="coding">#!/bin/bash
+if [ $# -lt 1 ]
+then
+	echo "Enter name for your script"
+	read filename
+else
+	filename=$1
+fi
+case $filename in 
+	*.sh)
+		echo "Creating: $filename"
+		touch $filename
+		chmod 755 $filename;;
+	*)
+		echo "Creating: $filename".sh""
+		touch $filename".sh"
+		chmod 755 $filename".sh"
+esac
+echo "File created"		</code>
+					</pre>
+				</div>
+			<footer>
+				Created 2021 by <a href="mailto:reagan.keith@gmail.com">Keith Reagan</a> 
+				<a href="https://linkedin.com/in/keith-reagan-8a35a8a2"><img alt="LinkedIn" id="social_icon" src="images/social_icon.png"></a>
+				<a href="https://www.credly.com/badges/241008bc-ceb8-4667-a664-e8572d6c9663/public_url"><img alt="comptia-security-ce-certification" id="comptia-security-ce-certification_icon" src="images/comptia-security-ce-certification.png"></a>
+			</footer>
+		</div> 
+	</body>
+
+</html>
