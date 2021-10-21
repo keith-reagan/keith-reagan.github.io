@@ -256,3 +256,10 @@ footer { /*  styling for footer, center aligning the text and clearing the float
 	    margin-left: 3px;
 	    margin-bottom: 3px;
 	}
+	
+	img#comptia-security-ce-certification_icon {
+    width: 16px;
+    height: 16px;
+    margin-left: 3px;
+    margin-bottom: 3px;
+}
