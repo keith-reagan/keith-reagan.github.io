@@ -223,6 +223,21 @@ img[src*="round_1"] {  /*  floats roll image to the left of the text content */
 	padding: 0 1em 1em 0;
 }
 
+img[class="smb_images"] {  /* styling for the image to make it fill the width of the div */
+	float: left;
+	padding: 0 1em 1em 0;
+/*	width: 200px;
+    height: 200px;*/
+}
+
+img[id="label_template"] {  /* styling for the image to make it fill the width of the div */
+	float: left;
+	padding: 0 1em 1em 0;
+	width: 200px;
+    height: 200px;
+}
+
+
 span { /*  changes text color for "Piece of Bread Bakery" entries on the page */
 	color: #3399CC
 }
