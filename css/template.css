@@ -205,42 +205,21 @@ textarea { /* styling for the text area to fill the width of the page */
 	width: 100%;
 }
 
-	
-	textarea.address { /* styling for the text area for address to make it 230x50px */
-		width: 230px;
-		height: 50px;
-	}
-
-
-
-	.contact, .install, .type, .weekdayClass, .weekendClass, .firstTime, .firstClass { /* styling for the check and radio buttons to make them inline */
-		display: inline-block;
-		width: auto;
-	}
-
-img[src*="round_1"] {  /*  floats roll image to the left of the text content */
-	float: left;
-	padding: 0 1em 1em 0;
-}
-
 img[class="smb_images"] {  /* styling for the image to make it fill the width of the div */
-	float: left;
+	/*float: left;*/
 	padding: 0 1em 1em 0;
 /*	width: 200px;
     height: 200px;*/
 }
 
 img[id="label_template"] {  /* styling for the image to make it fill the width of the div */
-	float: left;
+	/*float: left;*/
 	padding: 0 1em 1em 0;
-	width: 200px;
-    height: 200px;
+	width: 300px;
+    height: 300px;
 }
 
 
-span { /*  changes text color for "Piece of Bread Bakery" entries on the page */
-	color: #3399CC
-}
 
 #contact { /*  styling for contact info above the footer */
 	font-size: 90%;
