@@ -1,0 +1,1 @@
+This is a modlet that I made for the game 7 Days to Die. The modlet includes some revamped POIs from Alpha 16, some original POIs, and a new piece of loot created for someone. Just add this folder into your Mods folder and create a new game and world to populate the new buildings!
