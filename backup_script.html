@@ -33,6 +33,7 @@
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Coding</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<!--<li><a class="dropdown-item" target="_blank" href="#">Coding</a></li>-->
+								
 								<li><a class="dropdown-item" target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/tree/main/Python_Parser">Python XML Parser</a></li>
 								<li><hr class="dropdown-divider"></li>
 								<li><a class="dropdown-item" target="_blank" href="scriptmaker.html">Basic Shell Script Maker</a></li>
@@ -66,31 +67,42 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 			<div id="content">
-				<center><h3>Basic Shell Script Maker</h3></center><br>
-				<p>This is a short script I had created to make empty shell scripts for my Intro to Linux Class. I might not sound like much but it did save some time with assignments</p>
+				<center><h3>Basic Backup Shell Script</h3></center><br>
+				<p>This is a short script I had created to backup files with the current year, month, day, hour and minutes timestamped onto the name</p>
 			</div>
 			
 			<div>
 					<pre>
 						<code class="coding">#!/bin/bash
-if [ $# -lt 1 ]
+
+echo "checking input..."
+if [ $# -lt 1 ] #translated - if input is less than 1
 then
-	echo "Enter name for your script"
+	echo "not enough input, please include file"
+	echo "enter file name"
 	read filename
-else
+else 
 	filename=$1
+fi #exits the loop
+echo "Working on file: $filename"
+echo "Checking if file exists..."
+
+if [ -f $filename ] #if filename exists
+then
+	echo "file exists, starting a copy"
+	newname="$filename-$(date +%Y_%m_%d_%H_%M)"  #creates a new file name with filename and the current year, month, day, hour, and min
+	
+	echo "new file name: $newname"
+	
+	cp $filename $newname
+	echo "file copied"
+	ls - al $filename $newname
+else
+	echo "file does not exist...creating file now..."
+	touch $filename
+	ls -al $filename
 fi
-case $filename in 
-	*.sh)
-		echo "Creating: $filename"
-		touch $filename
-		chmod 755 $filename;;
-	*)
-		echo "Creating: $filename".sh""
-		touch $filename".sh"
-		chmod 755 $filename".sh"
-esac
-echo "File created"		</code>
+echo "done!"</code>
 					</pre>
 				</div>
 			<footer>
