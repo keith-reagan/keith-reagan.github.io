@@ -3,4 +3,9 @@
 html {height:100%; font-family:"Lucida Grande",Verdana,Helvetica,Arial,sans-serif; font-size: 13px;}
 body {height:100%; color:black; background:$grey; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 13px;}
 
-
+img[id="slideshow"] {  /* styling for the image to make it fill the width of the div */
+	float: left;
+	padding: 0 1em 1em 0;
+/*	width: 200px;
+    height: 200px;*/
+}

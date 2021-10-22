@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+	Keith Reagan
+	template.html for portfolio
+    -->
+<head>
+	<LINK REL="SHORTCUT ICON" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+	<title>Welcome to my portfolio page</title>
+	<!-- Bootstrap core CSS -->
+	<link href="../bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/template.css" rel="stylesheet"> <!-- Custom styling sheet -->
+	<script src="../bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div id="wrapper">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html">My Portfolio</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Coding</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<!--<li><a class="dropdown-item" target="_blank" href="#">Coding</a></li>-->
+								<li><a class="dropdown-item" target="_blank" href="scriptmaker.html">Basic Shell Script Maker</a></li>
+								<li><a class="dropdown-item" target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/tree/main/Python_Parser">Python XML Parser</a></li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hardware</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" target="_blank" href="pc_build.html">PC Build</a></li>
+								<li><a class="dropdown-item" target="_blank" href="server_build.html">Server Build</a></li>
+							</ul>
+						</li>						
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gaming</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/tree/main/gaming/standalone_pois">7D2D Mods</a></li>
+								<!--<li><a class="dropdown-item" target="_blank" href="snes.html">SNES Mod</a></li>-->
+								<li><a class="dropdown-item" target="_blank" href="smb.html">Super Mario Bros Mod</a></li>
+							</ul>
+						</li>	
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Server</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" target="_blank" href="linux.html">Linux</a></li>
+								<li><a class="dropdown-item" target="_blank" href="windows.html">Windows</a></li>
+							</ul>
+						</li>	
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+			<div id="content">
+				<div>
+					<center><h3>Basic Super Mario Bros ROM Hack</h3></center><br>
+					<p>This info is assuming that you're editing SMB for the NES, no other game. However, there are plenty of tools out there to work on other games as well. These are just what I used.</p>
+					<p>First things first, to make sure that you have the right board and the right chip size you can go <a target="_blank" href="http://tuxnes.sourceforge.net/nesmapper.txt">here</a></p>
+					<p>To edit the game sprites I used <a target="_blank" href="http://www.romhacking.net/utilities/108/">Tile Layer Pro</a>. PLEASE note: only edit actual sprite tiles in this editor, if you try to edit what pretty much looks like colored "static" then you're messing with the actual game code. Chances are if you save over that your game won't work, ever.</p>
+					<p>Now that your game is all done you're ready to prep the files. You'll need to split that ROM file you were just editing into .chr and .prg files. For that you can use <a target="_blank" href="https://www.zophar.net/utilities/nesutil/tnines.html">tniNES Utility</a>. Now those files that you have created (we'll call the SMB.chr and SMB.prg) are 4kb and 32kb respectively. You'll need to use the copy command in the command prompt to enlarge the file. use the /b switch to add the file to itself. Example - copy /b smb.chr + smb.char + smb.chr + smb.chr smbbig.chr this will add the chr file to itself 4 times. You'll have to do it until it adds up to the size of the EPROM chip you're using. Doing the command above will make SMB.CHR 4kb into SMBBIG.chr  16kb.</p>
+					<p>Your EPROM chips will be between 120-200ns in speed. Make sure that you're getting a size that can contain the files. Each file has its own chip that it calls its home. I used the <a target="_blank" href="https://www.jameco.com/webapp/wcs/stores/servlet/Product_10001_10001_39714_-1">IC 27C256-15 EPROM 256K-Bit 150ns</a>.There's different kinds, makers, etc. The model of this one is 27C256. This is the flavor of chip that AMD puts out. Note the last 3 numbers. 256 is your size. You'll see 128 (128kb), 512 (512kb), 1001 (1mb)etc. Just remember to make your .chr and .prg files those sizes. If you get 128kb chips then make sure that your files are 128kb. If not, you'll just get a gray screen when you go to play the cartridge.</p>
+					<p>Make sure to erase any chips you get using a UV EPROM eraser. I had a %100 failure rate with the 3 chips that I got that were used, thus the Jameco link.</p>
+					<p>The programmer that I used is no longer sold. Due to the age I could only get it to run on Windows XP, so take note of that. I wouldn’t doubt if this is because of support issues for the old EPROMs. Depending on the layout of the program the following may or may not be accurate -iIf you get the chip above you'll need to select it from the "chip tree". Select EPROM, then AMD, and then the model that you got. The model will be labeled on the chip as well so just look at it if you're not sure. Run the Blank test on your chip first, always make sure it's blank and your programmer can read it properly. Call your file up into the buffer, write, then verify. Label your chips with a piece of scotch tape or something of the like so you can remember what one is what.</p>
+					<p>Label Template info-<br>
+					This was built in millimeters. 55mm wide, 97mm tall with a line 7mm from the top where you fold it over.<br>
+					<img alt="LinkedIn" id="social_icon" src="images/NES_Label_Template.png"></p>
+					<center><h3>Pictures of the project</h3></center><br>
+				</div>
+				<div>
+					<div>
+						<img src="images/original_eprom.jpg" class=smb_images alt="Donor board with original EPROMS"/>
+						<div id="caption"  class="caption">
+							This is a donor board that I used. I had to remove as much solder as I could and then take a heat gun and carefully remove the old EPROM chips.
+						</div>
+					</div>
+					<div>
+						<img src="images/empty_board_with_new_eproms.jpg" class=smb_images alt="Empty board with new EPROMS"/>
+						<div id="caption"  class="caption">
+							Here we have the donor board with the old EPROMS removed with the new ones prepped and ready to be soldered into place.
+						</div>
+					</div>
+					<div>
+						<img src="images/new_eproms_installed.jpg" class=smb_images alt="Donor board with new EPROMS"/>
+						<div id="caption"  class="caption">
+							New EPROMS installed into the new board
+						</div>
+					</div>
+					<div>
+						<img src="images/title_screen.png" class=smb_images alt="Changed title screen"/>
+						<div id="caption"  class="caption">
+							Names have been changed to play as Tony or his brother Matt. Mario is now bald with a goatee with a (sorta) flannel shirt on
+						</div>
+					</div>
+					<div>
+						<img src="images/another_castle.png" class=smb_images alt="End of level changed to thank Tony"/>
+						<div id="caption"  class="caption">
+							Toad is still Toad, but now it's Emily that's in another castle!
+						</div>
+					</div>
+					<div>
+						<img src="images/completed_game.jpeg" class=smb_images alt="Completed cartridge with new label"/>
+						<div id="caption"  class="caption">
+							Completed cartridge with custom label. 
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			<footer>
+				Created 2021 by <a href="mailto:reagan.keith@gmail.com">Keith Reagan</a> 
+				<a target="_blank" href="https://linkedin.com/in/keith-reagan-8a35a8a2"><img alt="LinkedIn" id="social_icon" src="images/social_icon.png"></a>
+				<a target="_blank" href="https://www.credly.com/badges/241008bc-ceb8-4667-a664-e8572d6c9663/public_url"><img alt="comptia-security-ce-certification" id="comptia-security-ce-certification_icon" src="images/comptia-security-ce-certification.png"></a>
+			</footer>
+		</div> 
+	</body>
+
+</html>
