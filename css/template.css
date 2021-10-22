@@ -219,6 +219,9 @@ img[id="label_template"] {  /* styling for the image to make it fill the width o
     height: 300px;
 }
 
+	div#caption {
+		padding-bottom: 1em;
+	}
 
 
 #contact { /*  styling for contact info above the footer */
