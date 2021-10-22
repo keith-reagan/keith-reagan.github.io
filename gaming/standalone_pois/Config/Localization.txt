@@ -1,3 +1,0 @@
-Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german
-foodSpartanLoaf,items,Food,,,Spartan Brand Meatloaf,, ,,,,,,,,,,,,
-foodSpartanLoafDesc,items,Food,,,Just like how mom would never make! EVER!,, ,,,,,,,,,,,,
