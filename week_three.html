@@ -64,7 +64,27 @@
 			
 			<div>
 					<pre>
-						<code class="coding"># Insert code here!</code>
+						<code class="coding">$ sed -n ‘/:[1-9]*\/[1-7]\/[[:digit:]]/p’ datebook
+# RegEx is your friend as I've said before. With sed you do need to change things up a bit in order for it to work properly and not just 
+# how you would generate it in it's usual format.
+
+$ sed ‘/^$/d’ datebook
+# Deleting is pretty straight forward with the "d" instruction. This short command looks at the beginning and end to see if the line is 
+# empty and then will remove it for when it gets printed out
+
+$ awk -F “:” ‘/Frodo|Tom/ {print $2}’ AwkLab.data
+# Using -F to change the field delimiter helps with finding and displaying just Frodo and Toms phone numbers
+
+$ awk ‘length($1) (less than sign)= 4 {print $1}’ AwkLab.data
+# Printing out whatever entries in the first column that are under 4 characters long
+
+$ awk -F”:” ‘{print$1 “  “$2 “  “ $3}’ AwkLab.data | awk ‘$NF (less than sign)= 75 ‘{print $2” “$3” “$4$5}’
+# Piping together commands helps narrow your results down even further to get you the info requested
+
+$ awk ‘sub{(/(Samwise Gamgee)/, “Sean Astin”); print $0}’ AwkLab.data
+# Using a sub string to change out a first and last name with another first and last name
+
+</code>
 					</pre>
 				</div>
 			<footer>
