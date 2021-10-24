@@ -205,24 +205,27 @@ textarea { /* styling for the text area to fill the width of the page */
 	width: 100%;
 }
 
-img[class="smb_images"] {  /* styling for the image to make it fill the width of the div */
-	/*float: left;*/
-	padding: 0 1em 1em 0;
-/*	width: 200px;
-    height: 200px;*/
-}
+	img[class="smb_images"] {  /* styling for the image to make it fill the width of the div */
+		/*float: left;*/
+		padding: 0 1em 1em 0;
+	/*	width: 200px;
+		height: 200px;*/
+	}
 
-img[id="label_template"] {  /* styling for the image to make it fill the width of the div */
-	/*float: left;*/
-	padding: 0 1em 1em 0;
-	width: 300px;
-    height: 300px;
-}
+	img[id="label_template"] {  /* styling for the image to make it fill the width of the div */
+		padding: 0 1em 1em 0;
+		width: 300px;
+		height: 300px;
+	}
 
 	div#caption {
 		padding-bottom: 1em;
 	}
-
+	img.images {
+    max-width: 100%;
+    padding: 0em 1.4em 0em 1.4em;
+    margin-right: 0.4em;
+	}
 
 #contact { /*  styling for contact info above the footer */
 	font-size: 90%;
