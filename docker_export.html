@@ -85,7 +85,13 @@
 777777777777   some-thing:ubuntu00.00                         "docker-entrypoint.thing"   4 months ago   Up 4 months   0.0.0.0:0000->0000/tcp, 0.0.0.0:0000->0000/tcp                           some-thing
 000000000000   another-thing:ubuntu00.00                          "docker-entrypoint.thing"   6 months ago   Up 6 months   0.0.0.0:0000->0000/tcp, 0.0.0.0:0000->0000/tcp                           another-thing
 999999999999   intake-forms:ubuntu00.00                        "docker-entrypoint.thing"   6 months ago   Up 6 months   0.0.0.0:0000->0000/tcp, 0.0.0.0:0000->0000/tcp                           intake-forms
+[kreagan@myserver ~]$
+[kreagan@myserver ~]$
+[kreagan@myserver ~]$
+[kreagan@myserver ~]$
+[kreagan@myserver ~]$
 [kreagan@myserver ~]$ export DOCK_FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
+[kreagan@myserver ~]$
 [kreagan@myserver ~]$ docker ps --format=$DOCK_FORMAT
 ID      000000000000
 NAME    nameone
