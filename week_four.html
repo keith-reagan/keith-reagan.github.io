@@ -64,23 +64,23 @@
 			
 			<div>
 					<pre>
-						<code class="coding">$ sudo apt install fail2ban									#Ubuntu install
+						<code class="coding">$ sudo apt install fail2ban								#Ubuntu install
 $ sudo systemctl status fail2ban							#Ubuntu check service
-$ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local 	#Makes a local copy of the config file
+$ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local 				#Makes a local copy of the config file
 $ sudo vi /etc/fail2ban/jail.local							#Ubuntu file edit
 $ sudo fail2ban-client status sshd							#Ubuntu check failed attempts
-$ sudo fail2ban-client set sshd unbandip (IP)				#Unbans the specified IP address from fail2ban
+$ sudo fail2ban-client set sshd unbandip (IP)						#Unbans the specified IP address from fail2ban
 
 $ sudo dnf install epel-release								#fail2ban isn't in the official repository, need to install epel-release first
-$ sudo dnf install fail2ban									#CentOS install
+$ sudo dnf install fail2ban								#CentOS install
 $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local 	#Makes a local copy of the config file 
 $ sudo chmod 755 /etc/fail2ban/jail.local
 $ sudo vi /etc/fail2ban/jail.local
-	backend = auto											#Needs to be changed to backend = systemd
-	enabled = false											#Needs to be changed to enabled = true
+	backend = auto									#Needs to be changed to backend = systemd
+	enabled = false									#Needs to be changed to enabled = true
 	#Under global settings
 	[sshd] 
-	enabled = true											#Line needs to be added in
+	enabled = true									#Line needs to be added in
 
 $ sudo systemctl start fail2ban
 $ sudo systemctl enable fail2ban
