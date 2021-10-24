@@ -191,16 +191,6 @@ label { /* styling for the labels, making them all the same width */
     vertical-align: top;
 }
 
-	label#aboutYou, #aboutBaking, #classAmnt, #additionalClasses, #questionOne, #questionTwo { /* aligning label txt to the left for specific labels */
-		text-align: left;
-		width: auto;
-	}
-	
-	#favMonth, #linkedIn, #favWeek { /* making the specific label widths 205px */
-
-		width: 205px;
-	}
-
 textarea { /* styling for the text area to fill the width of the page */
 	width: 100%;
 }
@@ -219,7 +209,7 @@ textarea { /* styling for the text area to fill the width of the page */
 	}
 
 	div#caption {
-		padding-bottom: 1em;
+		padding: 1em 0em 1em 1.4em;
 	}
 	img.images {
     max-width: 100%;
