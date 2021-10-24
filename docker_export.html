@@ -69,17 +69,12 @@
 		</nav>
 			<div id="content">
 				<center><h3>Docker Format</h3></center><br>
-				<center><p>At work I found that it was difficult to read the output for the Docker containers that we have on one of our servers. To make it a bit easier to read I created the simple export below (information in output has been changed to protect data)</p></center>
+				<center><p>At work I found that it was difficult to read the output for the Docker containers that we have on one of our servers as seen in the top part of this code window. To make it a bit easier to read I created the simple export below (information in output has been changed to protect data)</p></center>
 			</div>
-				<div>
-					<div id="caption"  class="caption">
-						Before formatting the output would look like this.
-					</div>
-					<img src="images/docker-before.PNG" id="docker_before" class="images" alt="Docker PS before look"/>
-				</div>			
+
 			<div>
 					<pre>
-						<code class="coding">CONTAINER ID   IMAGE                                          COMMAND                  CREATED        STATUS        PORTS                                                                 NAMES
+						<code class="coding" id="docker">CONTAINER ID   IMAGE                                          COMMAND                  CREATED        STATUS        PORTS                                                                 NAMES
 000000000000   some.website.com/something/else/nameone:1.1.0   "/run.sh"                5 days ago     Up 5 days     0000/tcp                                                              nameone
 111111111111   some.website.com/something/else/nametwo:1.1.0      "docker-php-thing"   5 days ago     Up 5 days     0000/tcp                                                              nametwo
 222222222222   some.website.com/something/else/namethree:1.1.0   "/entrypoint.sh thing"   5 days ago     Up 5 days     0.0.0.0:0000->0000/tcp, 0.0.0.0:0000->0000/tcp                           namethree
