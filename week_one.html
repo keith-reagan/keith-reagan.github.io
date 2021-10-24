@@ -58,42 +58,84 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 			<div id="content">
-				<center><h3>Basic Backup Shell Script</h3></center><br>
-				<p>This is a short script I had created to backup files with the current year, month, day, hour and minutes timestamped onto the name</p>
+				<center><h3>Week 1 - Server installs</h3></center><br>
+				<p>With week one I had originally tried to get Samaba working on the servers but ended up scrapping the idea in favor of FTP. Below is some of the notes that I took during the process on CentOS and Ubuntu, each with their own slight differences.</p>
 			</div>
-			
 			<div>
 					<pre>
-						<code class="coding">#!/bin/bash
+						<code class="coding"># For CentOS install -
+# Install vsftpd, then enabling it to run at boot time, and check the status of it
+sudo dnf install vsftpd
+sudo systemctl enable vsftpd --now
+sudo systemctl status vsftpd
 
-echo "checking input..."
-if [ $# -lt 1 ] #translated - if input is less than 1
-then
-	echo "not enough input, please include file"
-	echo "enter file name"
-	read filename
-else 
-	filename=$1
-fi #exits the loop
-echo "Working on file: $filename"
-echo "Checking if file exists..."
+# Make a backup copy of the config file
+$ sudo cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.original
 
-if [ -f $filename ] #if filename exists
-then
-	echo "file exists, starting a copy"
-	newname="$filename-$(date +%Y_%m_%d_%H_%M)"  #creates a new file name with filename and the current year, month, day, hour, and min
-	
-	echo "new file name: $newname"
-	
-	cp $filename $newname
-	echo "file copied"
-	ls - al $filename $newname
-else
-	echo "file does not exist...creating file now..."
-	touch $filename
-	ls -al $filename
-fi
-echo "done!"</code>
+# Edit the config file
+sudo vi /etc/vsftpd/vsftpd.conf
+
+# Make sure you have the following setup
+local_enable=YES
+write_enable=YES
+local_umask=022
+dirmessage_enable=YES
+xferlog_enable=YES
+connect_from_port_20=YES
+listen=YES
+listen_ipv6=NO
+use_localtime=YES
+pam_service_name=vsftpd
+userlist_enable=YES
+
+# Save the config file and restart the service. If done correctly would should be able to connect to the FTP server 
+# with a warning that it is not secure and does not support FTP over TLS. 
+
+$ sudo firewall-cmd --zone=public --permanent --add-service=ftp	#Adding FTP service permanently into the firewall config until we remove it
+$ sudo firewall-cmd --reload									#Reloads the firewall service and makes changes take effect
+$ sudo firewall-cmd --list-services								#This will show us the list of services the firewall allows
+</code>
+					</pre>
+				</div>
+				<div>
+				<br>
+
+				</div>
+				<div>
+					<pre>
+						<code class="coding"># For Ubuntu install -
+# Install vsftpd 
+sudo apt install vsftpd
+
+# Make a backup copy of the config file
+$ sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.original
+
+# Edit the config file
+sudo vi /etc/vsftpd.conf
+# Make sure you have the following setup
+listen=YES
+listen_ipv6=NO
+local_enable=YES
+write_enable=YES
+local_umask=022
+dirmessage_enable=YES
+use_localtime=YES
+xferlog_enable=YES
+connect_from_port_20=YES
+secure_chroot_dir=/var/run/vsftpd/empty
+pam_service_name=vsftpd
+
+# Save the config file and restart the service. If done correctly would should be able to connect to the FTP server 
+# with a warning that it is not secure and does not support FTP over TLS. 
+
+# Allow FTP traffic through the firewall and SSH access
+sudo ufw allow 20:21/tcp
+sudo ufw allow 30000:31000/tcp
+sudo ufw allow OpenSSH
+# Check the status of the firewall, if its enabled make sure you reload after applying the new 
+sudo ufw status
+sudo ufw disable
+sudo ufw enable</code>
 					</pre>
 				</div>
 			<footer>
