@@ -176,6 +176,9 @@ code  {
     -webkit-text-size-adjust: none;
 }
 
+code#docker {
+    white-space: pre-wrap;
+}
 
 fieldset { /* styling for the fieldsets */
 	background-color: #e8f2fc;
