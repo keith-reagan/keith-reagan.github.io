@@ -64,36 +64,38 @@
 			
 			<div>
 					<pre>
-						<code class="coding">#!/bin/bash
+						<code class="coding">$ grep Street datebook
+#"grep" being the command, "Street" is the specific string I'm looking for in the file "datebook"
 
-echo "checking input..."
-if [ $# -lt 1 ] #translated - if input is less than 1
-then
-	echo "not enough input, please include file"
-	echo "enter file name"
-	read filename
-else 
-	filename=$1
-fi #exits the loop
-echo "Working on file: $filename"
-echo "Checking if file exists..."
+$ grep '^M' datebook
+# Using RegEx inside the single qoutes the ^ anchor searches for the first letter in each line for an M, '^M' in databook
 
-if [ -f $filename ] #if filename exists
-then
-	echo "file exists, starting a copy"
-	newname="$filename-$(date +%Y_%m_%d_%H_%M)"  #creates a new file name with filename and the current year, month, day, hour, and min
-	
-	echo "new file name: $newname"
-	
-	cp $filename $newname
-	echo "file copied"
-	ls - al $filename $newname
-else
-	echo "file does not exist...creating file now..."
-	touch $filename
-	ls -al $filename
-fi
-echo "done!"</code>
+$ grep '000$' datebook
+# Using RegEx to search for the string 000 at the end of each line with $ anchor
+ 
+$ grep -m8 -v datebook
+# I added in the -m8 so it would only search the first 8 lines and not flood the screen with results using the inverse match -v
+
+$ grep '\/23\:' datebook
+# The RegEx here show a string that starts with "/" using "\/" ("\" allowing to escape a special charact), then has "23" and ending with a ":" using "\:" in datebook
+
+$ grep '\:[8][[:digit:]]\{2\}\-' datebook
+# The "\:[8]" specifies the first part of the string needs ":8" which is the start of the area code after the persons name. "[[:digit:]]\{2\}" 
+states that the next 2 characters need to be digits with the string ending with a "-" as the last character using "\-".
+
+$ grep '[[:upper:]][[:lower:]]\{5\},[[:blank:]][[:upper:]]' datebook
+# I think the ask was for a space after the comma so I went with this. "[[:upper:]]" for the first character in the string being an upper case letter,
+#"[[:lower:]]\{5\}" for the next 5 characters to be lower case, ",[[:blank:]]" for a comma then space, and lastly [[:upper:]] for an upper case letter.
+
+$ egrep '[[:digit:]]{2,3}[[:blank:]][[:upper:]]' datebook
+# I had to go with egrep so I could use "{2,3}" after "[[:digit:]]" so it would look for two or three numbers in a row. Followed by "[[:blank:]][[:upper:]]" 
+# for a blank space and uppercase letter
+
+$ grep -n MA datebook
+# The "-n" was used to display the line number of the entry that had the state of "MA" in the datebook file
+
+$ egrep -m25 -v '(Street|ST)' datebook
+# I used "-m" again to shorten the output, "-v" to show the inverse match of the Street OR ST - "(Street|ST)" results with having to use egrep for the OR.</code>
 					</pre>
 				</div>
 			<footer>
