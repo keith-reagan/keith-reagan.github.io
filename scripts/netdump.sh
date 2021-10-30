@@ -40,7 +40,7 @@ osflavor=$(hostnamectl | grep Operating | awk 'BEGIN{FS=": "}; {print $2}') #Def
 		if [[ "$netstatInstalled" == *"net-tools"* ]]; then
 			netstat -r | sed -n '2,4p' | awk '{print $1, "\t" $2, "\t" $3}' | tee -a /logs/netdump/$pants #Prints out default gateway and subnet
 		else
-			echo -e "netstat/net-tools is \e[41mNOT\e[0m installed! Use \e[96msudo dnf netstat\e[0m to install. Skipping process for now" | tee -a /logs/netdump/$pants
+			echo -e "netstat/net-tools is \e[41mNOT\e[0m installed! Use \e[96msudo dnf install netstat\e[0m to install. Skipping process for now" | tee -a /logs/netdump/$pants
 		fi
 	fi
 	#End fetching dedault gateway and subnet mask info
@@ -59,7 +59,7 @@ osflavor=$(hostnamectl | grep Operating | awk 'BEGIN{FS=": "}; {print $2}') #Def
 		if [[ "$firewalldInstalled" == *"firewalld"* ]]; then
 			systemctl status firewalld.service | awk '{ sub(/^[ \t]+/, ""); print }' | grep active | tee -a /logs/netdump/$pants #Checks firewall status
 		else
-			echo -e "firewalld is \e[41mNOT\e[0m installed! Use \e[96msudo dnf firewalld\e[0m to install. Skipping process for now" | tee -a /logs/netdump/$pants
+			echo -e "firewalld is \e[41mNOT\e[0m installed! Use \e[96msudo dnf install firewalld\e[0m to install. Skipping process for now" | tee -a /logs/netdump/$pants
 		fi
 	fi
 	#End firewall check    
@@ -78,7 +78,7 @@ osflavor=$(hostnamectl | grep Operating | awk 'BEGIN{FS=": "}; {print $2}') #Def
 		if [[ "$fail2banInstalled" == *"fail2ban"* ]]; then
 			systemctl status fail2ban.service | awk '{ sub(/^[ \t]+/, ""); print }' | grep active | tee -a /logs/netdump/$pants #Checks fail2ban status
 		else
-			echo -e "fail2ban is \e[41mNOT\e[0m installed! Use \e[96msudo dnf fail2ban\e[0m to install. Skipping process for now" | tee -a /logs/netdump/$pants
+			echo -e "fail2ban is \e[41mNOT\e[0m installed! Use \e[96msudo dnf install fail2ban\e[0m to install. Skipping process for now" | tee -a /logs/netdump/$pants
 		fi
 	fi
 	#End fail2ban check
@@ -102,7 +102,7 @@ osflavor=$(hostnamectl | grep Operating | awk 'BEGIN{FS=": "}; {print $2}') #Def
 		if [[ "$nmapInstalled" == *"nmap"* ]]; then
 		nmap $hostip -sV | tee -a /logs/netdump/$pants #Runs nmap on the local machine
 		else
-			echo -e "nmap is \e[41mNOT\e[0m installed! Use \e[96msudo dnf nmap\e[0m to install. Skipping process for now" | tee -a /logs/netdump/$pants
+			echo -e "nmap is \e[41mNOT\e[0m installed! Use \e[96msudo dnf install nmap\e[0m to install. Skipping process for now" | tee -a /logs/netdump/$pants
 		fi
 	fi		
 	#End nmap check		
