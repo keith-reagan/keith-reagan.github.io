@@ -30,17 +30,17 @@ osflavor=$(hostnamectl | grep Operating | awk 'BEGIN{FS=": "}; {print $2}') #Def
 	if [[ "$osflavor" == *"Ubuntu"* ]]; then #Checks OS flavor, will determine what command to run next and suggest for install if not located
 	#If the OS is Ubuntu, script will check if netstat is installed by using dpkg and cleaning up the command until it just prints "netstat" as the result
 	netstatInstalled=$(sudo dpkg -s netstat >/dev/null 2>&1 | awk '/Package/ {print $2}') 
-		if [[ "$netstatInstalled" == *"netstat"* ]]; then #If command print check comes back with "netstat" 
+		if [[ "$netstatInstalled" == *"net-tools"* ]]; then #If command print check comes back with "netstat" 
 			netstat -r | sed -n '2,4p' | awk '{print $1, "\t" $2, "\t" $3}' | tee -a /logs/netdump/$pants #Prints out default gateway and subnet
 		else #If netstat isn't install, it will error and let you know it is not and give you the command on how to install it
-			echo -e "netstat is \e[41mNOT\e[0m installed! Use \e[96msudo apt-get install netstat -y\e[0m to install. Skipping process for now" | tee -a /logs/netdump/$pants
+			echo -e "netstat/net-tools is \e[41mNOT\e[0m installed! Use \e[96msudo apt-get install net-tools -y\e[0m to install. Skipping process for now" | tee -a /logs/netdump/$pants
 		fi
 	else #If the OS is Centos, script will check if netstat aka net-tools is installed, if not suggest you do
 	netstatInstalled=$(sudo dnf info net-tools | grep net-tools | awk '/Name/ {print $3}') 
 		if [[ "$netstatInstalled" == *"net-tools"* ]]; then
 			netstat -r | sed -n '2,4p' | awk '{print $1, "\t" $2, "\t" $3}' | tee -a /logs/netdump/$pants #Prints out default gateway and subnet
 		else
-			echo -e "netstat is \e[41mNOT\e[0m installed! Use \e[96msudo dnf netstat\e[0m to install. Skipping process for now" | tee -a /logs/netdump/$pants
+			echo -e "netstat/net-tools is \e[41mNOT\e[0m installed! Use \e[96msudo dnf netstat\e[0m to install. Skipping process for now" | tee -a /logs/netdump/$pants
 		fi
 	fi
 	#End fetching dedault gateway and subnet mask info
