@@ -1,0 +1,92 @@
+#!/usr/bin/bash
+#11-5-21
+#Keith Reagan
+#iptables example configuration script for Ubuntu
+
+# Drop ICMP echo-request messages sent to broadcast or multicast addresses
+echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts
+
+# Drop source routed packets
+echo 0 > /proc/sys/net/ipv4/conf/all/accept_source_route
+ 
+# Enable TCP SYN cookie protection from SYN floods
+echo 1 > /proc/sys/net/ipv4/tcp_syncookies
+ 
+# Don't accept ICMP redirect messages
+echo 0 > /proc/sys/net/ipv4/conf/all/accept_redirects
+ 
+# Don't send ICMP redirect messages
+echo 0 > /proc/sys/net/ipv4/conf/all/send_redirects
+ 
+# Enable source address spoofing protection
+echo 1 > /proc/sys/net/ipv4/conf/all/rp_filter
+ 
+# Log packets with impossible source addresses
+echo 1 > /proc/sys/net/ipv4/conf/all/log_martians
+ 
+# Flush all chains
+/sbin/iptables --flush
+ 
+# Allow unlimited traffic on the loopback interface
+/sbin/iptables -A INPUT -i lo -j ACCEPT
+/sbin/iptables -A OUTPUT -o lo -j ACCEPT
+ 
+# Set default policies
+/sbin/iptables --policy INPUT DROP
+/sbin/iptables --policy OUTPUT DROP
+/sbin/iptables --policy FORWARD DROP
+ 
+# Previously initiated and accepted exchanges bypass rule checking
+# Allow unlimited outbound traffic
+/sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+/sbin/iptables -A OUTPUT -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+
+# 3. Deal with SSH service (allow incoming and outgoing SSH, second script to deny SSH) 
+#Ratelimit SSH for attack protection
+/sbin/iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 4 -j DROP
+/sbin/iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --set
+/sbin/iptables -A INPUT -p tcp --dport 22 -m state --state NEW -j ACCEPT
+ 
+# Allow certain ports to be accessible from the outside
+# 1. Deal with web server (open needed ports, and forward port 80 traffic to 8080)
+/sbin/iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
+# 2. Deal with MySQL service (open needed ports)
+/sbin/iptables -A INPUT -p tcp --dport 3306 -j ACCEPT #Accept incoming to port 3306
+/sbin/iptables -A OUTPUT -p tcp --dport 3306 -j ACCEPT #Accept outgoing to port 3306
+
+# 4. Deal with Email service (Such as allow or block incoming SMTP,POP3...)
+# POP3 (Protocol to RECEIVE email messages)
+/sbin/iptables -A INPUT -p tcp --dport 110 -j REJECT #Block incoming to non-secure port 110
+/sbin/iptables -A INPUT -p tcp --dport 995 -j ACCEPT #Accept incoming to secure port 995
+	
+# IMAP (Protocol to RECEIVE email messages)
+/sbin/iptables -A INPUT -p tcp --dport 143 -j REJECT #Block incoming to non-secure port 143
+/sbin/iptables -A INPUT -p tcp --dport 993 -j ACCEPT #Accept incoming to secure port 993	
+	
+# SMTP (Protocol to SEND email messages)
+/sbin/iptables -A OUTPUT -p tcp --match multiport --dports 25,26 -j REJECT #Block incoming to non-secure ports 25, 26
+/sbin/iptables -A OUTPUT -p tcp --match multiport --dports 465,587 -j ACCEPT #Accept incoming to secure ports 465, 587
+
+# Other rules for future use if needed.  Uncomment to activate
+# /sbin/iptables -A INPUT -p tcp --dport 80 -m state --state NEW -j ACCEPT    # http
+# /sbin/iptables -A INPUT -p tcp --dport 443 -m state --state NEW -j ACCEPT   # https
+
+# UDP packet rule.  This is just a random udp packet rule as an example only
+# /sbin/iptables -A INPUT -p udp --dport 5021 -m state --state NEW -j ACCEPT
+
+# Allow pinging of your server
+#/sbin/iptables -A INPUT -p icmp --icmp-type 8 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+
+# 5. Script to allow/block specific hosts, MAC addresses
+/sbin/iptables -A INPUT -s 192.168.1.3 -j DROP
+
+
+# 6. A script/command to block telnet, block ping
+/sbin/iptables -A INPUT -p tcp --dport 23 -m state --state NEW -j REJECT 	# Block telnet
+/sbin/iptables -A INPUT -p icmp --icmp-type 8 -m state --state NEW -j DROP	# Block pinging
+  
+# Drop all other traffic
+/sbin/iptables -A INPUT -j DROP
+
+# print the activated rules to the console when script is completed
+/sbin/iptables -nL

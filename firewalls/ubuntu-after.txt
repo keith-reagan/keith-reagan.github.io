@@ -1,0 +1,192 @@
+kreagan@acme-ubuntu:/etc/network$ sudo /etc/network/firewall
+Chain INPUT (policy DROP)
+target     prot opt source               destination
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
+DROP       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:22 state NEW recent: UPDATE seconds: 60 hit_count: 4 name: DEFAULT side: source mask: 255.255.255.255
+           tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:22 state NEW recent: SET name: DEFAULT side: source mask: 255.255.255.255
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:22 state NEW
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:3306
+REJECT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:110 reject-with icmp-port-unreachable
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:995
+REJECT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:143 reject-with icmp-port-unreachable
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:993
+DROP       all  --  192.168.1.3          0.0.0.0/0
+DROP       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:23 state NEW
+DROP       icmp --  0.0.0.0/0            0.0.0.0/0            icmptype 8 state NEW
+DROP       all  --  0.0.0.0/0            0.0.0.0/0
+
+Chain FORWARD (policy DROP)
+target     prot opt source               destination
+
+Chain OUTPUT (policy DROP)
+target     prot opt source               destination
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            state NEW,RELATED,ESTABLISHED
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:3306
+REJECT     tcp  --  0.0.0.0/0            0.0.0.0/0            multiport dports 25,26 reject-with icmp-port-unreachable
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            multiport dports 465,587
+
+Chain ufw-after-forward (0 references)
+target     prot opt source               destination
+
+Chain ufw-after-input (0 references)
+target     prot opt source               destination
+
+Chain ufw-after-logging-forward (0 references)
+target     prot opt source               destination
+
+Chain ufw-after-logging-input (0 references)
+target     prot opt source               destination
+
+Chain ufw-after-logging-output (0 references)
+target     prot opt source               destination
+
+Chain ufw-after-output (0 references)
+target     prot opt source               destination
+
+Chain ufw-before-forward (0 references)
+target     prot opt source               destination
+
+Chain ufw-before-input (0 references)
+target     prot opt source               destination
+
+Chain ufw-before-logging-forward (0 references)
+target     prot opt source               destination
+
+Chain ufw-before-logging-input (0 references)
+target     prot opt source               destination
+
+Chain ufw-before-logging-output (0 references)
+target     prot opt source               destination
+
+Chain ufw-before-output (0 references)
+target     prot opt source               destination
+
+Chain ufw-logging-allow (0 references)
+target     prot opt source               destination
+
+Chain ufw-logging-deny (0 references)
+target     prot opt source               destination
+
+Chain ufw-not-local (0 references)
+target     prot opt source               destination
+
+Chain ufw-reject-forward (0 references)
+target     prot opt source               destination
+
+Chain ufw-reject-input (0 references)
+target     prot opt source               destination
+
+Chain ufw-reject-output (0 references)
+target     prot opt source               destination
+
+Chain ufw-skip-to-policy-forward (0 references)
+target     prot opt source               destination
+
+Chain ufw-skip-to-policy-input (0 references)
+target     prot opt source               destination
+
+Chain ufw-skip-to-policy-output (0 references)
+target     prot opt source               destination
+
+Chain ufw-track-forward (0 references)
+target     prot opt source               destination
+
+Chain ufw-track-input (0 references)
+target     prot opt source               destination
+
+Chain ufw-track-output (0 references)
+target     prot opt source               destination
+
+Chain ufw-user-forward (0 references)
+target     prot opt source               destination
+
+Chain ufw-user-input (0 references)
+target     prot opt source               destination
+
+Chain ufw-user-limit (0 references)
+target     prot opt source               destination
+
+Chain ufw-user-limit-accept (0 references)
+target     prot opt source               destination
+
+Chain ufw-user-logging-forward (0 references)
+target     prot opt source               destination
+
+Chain ufw-user-logging-input (0 references)
+target     prot opt source               destination
+
+Chain ufw-user-logging-output (0 references)
+target     prot opt source               destination
+
+Chain ufw-user-output (0 references)
+target     prot opt source               destination
+kreagan@acme-ubuntu:/etc/network$
+
+####################################################################
+
+kreagan@acme-ubuntu:/etc/network$ sudo /etc/network/firewall-down
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination
+kreagan@acme-ubuntu:/etc/network$
+
+
+####################################################################
+
+kreagan@acme-ubuntu:/etc/network$ sudo /etc/network/firewall-down
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination
+kreagan@acme-ubuntu:/etc/network$ ^C
+kreagan@acme-ubuntu:/etc/network$ sudo vi firewall-reload
+kreagan@acme-ubuntu:/etc/network$ sudo /etc/network/firewall-reload
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination
+Chain INPUT (policy DROP)
+target     prot opt source               destination
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
+DROP       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:22 state NEW recent: UPDATE seconds: 60 hit_count: 4 name: DEFAULT side: source mask: 255.255.255.255
+           tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:22 state NEW recent: SET name: DEFAULT side: source mask: 255.255.255.255
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:22 state NEW
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:3306
+REJECT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:110 reject-with icmp-port-unreachable
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:995
+REJECT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:143 reject-with icmp-port-unreachable
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:993
+DROP       all  --  192.168.1.3          0.0.0.0/0
+DROP       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:23 state NEW
+DROP       icmp --  0.0.0.0/0            0.0.0.0/0            icmptype 8 state NEW
+DROP       all  --  0.0.0.0/0            0.0.0.0/0
+
+Chain FORWARD (policy DROP)
+target     prot opt source               destination
+
+Chain OUTPUT (policy DROP)
+target     prot opt source               destination
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            state NEW,RELATED,ESTABLISHED
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:3306
+REJECT     tcp  --  0.0.0.0/0            0.0.0.0/0            multiport dports 25,26 reject-with icmp-port-unreachable
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            multiport dports 465,587
+kreagan@acme-ubuntu:/etc/network$
+
+

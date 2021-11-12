@@ -1,0 +1,26 @@
+[root@acme-centos kreagan]# sudo iptables -nL
+Chain INPUT (policy DROP)
+target     prot opt source               destination
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+DROP       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:22 state NEW recent: UPDATE seconds: 60 hit_count: 4 name: DEFAULT side: source mask: 255.255.255.255
+           tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:22 state NEW recent: SET name: DEFAULT side: source mask: 255.255.255.255
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:22 state NEW
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:3306
+REJECT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:110 reject-with icmp-port-unreachable
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:995
+REJECT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:143 reject-with icmp-port-unreachable
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:993
+DROP       all  --  157.240.220.35       0.0.0.0/0
+DROP       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:23 state NEW
+DROP       icmp --  0.0.0.0/0            0.0.0.0/0            icmptype 8 state NEW
+DROP       icmp --  0.0.0.0/0            0.0.0.0/0            icmptype 8 state NEW
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:3306
+REJECT     tcp  --  0.0.0.0/0            0.0.0.0/0            multiport dports 25,26 reject-with icmp-port-unreachable
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            multiport dports 465,587

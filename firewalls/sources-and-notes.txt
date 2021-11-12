@@ -1,0 +1,130 @@
+##############################################################
+#########################Ubuntu setup#########################
+# https://www.linuxnorth.org/five_minute_firewall/
+# making sure that packet filter is ready to go
+$ sudo iptables -nL
+
+# Create scripts for firewall
+# The first script will create, activate and output your rules to your console
+# The second script will flush (delete) your rules and output them to your console
+# The third script will flush and immediately reload your rules in the firewall script
+$ cd /etc/network
+$ sudo touch firewall firewall-down firewall-reload
+
+# Lock down permissions so only root can open and view files
+$ sudo chmod 700 firewall firewall-down firewall-reload
+
+# Open firewall file and use firewall_script file to paste into it
+$ sudo vi /etc/network/firewall
+
+# Engage the firewall
+$ sudo /etc/network/firewall
+
+# Open /etc/network/firewall-down file and use firewall-down file to paste into it
+$ sudo vi firewall-down
+
+
+# Open /etc/network/firewall-reload file and use firewall-reload file to paste into it
+$ sudo vi firewall-reload
+
+# Reload firewall script
+$ sudo /etc/network/firewall-reload
+
+# Install iptables-persistent to make rules permanent
+$ sudo apt install iptables-persistent
+
+# Say yes to Save current Ipv4 rules
+# Say yes to Save current Ipv6 rules in the next screen as well.
+# Once complete the netfilter-persistent script will be installed to /etc/init.d which will allow you to start, stop, flush and save your firewall rules.
+
+# To see the options available type the following
+$ sudo /etc/init.d/netfilter-persistent
+# You will see the following message.
+$ Usage: /etc/init.d/netfilter-persistent {start|restart|reload|force-reload|save|flush}
+# Let's start by saving our rules so that they are engaged when the system boots up.
+$ sudo /etc/init.d/netfilter-persistent save
+
+# Test the other options for flushing and reloading with netfilter-persistent. Now everytime you modify your rules in /etc/network/firewall and run /etc/network/firewall-reload, make sure you save them permanently with netfilter-persistent save.
+
+
+
+##############################################################
+#########################Centos setup#########################
+# https://upcloud.com/community/tutorials/configure-iptables-centos/
+# login as root
+
+$ sudo iptables -nL
+
+$ sudo iptables-save > /etc/sysconfig/iptables
+
+# Adding rules 
+
+$ sudo iptables -I INPUT 1 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT # To allow established connections continue, added to the top
+
+$ sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
+
+$ sudo iptables -A INPUT -p tcp --dport 3306 -j ACCEPT #Accept incoming to port 3306
+$ sudo iptables -A OUTPUT -p tcp --dport 3306 -j ACCEPT #Accept outgoing to port 3306
+
+$ sudo iptables -A INPUT -p tcp --dport ssh -m state --state NEW -m recent --update --seconds 60 --hitcount 4 -j DROP
+$ sudo iptables -A INPUT -p tcp --dport ssh -m state --state NEW -m recent --set
+$ sudo iptables -A INPUT -p tcp --dport ssh -m state --state NEW -j ACCEPT
+
+$ sudo iptables -A INPUT -p tcp --dport 110 -j REJECT
+$ sudo iptables -A INPUT -p tcp --dport 995 -j ACCEPT
+
+$ sudo iptables -A INPUT -p tcp --dport 143 -j REJECT
+$ sudo iptables -A INPUT -p tcp --dport 993 -j ACCEPT
+
+$ sudo iptables -A OUTPUT -p tcp --match multiport --dports 25,26 -j REJECT
+$ sudo iptables -A OUTPUT -p tcp --match multiport --dports 465,587 -j ACCEPT
+
+$ sudo iptables -A INPUT -s 157.240.220.35 -j DROP
+
+$ sudo iptables -A INPUT -p tcp --dport 23 -m state --state NEW -j DROP 	# Block telnet
+$ sudo iptables -A INPUT -p icmp --icmp-type 8 -m state --state NEW -j DROP	# Block pinging
+
+$ sudo iptables -P INPUT DROP
+
+# Overwrite the current rules
+$ sudo iptables-restore < /etc/sysconfig/iptables
+# Add the new rules keeping the current ones
+$ sudo iptables-restore -n < /etc/sysconfig/iptables
+
+# To automate the restore at reboot CentOS offers a system service by the same name, iptables. However, it does not come in the default configuration and needs to be installed manually.
+
+$ sudo yum install iptables-services
+# Once installed, start and enable the service.
+
+$ sudo systemctl start iptables
+$ sudo systemctl enable iptables
+# Afterwards, you can simply save the current rules using the following command.
+
+$ sudo service iptables save
+
+# Index iptable
+$ sudo iptables -L --line-numbers
+Chain INPUT (policy DROP)
+ num target prot opt source   destination
+ 1   ACCEPT all  --  anywhere anywhere ctstate RELATED,ESTABLISHED
+ 2   ACCEPT tcp  --  anywhere anywhere tcp dpt:ssh
+ 3   ACCEPT tcp  --  anywhere anywhere tcp dpt:http
+
+# To insert a new rule to the top of the chain, use the following command with index number 1.
+$ sudo iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
+
+# Delete "INPUT 2" from indexed iptable
+$ sudo iptables -D INPUT 2
+
+
+
+
+
+
+
+
+
+
+
+
+
