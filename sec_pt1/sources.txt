@@ -1,0 +1,21 @@
+https://access.redhat.com/solutions/10107
+https://filippo.io/linux-syscall-table/
+https://linuxhint.com/auditd_linux_tutorial/
+https://linuxhint.com/bash_for_each_line/
+https://ostechnix.com/a-beginners-guide-to-cron-jobs/
+https://serverfault.com/questions/410334/grepping-for-cidr-ranges
+https://stackoverflow.com/questions/15515911/strip-leading-zeros-in-awk-program
+https://stackoverflow.com/questions/4332478/read-the-current-text-color-in-a-xterm/4332530#4332530
+https://stackoverflow.com/questions/5412761/using-colors-with-printf
+https://stackoverflow.com/questions/61183536/restarting-auditd-service-gives-dependency-error to get centos to start process
+https://www.baeldung.com/linux/directory-md5-checksum
+https://www.beyondtrust.com/blog/entry/important-linux-files-protect
+https://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/
+https://www.golinuxcloud.com/linux-login-history/
+https://www.howtogeek.com/410532/how-to-compare-two-text-files-in-the-linux-terminal/
+https://www.networkworld.com/article/3218728/how-log-rotation-works-with-logrotate.html
+https://www.networkworld.com/article/3263752/reviewing-logins-on-linux.html
+https://www.networkworld.com/article/3391362/looking-into-linux-modules.html
+https://www.tecmint.com/linux-system-auditing-with-auditd-tool-on-centos-rhel/
+https://www.youtube.com/watch?v=QZJ1drMQz1A	
+https://github.com/CoreyMSchafer/code_snippets/blob/master/Cron-Tasks/snippets.txt
