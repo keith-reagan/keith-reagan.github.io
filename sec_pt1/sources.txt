@@ -17,5 +17,6 @@ https://www.networkworld.com/article/3218728/how-log-rotation-works-with-logrota
 https://www.networkworld.com/article/3263752/reviewing-logins-on-linux.html
 https://www.networkworld.com/article/3391362/looking-into-linux-modules.html
 https://www.tecmint.com/linux-system-auditing-with-auditd-tool-on-centos-rhel/
+https://www.tutorialspoint.com/unix_commands/ausearch.htm
 https://www.youtube.com/watch?v=QZJ1drMQz1A	
 https://github.com/CoreyMSchafer/code_snippets/blob/master/Cron-Tasks/snippets.txt
