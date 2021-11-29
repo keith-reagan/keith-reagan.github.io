@@ -1,0 +1,89 @@
+[kreagan@acme-centos ~]$ cat realfail.log
+Nov 13 15:23:53 acme-centos sshd[73156]: Failed password for kreagan from 192.168.187.1 port 56208 ssh2
+Nov 13 15:23:58 acme-centos sshd[73156]: Failed password for kreagan from 192.168.187.1 port 56208 ssh2
+Nov 13 15:24:02 acme-centos sshd[73156]: Failed password for kreagan from 192.168.187.1 port 56208 ssh2
+Nov 17 18:35:06 acme-centos sshd[76552]: Failed password for kreagan from 192.168.187.130 port 60682 ssh2
+Nov 17 18:35:09 acme-centos sshd[76552]: Failed password for kreagan from 192.168.187.130 port 60682 ssh2
+Nov 17 18:35:14 acme-centos sshd[76552]: Failed password for kreagan from 192.168.187.130 port 60682 ssh2
+
+
+[kreagan@acme-centos ~]$ cat realsecure.log
+Nov 12 03:25:39 acme-centos sshd[71822]: Accepted password for kreagan from 192.168.187.1 port 61811 ssh2
+Nov 12 03:25:39 acme-centos sshd[71822]: Accepted password for kreagan from 124.121.20.11 port 61811 ssh2
+Nov 12 10:25:39 acme-centos sshd[71822]: Accepted password for kreagan from 192.168.187.1 port 61811 ssh2
+Nov 13 10:25:39 acme-centos sshd[71822]: Accepted password for kreagan from 192.168.187.1 port 61811 ssh2
+Nov 13 10:25:39 acme-centos sshd[71822]: Accepted password for kreagan from 192.168.187.1 port 61811 ssh2
+Nov 14 10:25:39 acme-centos sshd[71822]: Accepted password for kreagan from 192.168.187.1 port 61811 ssh2
+Nov 14 10:25:39 acme-centos sshd[71822]: Accepted password for kreagan from 192.168.187.1 port 61811 ssh2
+Nov 15 10:25:39 acme-centos sshd[71822]: Accepted password for kreagan from 192.168.187.1 port 61811 ssh2
+Nov 15 09:29:21 acme-centos sshd[72499]: Accepted password for kreagan from 192.168.187.1 port 51525 ssh2
+Nov 17 16:30:36 acme-centos sshd[75182]: Accepted password for kreagan from 192.168.187.1 port 58032 ssh2
+Nov 17 17:30:36 acme-centos sshd[75182]: Accepted password for kreagan from 124.121.20.11 port 58032 ssh2
+Nov 18 08:56:20 acme-centos sshd[77849]: Accepted password for kreagan from 192.168.187.1 port 57745 ssh2
+
+
+[kreagan@acme-centos ~]$ cat oor_ips.log
+Nov 12 03:25:39 acme-centos sshd[71822]: Accepted password for kreagan from 124.121.20.11 port 61811 ssh2
+Nov 17 17:30:36 acme-centos sshd[75182]: Accepted password for kreagan from 124.121.20.11 port 58032 ssh2
+
+
+
+# failed_users=
+[kreagan@acme-centos ~]$ cat realfail.log | awk '{ print $(NF-5) }' | sort | uniq
+kreagan
+
+
+# success_users=$(cat $SUCCESS_LOG | awk '{ print $(NF-5) }' | sort | uniq)
+[kreagan@acme-centos ~]$ cat realsecure.log | awk '{ print $(NF-5) }'| sort | uniq
+kreagan
+
+
+#success_bad_time_users=$(cat $SUCCESS_LOG | awk '{print $1,$2,$3,$9,$11}' | awk '{gsub ("^0[1-5]*", "", $3); print$1,$2,$3,$4,$5}' | egrep '[[:space:]][0-5]\:')
+[kreagan@acme-centos ~]$ cat realsecure.log | awk '{print $1,$2,$3,$9,$11}' | awk '{gsub ("^0[1-5]*", "", $3); print$1,$2,$3,$4,$5}' | egrep '[[:space:]][0-5]\:'
+[kreagan@acme-centos ~]$
+
+
+#success_users_bad_ip=$(cat $SUCCESS_LOG | awk '{ print $(NF-3) }' | egrep -v '192\.168\.187\.' | sort | uniq)
+[kreagan@acme-centos ~]$ cat realsecure.log | awk '{ print $(NF-3) }' | egrep -v '192\.168\.187\.' | sort | uniq
+124.121.20.11
+
+
+# extract the IP Addresses of successful and failed login attempts
+#failed_ip_list="$(egrep -o "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" $FAILED_LOG | sort | uniq)"
+[kreagan@acme-centos ~]$ egrep -o "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" realfail.log | sort | uniq
+192.168.187.1
+192.168.187.130
+
+
+#success_ip_list="$(egrep -o "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" $SUCCESS_LOG | sort | uniq)"
+[kreagan@acme-centos ~]$ egrep -o "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" realsecure.log | sort | uniq
+124.121.20.11
+192.168.187.1
+
+
+	printf "\n${RED}Signed in successfully under an abby normal IP!${NORMAL}\n" >> /logs/logins/$pants;
+	printf "${UNDERLINE}%-10s|%-10s|%-10s|%-15s|%-15s|%s\n" "Status" "User" "IP address" "Host" "Time range${NORMAL}" >> /logs/logins/$pants;
+	      # Count successful login attempts by this user from this IP
+
+	login_times=`grep $ip $OOR_IPS | grep " $user " | head -1 | cut -c-16`
+	#printf "\nIP is $ip \n OOR IP $OOR_IPS \n User is $user \n
+
+    HOST=$(host $ip 8.8.8.8 | tail -1 | awk '{ print $NF }' )
+for ip in $OOR_IPS;
+do
+    printf "%-10s|%-10s|%-10s|${RED}%-15s${NORMAL}|%-15s|%-s\n" "Success" "$user" "$ip"  "$HOST" "$login_times"  >> /logs/logins/$pants;
+
+#do #Display successful logins from out of range IPs
+#  printf "\n${RED}Signed in successfully under an abby normal IP!${NORMAL}\n">> /logs/logins/$pants;
+#  awk '{print $1,$2,$3,$9,$11}' success.log | awk '{gsub ("^0*", "", $3); print$1, "  "$2, "  ", $3,"  "$4, "    "$5}' | egrep -v '192\.168\.187\.' >> /logs/logins/$pants;
+
+done
+
+"08:[2][0-9]:[0-5][0-9]|08:[3][0-5]:[0-5][0-9]"
+08:25:00 through 08:35:59
+
+"00:00:[0][0-1]|06:[0-5][0-9]:[0-5][0-9]"
+
+grep -E '(00:[0-5][0-9]:[0-5][0-9]|11:00:00)'
+
+'[[:upper:]][[:lower:]][[:lower]][[:space:]][0-31][[:space:]][0][0-6]'
