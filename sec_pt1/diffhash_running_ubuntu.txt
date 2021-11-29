@@ -1,0 +1,19 @@
+kreagan@acme-ubuntu:~$ sudo bash diffhash.sh
+[sudo] password for kreagan:
+kreagan@acme-ubuntu:~$
+kreagan@acme-ubuntu:~$
+kreagan@acme-ubuntu:~$ ls -li /logs/misc/
+total 400
+923877 -rw-r--r-- 1 root root  12915 Nov 22 00:15 etc_hash_Monday_November_22_2021_00:15:08.log
+923880 -rw-r--r-- 1 root root 155931 Nov 22 00:15 etc_ls_Monday_November_22_2021_00:15:08.log
+923879 -rw-r--r-- 1 root root 150476 Nov 22 00:15 todays-etc-ls.log
+923876 -rw-r--r-- 1 root root  12603 Nov 22 00:15 todays-etc-md5sum.log
+923873 -rw-r--r-- 1 root root  14218 Nov 22 00:15 todays-var-ls.log
+923870 -rw-r--r-- 1 root root  12603 Nov 22 00:15 todays-var-md5sum.log
+923871 -rw-r--r-- 1 root root  12915 Nov 22 00:15 var_hash_Monday_November_22_2021_00:15:08.log
+923874 -rw-r--r-- 1 root root  14654 Nov 22 00:15 var_ls_Monday_November_22_2021_00:15:08.log
+923878 -rw-r--r-- 1 root root      0 Nov 22 00:15 yesterdays-etc-ls.log
+923875 -rw-r--r-- 1 root root      0 Nov 22 00:15 yesterdays-etc-md5sum.log
+923872 -rw-r--r-- 1 root root      0 Nov 22 00:15 yesterdays-var-ls.log
+923868 -rw-r--r-- 1 root root      0 Nov 22 00:15 yesterdays-var-md5sum.log
+kreagan@acme-ubuntu:~$

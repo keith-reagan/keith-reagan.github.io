@@ -1,0 +1,175 @@
+cat /logs/misc/var_ls_Sunday_November_21_2021_18\:56\:10.log
+< /var/log/:
+< total 3096
+< drwxr-xr-x. 2 root   root     4096 Sep 17 11:55 anaconda
+< drwx------. 2 root   root       23 Sep 17 11:56 audit
+< -rw-------. 1 root   root        0 Oct 16 08:18 boot.log
+< -rw-------. 1 root   root     8155 Sep 18 08:21 boot.log-20210918
+< -rw-------. 1 root   root     7792 Oct 14 12:31 boot.log-20211014
+< -rw-------. 1 root   root     7974 Oct 16 08:18 boot.log-20211016
+< -rw-------. 1 root   utmp     6528 Nov 20 12:01 btmp
+< -rw-rw----. 1 root   utmp        0 Oct  1 10:48 btmp-20211104
+< drwxr-xr-x. 2 chrony chrony      6 Mar  2  2021 chrony
+< -rw-------. 1 root   root        0 Nov 21 18:26 cron
+< -rw-------. 1 root   root    13799 Nov  4 12:44 cron-20211104
+< -rw-------. 1 root   root     9524 Nov 12 10:14 cron-20211112
+< -rw-------. 1 root   root    10827 Nov 19 10:37 cron-20211119
+< -rw-------. 1 root   root     6886 Nov 21 18:26 cron-20211121
+< -rw-r--r--. 1 root   root   325314 Nov 20 20:39 dnf.librepo.log
+< -rw-r--r--. 1 root   root   806475 Nov 20 20:39 dnf.log
+< -rw-r--r--. 1 root   root    59964 Nov 20 20:39 dnf.rpm.log
+< -rw-------. 1 root   root        0 Nov 12 10:14 fail2ban.log
+< -rw-------. 1 root   root   409499 Oct 17 03:40 fail2ban.log-20211017
+< -rw-------. 1 root   root   256043 Oct 24 17:33 fail2ban.log-20211024
+< -rw-------. 1 root   root    32787 Oct 29 09:52 fail2ban.log-20211104
+< -rw-------. 1 root   root    58339 Nov  6 15:36 fail2ban.log-20211112
+< -rw-r-----. 1 root   root     2096 Oct 21 17:09 firewalld
+< -rw-r--r--. 1 root   root        0 Nov 21 18:26 hawkey.log
+< -rw-r--r--. 1 root   root     6240 Nov  4 12:34 hawkey.log-20211104
+< -rw-r--r--. 1 root   root      480 Nov  6 20:20 hawkey.log-20211112
+< -rw-r--r--. 1 root   root      720 Nov 19 10:11 hawkey.log-20211119
+< -rw-r--r--. 1 root   root      360 Nov 20 20:39 hawkey.log-20211121
+< -rw-r--r--. 1 root   root     2940 Oct 21 17:09 kdump.log
+< -rw-rw-r--. 1 root   utmp   292584 Nov 21 18:35 lastlog
+< -rw-------. 1 root   root        0 Nov 21 18:26 maillog
+< -rw-------. 1 root   root        0 Oct 24 18:28 maillog-20211104
+< -rw-------. 1 root   root        0 Nov  4 12:44 maillog-20211112
+< -rw-------. 1 root   root        0 Nov 12 10:14 maillog-20211119
+< -rw-------. 1 root   root        0 Nov 19 10:37 maillog-20211121
+< -rw-------. 1 root   root     2013 Nov 21 18:42 messages
+< -rw-------. 1 root   root   181512 Nov  4 12:34 messages-20211104
+< -rw-------. 1 root   root   123362 Nov 12 10:11 messages-20211112
+< -rw-------. 1 root   root   144424 Nov 19 10:27 messages-20211119
+< -rw-------. 1 root   root   101026 Nov 21 18:16 messages-20211121
+< drwx------. 2 root   root        6 Sep 17 11:51 private
+< drwx------. 4 root   root       62 Oct 13 17:25 samba
+< -rw-------. 1 root   root      214 Nov 21 18:35 secure
+< -rw-------. 1 root   root    63644 Oct 30 13:40 secure-20211104
+< -rw-------. 1 root   root    41145 Nov  6 17:16 secure-20211112
+< -rw-------. 1 root   root    94897 Nov 19 10:34 secure-20211119
+< -rw-------. 1 root   root   160561 Nov 20 20:36 secure-20211121
+< -rw-------. 1 root   root        0 Nov 21 18:26 spooler
+< -rw-------. 1 root   root        0 Oct 24 18:28 spooler-20211104
+< -rw-------. 1 root   root        0 Nov  4 12:44 spooler-20211112
+< -rw-------. 1 root   root        0 Nov 12 10:14 spooler-20211119
+< -rw-------. 1 root   root        0 Nov 19 10:37 spooler-20211121
+< drwxr-x---. 2 sssd   sssd      270 Nov 21 18:26 sssd
+< drwxr-xr-x. 2 root   root       23 Jun  1 15:47 tuned
+< -rw-------. 1 root   root     1097 Nov  4 18:55 vmware-network.1.log
+< -rw-------. 1 root   root     1397 Nov  4 18:50 vmware-network.2.log
+< -rw-------. 1 root   root      719 Oct 15 12:26 vmware-network.3.log
+< -rw-------. 1 root   root     1101 Oct 13 17:18 vmware-network.4.log
+< -rw-------. 1 root   root     1397 Oct  9 19:49 vmware-network.5.log
+< -rw-------. 1 root   root     1097 Oct  9 10:44 vmware-network.6.log
+< -rw-------. 1 root   root     1397 Oct  9 10:36 vmware-network.7.log
+< -rw-------. 1 root   root     1097 Oct  7 08:58 vmware-network.8.log
+< -rw-------. 1 root   root     1397 Oct  3 20:54 vmware-network.9.log
+< -rw-------. 1 root   root     5559 Nov 13 09:28 vmware-network.log
+< -rw-------. 1 root   root     4547 Oct 15 12:26 vmware-vgauthsvc.log.0
+< -rw-------. 1 root   root    18222 Nov 21 17:54 vmware-vmsvc-root.log
+< -rw-------. 1 root   root      522 Oct 15 12:26 vmware-vmtoolsd-root.log
+< -rw-rw-r--. 1 root   utmp    42240 Nov 21 18:35 wtmp
+< -rw-------. 1 root   root        0 Nov 21 18:26 xferlog
+< -rw-------. 1 root   root        0 Oct 24 18:28 xferlog-20211104
+< -rw-------. 1 root   root        0 Nov  4 12:44 xferlog-20211112
+< -rw-------. 1 root   root        0 Nov 12 10:14 xferlog-20211119
+< -rw-------. 1 root   root        0 Nov 19 10:37 xferlog-20211121
+<
+< /var/log/anaconda:
+< total 4592
+< -rw-------. 1 root root   36421 Sep 17 11:55 anaconda.log
+< -rw-------. 1 root root    3040 Sep 17 11:55 dbus.log
+< -rw-------. 1 root root    2207 Sep 17 11:55 dnf.librepo.log
+< -rw-------. 1 root root     120 Sep 17 11:55 hawkey.log
+< -rw-------. 1 root root 3041425 Sep 17 11:55 journal.log
+< -rw-------. 1 root root       0 Sep 17 11:55 ks-script-5vpc2ict.log
+< -rw-------. 1 root root       0 Sep 17 11:55 ks-script-fh393duv.log
+< -rw-------. 1 root root       0 Sep 17 11:55 ks-script-yiiqv3iw.log
+< -rw-------. 1 root root  266210 Sep 17 11:55 lvm.log
+< -rw-------. 1 root root  303143 Sep 17 11:55 packaging.log
+< -rw-------. 1 root root    7829 Sep 17 11:55 program.log
+< -rw-------. 1 root root  208356 Sep 17 11:55 storage.log
+< -rw-------. 1 root root  776492 Sep 17 11:55 syslog
+< -rw-------. 1 root root   38227 Sep 17 11:55 X.log
+<
+< /var/log/audit:
+< total 8068
+< -rw-------. 1 root root 6191243 Nov 21 18:56 audit.log
+<
+< /var/log/chrony:
+< total 0
+<
+< /var/log/private:
+< total 0
+<
+< /var/log/samba:
+< total 0
+< drwx------. 4 root root  30 Oct 13 17:25 cores
+< -rw-r--r--. 1 root root   0 Oct 17 04:31 log.nmbd
+< -rw-r--r--. 1 root root   0 Nov  4 12:44 log.smbd
+< drwx------. 2 root root 118 Nov  4 12:44 old
+<
+< /var/log/samba/cores:
+< total 0
+< drwx------. 2 root root 6 Oct 13 17:25 nmbd
+< drwx------. 2 root root 6 Oct 13 17:25 smbd
+<
+< /var/log/samba/cores/nmbd:
+< total 0
+<
+< /var/log/samba/cores/smbd:
+< total 0
+<
+< /var/log/samba/old:
+< total 16
+< -rw-r--r--. 1 root root 396 Oct 15 12:27 log.nmbd-20211017.gz
+< -rw-r--r--. 1 root root 266 Oct 15 12:26 log.smbd-20211017.gz
+< -rw-r--r--. 1 root root 272 Oct 23 18:53 log.smbd-20211024.gz
+< -rw-r--r--. 1 root root 296 Oct 30 12:47 log.smbd-20211104.gz
+<
+< /var/log/sssd:
+< total 64
+< -rw-------. 1 root root  1838 Nov 21 18:56 sssd_implicit_files.log
+< -rw-------. 1 root root   178 Oct 21 17:09 sssd_implicit_files.log-20211024.gz
+< -rw-------. 1 root root 21771 Nov 20 20:34 sssd_implicit_files.log-20211121
+< -rw-------. 1 root root   118 Nov 21 18:26 sssd.log
+< -rw-------. 1 root root   189 Nov 19 10:37 sssd.log-20211119.gz
+< -rw-------. 1 root root   607 Nov 21 18:26 sssd.log-20211121
+< -rw-------. 1 root root  1082 Nov 21 18:56 sssd_nss.log
+< -rw-------. 1 root root   134 Nov 12 10:14 sssd_nss.log-20211119.gz
+< -rw-------. 1 root root   607 Nov 21 18:26 sssd.log-20211121
+< -rw-------. 1 root root  1082 Nov 21 18:56 sssd_nss.log
+< -rw-------. 1 root root   134 Nov 12 10:14 sssd_nss.log-20211119.gz
+< -rw-------. 1 root root 11418 Nov 20 20:34 sssd_nss.log-20211121
+<
+< /var/log/tuned:
+< total 8
+< -rw-r--r--. 1 root root 7263 Oct 21 17:09 tuned.log
+---
+> 0010eaca4fb6bcccb01383e628edd4a4  /var/log/hawkey.log
+> 0299555fd8f9098e1f7f195a84ae4684  /var/log/fail2ban.log-20211112
+> 04de7943a8baf36f0ba58eda71625896  /var/log/cron-20211024
+> 04f88e435d8199cbfe623d593e1bffc9  /var/log/hawkey.log-20211119
+> 0683b60731e972dd1f983d323a3de1af  /var/log/vmware-vmsvc-root.log
+> 071e5e7f03a8d494c9577e673db0ec2b  /var/log/sssd/sssd.log-20211112.gz
+> 0d4c2629b5588ee694aeb034b663ac2c  /var/log/xferlog-20211024
+> 0e2f249fda84fe36d7ba3387fcdbcbae  /var/log/vmware-network.3.log
+> 0f81c0352a8d270f56b5990862b60d58  /var/log/anaconda/packaging.log
+> 1120880e39fe9259c906050483b33d35  /var/log/messages-20211104
+> 11eeacb483ae85b55ed1d3ebadcae1b6  /var/log/messages-20211024
+> 16bc761bda0aef6fe82090e93535a458  /var/log/sssd/sssd_implicit_files.log-20211017.gz
+> 1d1bb3f14e76a61848e8cc9cdb916f3d  /var/log/vmware-network.6.log
+> 1e43359b4a1fcbaadddf06477dab3b9f  /var/log/anaconda/dbus.log
+> 299135366255df35ccb720819f581382  /var/log/secure-20211112
+> 2b6e1c7c8b113a6d5aa0dcce1bdb6be8  /var/log/messages-20211112
+> 3ae733bde417fd2d865b9e67d4f7798f  /var/log/fail2ban.log-20211017
+> 3c358bf03998918428775954c9425c2f  /var/log/samba/old/log.nmbd-20211017.gz
+> 3f87bbfed62cde1127eac6e931cd0492  /var/log/firewalld
+> 3fb447704de2bc5137e8dab6aa9d33e7  /var/log/samba/old/log.smbd-20211104.gz
+> 4265ecd156d79f58b18aac2f0329d2b5  /var/log/sssd/sssd_nss.log
+> 4fa36c0f9ca8c19abb84c987c033b27d  /var/log/secure
+> 5520694873567e74871e1dd53e4b831c  /var/log/boot.log-20211016
+> 5858f4208598ff8b89225c3ed2d590ef  /var/log/cron-20211112
+> 58be64c1ec02579deb38ebe2eca2ee04  /var/log/vmware-network.1.log
+> ff753c6a7d448bba0dd84b354b58a751  /var/log/vmware-network.7.log
+> ffa35c4ac175fd8deb6c03d67dc7af80  /var/log/fail2ban.log-20211024
