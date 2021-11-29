@@ -13,6 +13,13 @@ Added in -
 ## Set rules for auditd
 -w /etc/hosts -p a -k monitor-hosts
 
+https://stackoverflow.com/questions/61183536/restarting-auditd-service-gives-dependency-error to get centos to start process
+
+# Updating RefuseManualStop to no in the /usr/lib/systemd/system/auditd.service
+  RefuseManualStop=no
+# Then reload the daemon as follows:
+$ sudo systemctl daemon-reload
+
 
 auditctl -w /logs/logins -p rwa -k temp4logins
 ls
