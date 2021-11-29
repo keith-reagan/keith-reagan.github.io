@@ -1,0 +1,346 @@
+CIS245 Week 8 and 9 Security nodes
+
+What to keep track of:
+	Subsystems
+	Memory
+	CPU
+	Network
+	Users
+	Processes
+
+Commands to try for server monitoring
+	Subsystems 
+		iostat – might need sysstat package
+		Nmon – likely needs to be installed
+	Memory 
+		cat /proc/meminfo
+	CPU 
+		Mpstat
+	Processes
+		Ps
+		Pstree 
+	Network Status
+		Tcpdump – run as sudo
+		uptime
+		
+/var/log/messages - generic system activity logs
+/var/log/auth.log - authentication related logs
+	CentOS uses /var/log/secure
+/var/log/boot.log - system initialization and boot related info
+/var/log/dmesg - Hardware and driver logs
+/var/log/kern/log - kernal related logs
+/var/log/faillog - failed logins
+/var/log/cron - cron job logging
+/var/log/yum.log - log of installs
+There are also logs for mail services, aphache, mysql and more
+
+Dashboards
+Know what's happening in real time
+Get alerts for things you specify
+Get real time data visualized
+Collect multiple forms of data 
+	Pcap
+	Text
+	Logs
+Files, directories and more
+Business analytics
+Troubleshooting
+Overall view of your server
+
+Sample Post Mortem report - https://developers.googleblog.com/2013/05/google-api-infrastructure-outage_3.html
+
+Try the Live Demo of OpenVAS 
+https://www.greenbone.net/en/live-demo/
+Try installing OpenVAS on your server and running it.
+
+Endpoint Protection, or Endpoint Security - 
+Goal is to protect enterprise data even in the case of BYOD
+Endpoint refers to the endpoint of the network, such as things outside the firewall
+Client-Server model
+Can be centrally managed server like we have here, or a SaaS (Software-as-a-Service) type solution
+
+Types of scans and support - 
+Realtime vs preset time scans
+Signature vs behavioral/heuristic
+Scan inbound/outbound traffic or both
+Support and uptime requirements
+
+Reviews and checklists - https://www.process.st/checklist/server-security-checklist/
+
+Best Practices - https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf
+
+########################notes from https://www.networkworld.com/article/3428361/how-to-manage-logs-in-linux.html ########################
+Log file rotation can be configured differently if you are so inclined, though the defaults work for most Linux sysadmins. Take a look at files like /etc/rsyslog.conf and /etc/logrotate.conf 
+
+$ who wtmp | tail -10		# show the most recent logins
+$ who wtmp | grep shark		# show recent logins for a particular user
+$ grep "sudo:" auth.log		# see who is using sudo
+$ tail dmesg				# look at kernel messages
+$ tail dpkg.log				# see recently installed and updated packages
+$ more ufw.log				# see firewall activity (i.e., if you are using ufw)
+$ last reboot				# see last reboot
+
+
+They may provide real-time monitoring, as well. Pay tools such as -
+https://www.solarwinds.com/security-event-manager Solarwinds Log & Event Manager 
+https://www.paessler.com/prtg PRTG Network Monitor (which includes log monitoring) 
+
+
+There are also some free tools that can help with analyzing log files. These include:
+
+Logwatch — program to scan system logs for interesting lines
+	https://techglimpse.com/linux-install-configure-logwatch/ Centos
+	https://linoxide.com/how-to-install-logwatch-on-ubuntu-20-04/ Ubuntu
+
+Logcheck — system log analyzer and reporter
+	https://www.maketecheasier.com/logcheck-analyses-log-files-linux/ Ubuntu
+
+######################## notes from https://www.networkworld.com/article/3330497/linux-commands-for-measuring-disk-activity.html ########################
+
+dtstat
+In spite of the fact that the dstat command begins with the letter "d", it provides stats on a lot more than just disk activity. If you want to view just disk activity, you can use the -d option
+	$ dstat -d
+	-dsk/total-
+	 read  writ
+	 949B   73k
+	  65k     0    # first second
+	   0    24k    # second second
+	   0    16k
+	   0	0 ^C
+
+Including a number after the -d option will set the interval to that number of seconds.
+	$ dstat -d 10
+	-dsk/total-
+	 read  writ
+	 949B   73k
+	  65k   81M    # first five seconds
+	   0    21k    # second five second
+	   0  9011B ^C
+
+More infod on dstat - https://www.networkworld.com/article/3291616/linux/examining-linux-system-performance-with-dstat.html
+
+iostat
+The iostat command helps monitor system input/output device loading by observing the time the devices are active in relation to their average transfer rates. It's sometimes used to evaluate the balance of activity between disks.
+$ iostat -p sda			# The -p option, which allows you to just look at your disks, Note that tps refers to transfers per second.
+$ iostat -p sda -d 5	# Get iostat to provide repeated reports, getting measurements every five seconds by using the -d option.
+$ iostat -p sda -d 5 -y	# Omit the first (stats since boot) report, add a -y to your command
+$ iostat -p sdb 		# Look at the second disk drive.
+
+iotop
+The iotop command is top-like utility for looking at disk I/O. It gathers I/O usage information provided by the Linux kernel so that you can get an idea which processes are most demanding in terms in disk I/O.
+$ sudo iotop -d 5		# The loop time has been set to 5 seconds. 
+
+ioping
+The ioping command is an altogether different type of tool, but it can report disk latency — how long it takes a disk to respond to requests — and can be helpful in diagnosing disk problems.
+$ sudo ioping /dev/sda1
+
+atop
+The atop command, like top provides a lot of information on system performance, including some stats on disk activity.
+
+$ atop | grep DSK		# To look at just the disk stats
+
+########################notes from https://www.networkworld.com/article/3291616/examining-linux-system-performance-with-dstat.html ########################
+
+Dstat
+Provides valuable insights into Linux system performance, pretty much replacing a collection of older tools such as vmstat, netstat, iostat, and ifstat with a flexible and powerful command that combines their features.
+With this one command, you can look at virtual memory, network connections and interfaces, CPU activity, input/output devices and more. In today's post, we'll examine some dstat comma
+It is also a Python script - 
+$ which dstat
+/usr/bin/dstat
+$ file /usr/bin/dstat
+/usr/bin/dstat: Python script, ASCII text executable
+
+Dstat options and defaults - 
+c -- cpu
+d -- disk
+n -- network
+g -- paging stats
+y -- system stats
+
+$ dstat -c 2 6							# -c (CPU) option, dstat displays CPU stats, asking for two-second intervals and six reports.
+$ dstat -a 2 5							# -s uses default options and omit warning messages
+$ dstat -m 2 3							# -m is memeory option showing basic memory usage
+$ dstat --mem-adv						# Advanced memory usage report, some additional memory statistics are provided.
+$ dstat --fs							# Open files and inodes in use
+$ dstat --output /tmp/stats.csv -a 2 5	# Generate a standard report to a .csv file 
+	
+########################notes from https://www.networkworld.com/article/3263752/reviewing-logins-on-linux.html ########################
+
+last 
+Command provides an easy way to review recent logins on a Linux system. It also has some useful options –- such as looking for logins for one particular user or looking for logins in an older wtmp file.
+
+$ last jdoe								# Look for logins for a particular user
+$ last -n 10 $USER						# Look at last 10 logins for current user
+$ last -f /var/log/wtmp.1 jdoe			# To look further back for a user 
+Note that the previous wtmp file on your system may not be wtmp.1. Some systems name the older files using date stamps like wtmp-2018-01-02. Check /var/log before you rely on the command
+
+#!/bin/bash
+
+echo -n "Start date: (e.g., Mar 1): "
+read start
+echo -n "End date: (e.g., Mar 11): "
+read end
+
+last | grep -v wtmp | while read line
+do
+    date=`date -d "$(echo $line | awk '{ print $5" "$6" "$7 }')" +%s`
+    [[ $date -ge `date -d "$start 00:00" +%s` && $date -le `date -d "$end 23:59" +%s` ]] && echo $line
+done
+
+last -f /var/log/wtmp.1 | grep -v wtmp | while read line
+do
+    date=`date -d "$(echo $line | awk '{ print $5" "$6" "$7 }')" +%s`
+    [[ $date -ge `date -d "$start 00:00" +%s` && $date -le `date -d "$end 23:59" +%s` ]] && echo $line
+done
+
+This script prompts for the beginning and end dates for your search and provides examples of the required format. It then runs the last command using a simple filter to allow it to ignore the “wtmp begins” message that lets you know how far back you are searching. It then takes the date from each line and converts it to the “seconds since Jan 1st, 1970 UTC” format. Next, it compares each record to the range of dates we’re looking for (also converted to the same format) and prints those that fall in between those two dates.
+
+The second loop, added to allow it to also search through the wtmp.1 file, can be easily removed if it isn't needed. It uses the same commands once it’s looping through the output of the last command for the second file.
+
+No checking is being done within this script to ensure that anyone running it has provided the dates in the required format. Making this mistake will, however, only generate a downpour of “invalid date” commands and won’t otherwise ruin your day.
+
+########################notes from https://www.networkworld.com/article/3218728/how-log-rotation-works-with-logrotate.html ########################
+
+The logrotate tool is commonly used to manage the process of log rotation, though logrotate itself is run through cron.
+
+The important files to pay attention to are:
+
+/usr/sbin/logrotate -- the logrotate command itself (the executable)
+/etc/cron.daily/logrotate -- the shell script that runs logrotate on a daily basis (note that it might be /etc/cron.daily/logrotate.cron on some systems)
+/etc/logrotate.conf -- the log rotation configuration file
+Another important file is /etc/logrotate.d, included in the process through this line in the /etc/logrotate.conf file:
+include /etc/logrotate.d
+
+$ ls -l /var/log/syslog*				# Seven generations of syslog files are retained and most are compressed.
+
+For many log files, only four generations of old files are retained. To understand why seven syslog files are retained by default, take a look at this section of the /etc/logrotate.d/rsyslog file. Note the "rotate 7" specification.		
+
+$ /etc/logrotate.d# more rsyslog
+/var/log/syslog
+{
+        rotate 7        # Seven generations of syslog files are retained
+        daily
+        missingok
+        notifempty
+        delaycompress
+        compress
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+
+The syslog file rules also specify "delaycompress" meaning the most recent file will not be compressed until the next rotation cycle.
+
+For a number of other log files, the rotation specifications are quite different. Only three generations of these log files are retained. They're rotated weekly instead of daily.
+
+/var/log/mail.info
+/var/log/mail.warn
+/var/log/mail.err
+/var/log/mail.log
+/var/log/daemon.log
+/var/log/kern.log
+/var/log/auth.log
+/var/log/user.log
+/var/log/lpr.log
+/var/log/cron.log
+/var/log/debug
+/var/log/messages
+{
+        rotate 4
+        weekly
+        missingok
+        notifempty
+        compress
+        delaycompress
+        sharedscripts
+        postrotate
+                invoke-rc.d rsyslog rotate > /dev/null
+        endscript
+}
+
+For wtmp and btmp files, rotation details are included in the /etc/logrotate.conf file. These log files are rotated monthly, and only one older file is retained. Note that the configuration lines below also determine the rotated files' permissions and ownership.
+
+# no packages own wtmp, or btmp -- we'll rotate them here
+/var/log/wtmp {
+    missingok
+    monthly
+    create 0664 root utmp
+    rotate 1
+}
+
+/var/log/btmp {
+    missingok
+    monthly
+    create 0660 root utmp
+    rotate 1
+}
+
+Here's what these other settings mean:
+	weekly: Rotate logs once per week. Available options are daily, weekly, monthly, and yearly
+	missingok: It's OK if no *.log files are found
+	rotate #: Keep specified number of files before deleting older log files
+	compress: Compress (gzip) log files
+	delaycompress: Delays compression until second time around
+	compresscmd: Set which command to used to compress. Defaults to gzip
+	uncompresscmd: Set the command to use to uncompress. Defaults to gunzip
+	notifempty: Don't rotate empty files
+	create 640 root adm: Create new log files with set permissions/owner/group
+	postrotate: Scripts to run after rotating is done
+	prerotate: Scripts to run before log rotating begins
+	size: Rotate when the file size reaches a particular limit
+
+$ find /var/log -type f | wc -l			# Counts out how many log files there are
+
+$ more status							# The /var/lib/logrotate/status file, created when /etc/cron.daily/logrotate runs, shows the date and time when each of the log files was last rotated
+logrotate state -- version 2
+"/var/log/apt/term.log" 2017-8-7-6:44:11
+"/var/log/cups/error_log" 2017-8-19-7:35:1
+"/var/log/unattended-upgrades/unattended-upgrades.log" 2017-8-7-6:44:11
+"/var/log/ufw.log" 2017-8-23-7:0:0
+"/var/log/dpkg.log" 2017-8-7-6:44:11
+"/var/log/lightdm/seat0-greeter.log" 2017-8-23-7:35:2
+"/var/log/unattended-upgrades/unattended-upgrades-shutdown.log" 2017-7-15-7:0:0
+"/var/log/auth.log" 2017-8-21-7:35:1
+
+Learn how to use the logsave command https://www.networkworld.com/article/3218728/how-log-rotation-works-with-logrotate.html?jwsource=cl
+
+$ logsave mylog who				# selectively add output to a file, this will over right
+$ logsave -a mylog who			# appends to the file
+$ alias sv='logsave -a mylog'	# create an alias for the command
+$ sv find . -type f -empty 		# will show empty log files using alias 
+
+
+########################notes from https://www.networkworld.com/article/3391362/looking-into-linux-modules.html ########################
+
+Listing modules
+$ lsmod 						# The easiest way to list modules
+
+"Module" shows the name of each module
+"Size" shows the module size (not how much memory it is using)
+"Used by" shows each module's usage count and the referring module
+
+$ lsmod | wc -l					# The number of modules loaded
+$ modprobe -c | wc -l			# The number of modules available on the system (not just running)
+
+Other commands for examining modules:
+depmod -- generates modules.dep and map files
+insmod -- a simple program to insert a module into the Linux Kernel
+lsmod -- show the status of modules in the Linux Kernel
+modinfo -- show information about a Linux Kernel module
+modprobe -- add and remove modules from the Linux Kernel
+rmmod -- a simple program to remove a module from the Linux Kernel
+
+modules.builtin file lists all modules that are built into the kernel and is used by modprobe when trying to load one of these modules
+
+$ more /lib/modules/$(uname -r)/modules.builtin | head -10	# $(uname -r) provides the name of the kernel release
+kernel/arch/x86/crypto/crc32c-intel.ko
+kernel/arch/x86/events/intel/intel-uncore.ko
+kernel/arch/x86/platform/intel/iosf_mbi.ko
+
+$ modinfo floppy | head -16					# get some additional detail on a module by using the modinfo
+
+You can load or unload a module using the modprobe command. Using a command like the one below, you can locate the kernel object associated with a particular module:
+$ find /lib/modules/$(uname -r) -name floppy*
+/lib/modules/5.0.0-13-generic/kernel/drivers/block/floppy.ko
+
+$ sudo modprobe floppy						# To load the module

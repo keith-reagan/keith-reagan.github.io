@@ -1,0 +1,1931 @@
+cat /logs/misc/etc_ls_Sunday_November_21_2021_18\:56\:10.log
+1,1929d0
+< /etc/:
+< total 1204
+< -rw-r--r--.  1 root root       16 Sep 17 11:55 adjtime
+< -rw-r--r--.  1 root root     1529 May 15  2020 aliases
+< drwxr-xr-x.  2 root root     4096 Oct  9 17:48 alternatives
+< -rw-r--r--.  1 root root      541 Nov  8  2019 anacrontab
+< -rw-r--r--.  1 root root       55 Feb  2  2021 asound.conf
+< -rw-r--r--.  1 root root        1 May 11  2019 at.deny
+< drwxr-x---.  4 root root      124 Nov 20 10:02 audit
+< drwxr-xr-x.  3 root root      228 Sep 17 11:55 authselect
+< drwxr-xr-x.  2 root root      135 Oct 21 17:09 bash_completion.d
+< -rw-r--r--.  1 root root     3019 May 15  2020 bashrc
+< -rw-r--r--.  1 root root      429 Nov  8  2019 bindresvport.blacklist
+< drwxr-xr-x.  2 root root        6 Aug 10 11:31 binfmt.d
+< -rw-r--r--.  1 root root       30 May 27 09:20 centos-release
+< -rw-r--r--.  1 root root       42 May 27 09:20 centos-release-upstream
+< drwxr-xr-x.  2 root root        6 Apr 26  2020 chkconfig.d
+< -rw-r--r--.  1 root root     1085 May 10  2019 chrony.conf
+< -rw-r-----.  1 root chrony    540 May 10  2019 chrony.keys
+< drwxr-xr-x.  2 root root       26 Aug 16 10:25 cifs-utils
+< drwxr-xr-x.  3 root root       19 Sep 17 11:52 cni
+< drwxr-xr-x.  4 root root       42 Sep 17 11:52 cockpit
+< drwxr-xr-x.  6 root root      139 Oct 21 17:07 containers
+< drwxr-xr-x.  2 root root       39 Sep 17 11:52 cron.d
+< drwxr-xr-x.  2 root root       23 Sep 17 11:51 cron.daily
+< -rw-r--r--.  1 root root        0 Nov  8  2019 cron.deny
+< drwxr-xr-x.  2 root root       22 Sep 17 11:51 cron.hourly
+< drwxr-xr-x.  2 root root        6 Jan 12  2021 cron.monthly
+< -rw-r--r--.  1 root root      451 Jan 12  2021 crontab
+< drwxr-xr-x.  2 root root        6 Jan 12  2021 cron.weekly
+< drwxr-xr-x.  6 root root       81 Sep 17 11:51 crypto-policies
+< -rw-------.  1 root root        0 Sep 17 11:50 crypttab
+< -rw-r--r--.  1 root root     1629 May 15  2020 csh.cshrc
+< -rw-r--r--.  1 root root     1078 May 15  2020 csh.login
+< drwxr-xr-x.  4 root root       78 May 27 11:49 dbus-1
+< drwxr-xr-x.  4 root root       31 Oct  9 17:41 dconf
+< drwxr-xr-x.  2 root root       33 Oct 21 17:09 default
+< drwxr-xr-x.  2 root root       40 Sep 17 11:51 depmod.d
+< drwxr-x---.  3 root root       45 Sep 17 11:52 dhcp
+< -rw-r--r--.  1 root root     4536 Apr 26  2020 DIR_COLORS
+< -rw-r--r--.  1 root root     5214 Apr 26  2020 DIR_COLORS.256color
+< -rw-r--r--.  1 root root     4618 Apr 26  2020 DIR_COLORS.lightbgcolor
+< drwxr-xr-x.  8 root root      128 Sep 17 11:50 dnf
+< -rw-r--r--.  1 root root      117 Feb 12  2021 dracut.conf
+< drwxr-xr-x.  2 root root        6 Feb 12  2021 dracut.conf.d
+< drwxr-xr-x.  3 root root       37 Oct  9 17:41 egl
+< -rw-r--r--.  1 root root        0 May 15  2020 environment
+< -rw-r--r--.  1 root root     1362 Sep 10  2018 ethertypes
+< -rw-r--r--.  1 root root        0 Sep 10  2018 exports
+< drwxr-xr-x.  6 root root      176 Oct 13 17:18 fail2ban
+< lrwxrwxrwx.  1 root root       56 Jun 28 17:56 favicon.png -> /usr/share/icons/hicolor/16x16/apps/fedora-logo-icon.png
+< -rw-r--r--.  1 root root       66 Sep 10  2018 filesystems
+< drwxr-x---.  7 root root      133 Jun 29 13:27 firewalld
+< drwxr-xr-x.  3 root root       38 Sep 17 11:51 fonts
+< -rw-r--r--.  1 root root       20 Jan 13  2021 fprintd.conf
+< -rw-r--r--.  1 root root      579 Sep 17 11:50 fstab
+< -rw-r--r--.  1 root root       38 May 11  2019 fuse.conf
+< drwxr-xr-x.  2 root root       25 Sep 17 11:51 gcrypt
+< drwxr-xr-x.  2 root root       26 Oct  9 17:41 geoclue
+< drwxr-xr-x.  3 root root       26 Oct  9 17:41 glvnd
+< drwxr-xr-x.  2 root root        6 May 15  2020 gnupg
+< -rw-r--r--.  1 root root       94 May 10  2019 GREP_COLORS
+< drwxr-xr-x.  4 root root       40 Sep 17 11:51 groff
+< -rw-r--r--.  1 root root      730 Nov 20 10:21 group
+< -rw-r--r--.  1 root root      714 Oct  9 17:41 group-
+< lrwxrwxrwx.  1 root root       22 Sep 21 15:37 grub2.cfg -> ../boot/grub2/grub.cfg
+< drwx------.  2 root root      288 Oct 21 17:08 grub.d
+< ----------.  1 root root      586 Nov 20 10:21 gshadow
+< ----------.  1 root root      574 Oct  9 17:41 gshadow-
+< drwxr-xr-x.  3 root root       20 Sep 21 16:29 gss
+< -rw-r--r--.  1 root root        9 Sep 10  2018 host.conf
+< -rw-r--r--.  1 root root       12 Oct 13 17:24 hostname
+< -rw-r--r--.  1 root root      158 Sep 10  2018 hosts
+< -rw-r--r--.  1 root root     4849 Aug 10 11:32 idmapd.conf
+< lrwxrwxrwx.  1 root root       11 Apr 26  2020 init.d -> rc.d/init.d
+< -rw-r--r--.  1 root root      490 Aug 10 11:31 inittab
+< -rw-r--r--.  1 root root      942 Sep 10  2018 inputrc
+< drwxr-xr-x.  2 root root      159 Sep 17 11:51 iproute2
+< drwxr-xr-x.  2 root root       52 Sep 17 11:52 iscsi
+< -rw-r--r--.  1 root root       23 May 27 09:20 issue
+< drwxr-xr-x.  2 root root       27 Sep 17 11:52 issue.d
+< -rw-r--r--.  1 root root       22 May 27 09:20 issue.net
+< drwxr-xr-x.  4 root root       33 Aug 10 11:31 kdump
+< -rw-r--r--.  1 root root     8550 Oct 21 17:09 kdump.conf
+< drwxr-xr-x.  4 root root       41 Aug 10 11:31 kernel
+< -rw-r--r--.  1 root root      812 Sep 21 16:24 krb5.conf
+< drwxr-xr-x.  2 root root       55 Sep 21 16:29 krb5.conf.d
+< -rw-r--r--.  1 root root    28991 Oct 21 17:12 ld.so.cache
+< -rw-r--r--.  1 root root       28 Mar 11  2021 ld.so.conf
+< drwxr-xr-x.  2 root root      130 Oct 21 17:09 ld.so.conf.d
+< -rw-r--r--.  1 root root     3256 Feb 20  2016 lftp.conf
+< -rw-r-----.  1 root root      191 Nov  4  2019 libaudit.conf
+< drwxr-xr-x.  3 root root       20 Sep 17 11:51 libblockdev
+< drwxr-xr-x.  2 root root      246 Sep 17 11:51 libibverbs.d
+< drwxr-xr-x.  2 root root       35 Sep 17 11:51 libnl
+< drwxr-xr-x.  6 root root       70 Sep 17 11:50 libreport
+< drwxr-xr-x.  2 root root       62 Sep 17 11:51 libssh
+< -rw-r--r--.  1 root root     2391 Jul 23  2015 libuser.conf
+< -rw-r--r--.  1 root root       19 Sep 17 11:55 locale.conf
+< lrwxrwxrwx.  1 root root       38 Sep 17 11:55 localtime -> ../usr/share/zoneinfo/America/New_York
+< -rw-r--r--.  1 root root     2512 Dec  1  2020 login.defs
+< -rw-r--r--.  1 root root      438 Feb 19  2018 logrotate.conf
+< drwxr-xr-x.  2 root root      205 Oct 21 17:09 logrotate.d
+< drwxr-xr-x.  3 root root       43 Sep 17 11:51 lsm
+< drwxr-xr-x.  6 root root      100 Sep 17 11:51 lvm
+< -r--r--r--.  1 root root       33 Sep 17 11:51 machine-id
+< -rw-r--r--.  1 root root      111 Apr  7  2021 magic
+< -rw-r--r--.  1 root root      272 May 11  2017 mailcap
+< -rw-r--r--.  1 root root     5122 Aug 10 11:31 makedumpfile.conf.sample
+< -rw-r--r--.  1 root root     5165 May 11  2019 man_db.conf
+< drwxr-xr-x.  3 root root       41 Sep 17 11:52 mcelog
+< drwxr-xr-x.  3 root root       32 Aug  9 09:56 microcode_ctl
+< -rw-r--r--.  1 root root    60352 May 11  2017 mime.types
+< -rw-r--r--.  1 root root     1108 Jul 17  2020 mke2fs.conf
+< drwxr-xr-x.  2 root root       93 Oct 21 17:09 modprobe.d
+< drwxr-xr-x.  2 root root        6 Aug 10 11:31 modules-load.d
+< -rw-r--r--.  1 root root        0 Sep 10  2018 motd
+< drwxr-xr-x.  2 root root       21 Sep 17 11:52 motd.d
+< lrwxrwxrwx.  1 root root       19 Sep 17 11:51 mtab -> ../proc/self/mounts
+< drwxr-xr-x.  2 root root        6 Mar 18  2021 multipath
+< -rw-r--r--.  1 root root     9450 May 11  2019 nanorc
+< -rw-r--r--.  1 root root      767 Nov  8  2019 netconfig
+< drwxr-xr-x.  7 root root      134 Aug 10 11:32 NetworkManager
+< -rw-r--r--.  1 root root       58 Sep 10  2018 networks
+< drwx------.  3 root root       66 Sep 17 11:51 nftables
+< lrwxrwxrwx.  1 root root       29 Sep 17 11:55 nsswitch.conf -> /etc/authselect/nsswitch.conf
+< -rw-r--r--.  1 root root     2197 Mar 11  2021 nsswitch.conf.bak
+< drwxr-xr-x.  2 root root       35 Jun 29 13:30 nvme
+< drwxr-xr-x.  2 root root        6 Dec 16  2020 oddjob
+< -rw-r--r--.  1 root root     4922 Dec 16  2020 oddjobd.conf
+< drwxr-xr-x.  2 root root       70 Sep 17 11:52 oddjobd.conf.d
+< drwxr-xr-x.  4 root root       50 Jun 17 10:42 openldap
+< drwxr-xr-x.  2 root root        6 Nov  3  2020 opt
+< lrwxrwxrwx.  1 root root       21 May 27 09:20 os-release -> ../usr/lib/os-release
+< drwxr-xr-x.  2 root root       48 Sep 17 11:52 PackageKit
+< drwxr-xr-x.  2 root root     4096 Oct 21 17:09 pam.d
+< -rw-r--r--.  1 root root     1641 Nov 20 10:21 passwd
+< -rw-r--r--.  1 root root     1596 Oct  9 17:41 passwd-
+< -rw-r--r--.  1 root root     2872 May 14  2019 pinforc
+< drwxr-xr-x.  3 root root       21 Sep 17 11:51 pkcs11
+< drwxr-xr-x.  8 root root       88 Sep 17 11:52 pki
+< drwxr-xr-x.  2 root root       28 Sep 17 11:52 plymouth
+< drwxr-xr-x.  5 root root       52 Sep 17 11:51 pm
+< drwxr-xr-x.  5 root root       72 Jun  4 16:39 polkit-1
+< drwxr-xr-x.  2 root root        6 Jan 19  2021 popt.d
+< drwxr-xr-x.  2 root root       24 Oct 21 17:07 prelink.conf.d
+< -rw-r--r--.  1 root root      233 Sep 10  2018 printcap
+< -rw-r--r--.  1 root root     2123 May 15  2020 profile
+< drwxr-xr-x.  2 root root     4096 Sep 17 11:52 profile.d
+< -rw-r--r--.  1 root root     6568 Sep 10  2018 protocols
+< lrwxrwxrwx.  1 root root       10 Apr 26  2020 rc0.d -> rc.d/rc0.d
+< lrwxrwxrwx.  1 root root       10 Apr 26  2020 rc1.d -> rc.d/rc1.d
+< lrwxrwxrwx.  1 root root       10 Apr 26  2020 rc2.d -> rc.d/rc2.d
+< lrwxrwxrwx.  1 root root       10 Apr 26  2020 rc3.d -> rc.d/rc3.d
+< lrwxrwxrwx.  1 root root       10 Apr 26  2020 rc4.d -> rc.d/rc4.d
+< lrwxrwxrwx.  1 root root       10 Apr 26  2020 rc5.d -> rc.d/rc5.d
+< lrwxrwxrwx.  1 root root       10 Apr 26  2020 rc6.d -> rc.d/rc6.d
+< drwxr-xr-x. 10 root root      127 Aug 10 11:31 rc.d
+< lrwxrwxrwx.  1 root root       13 Aug 10 11:31 rc.local -> rc.d/rc.local
+< drwxr-xr-x.  3 root root       38 Sep 17 11:51 rdma
+< lrwxrwxrwx.  1 root root       14 May 27 09:20 redhat-release -> centos-release
+< -rw-r--r--.  1 root root       74 Nov 13 09:28 resolv.conf
+< drwxr-xr-x.  3 root root       24 Sep 17 11:52 rhsm
+< -rw-r--r--.  1 root root     1634 Aug  1  2018 rpc
+< drwxr-xr-x.  2 root root       25 Jun  2 14:15 rpm
+< -rw-r--r--.  1 root root     3186 Jun  1 16:28 rsyslog.conf
+< drwxr-xr-x.  2 root root        6 Jun  1 16:32 rsyslog.d
+< drwxr-xr-x.  2 root root       35 Aug 16 10:25 rwtab.d
+< drwxr-xr-x.  2 root root       61 Sep 18 11:40 samba
+< drwxr-xr-x.  2 root root        6 May 15  2020 sasl2
+< drwxr-xr-x.  7 root root     4096 Sep 17 11:51 security
+< drwxr-xr-x.  3 root root       57 Sep 21 16:14 selinux
+< -rw-r--r--.  1 root root   692252 May 15  2020 services
+< -rw-r--r--.  1 root root      216 Mar 19  2021 sestatus.conf
+< drwxr-xr-x.  2 root root       33 Sep 17 11:52 setroubleshoot
+< drwxr-xr-x.  3 root root       21 Oct  9 17:41 sgml
+< ----------.  1 root root     1112 Nov 20 13:55 shadow
+< ----------.  1 root root      978 Oct  9 17:41 shadow-
+< -rw-r--r--.  1 root root       68 Oct  9 17:38 shells
+< drwxr-xr-x.  2 root root       76 Oct  9 17:41 skel
+< drwxr-xr-x.  3 root root       74 Sep 17 11:52 smartmontools
+< drwxr-xr-x.  3 root root       37 Sep 17 11:52 sos
+< drwxr-xr-x.  3 root root      245 May 27 11:54 ssh
+< drwxr-xr-x.  2 root root       19 Oct 21 17:09 ssl
+< drwx------.  4 sssd sssd       31 Aug 16 10:25 sssd
+< -rw-r--r--.  1 root root       42 Nov 20 10:21 subgid
+< -rw-r--r--.  1 root root       21 Sep 17 12:25 subgid-
+< -rw-r--r--.  1 root root       42 Nov 20 10:21 subuid
+< -rw-r--r--.  1 root root       21 Sep 17 12:25 subuid-
+< -rw-r-----.  1 root root     1786 Feb  4  2021 sudo.conf
+< -r--r-----.  1 root root     4328 Feb  4  2021 sudoers
+< drwxr-x---.  2 root root        6 Feb  4  2021 sudoers.d
+< -rw-r-----.  1 root root     3181 Feb  4  2021 sudo-ldap.conf
+< drwxr-xr-x.  5 root root     4096 Nov  6 16:17 sysconfig
+< -rw-r--r--.  1 root root      449 Aug 10 11:31 sysctl.conf
+< drwxr-xr-x.  2 root root       28 Aug 10 11:31 sysctl.d
+< drwxr-xr-x.  4 root root      150 Aug 10 11:31 systemd
+< lrwxrwxrwx.  1 root root       14 May 27 09:20 system-release -> centos-release
+< -rw-r--r--.  1 root root       23 May 27 09:20 system-release-cpe
+< -rw-r-----.  1 root tss      7046 Nov 16  2020 tcsd.conf
+< drwxr-xr-x.  2 root root       22 Nov 20 12:22 temp4audit
+< drwxr-xr-x.  2 root root        6 May 10  2019 terminfo
+< drwxr-xr-x.  2 root root        6 Aug 10 11:31 tmpfiles.d
+< -rw-r--r--.  1 root root      375 May 27 16:49 trusted-key.key
+< drwxr-xr-x.  3 root root      136 Oct 21 17:09 tuned
+< drwxr-xr-x.  4 root root       68 Oct 21 17:11 udev
+< drwxr-xr-x.  2 root root       60 Sep 17 11:52 udisks2
+< drwxr-xr-x.  2 root root       45 Sep 17 11:51 unbound
+< -rw-r--r--.  1 root root      587 May 11  2019 updatedb.conf
+< -rw-r--r--.  1 root root     1523 May 11  2019 usb_modeswitch.conf
+< -rw-r--r--.  1 root root       28 Sep 17 11:55 vconsole.conf
+< -rw-r--r--.  1 root root     1982 Jun 18  2020 vimrc
+< -rw-r--r--.  1 root root     1204 Jun 18  2020 virc
+< drwxr-xr-x.  4 root root      208 Sep 17 11:52 vmware-tools
+< drwxr-xr-x.  2 root root      116 Oct 17 04:12 vsftpd
+< -rw-r--r--.  1 root root     4925 Apr 26  2020 wgetrc
+< drwxr-xr-x.  6 root root       70 Sep 17 11:51 X11
+< -rw-r--r--.  1 root root      642 Dec  9  2016 xattr.conf
+< drwxr-xr-x.  4 root root       38 Sep 17 11:51 xdg
+< drwxr-xr-x.  2 root root        6 Nov  3  2020 xinetd.d
+< drwxr-xr-x.  2 root root       21 Oct  9 17:41 xml
+< drwxr-xr-x.  2 root root       57 Sep 17 11:52 yum
+< lrwxrwxrwx.  1 root root       12 Mar 11  2021 yum.conf -> dnf/dnf.conf
+< drwxr-xr-x.  2 root root     4096 Oct 21 17:09 yum.repos.d
+<
+< /etc/alternatives:
+< total 0
+< lrwxrwxrwx. 1 root root 39 Sep 17 11:52 cifs-idmap-plugin -> /usr/lib64/cifs-utils/cifs_idmap_sss.so
+< lrwxrwxrwx. 1 root root 17 Sep 18 09:55 cups_backend_smb -> /usr/bin/smbspool
+< lrwxrwxrwx. 1 root root 25 Oct  9 17:48 easy_install-3 -> /usr/bin/easy_install-3.6
+< lrwxrwxrwx. 1 root root 19 Oct  9 17:41 emacs -> /usr/bin/emacs-26.1
+< lrwxrwxrwx. 1 root root 20 Oct  9 17:41 emacs.etags -> /usr/bin/etags.emacs
+< lrwxrwxrwx. 1 root root 36 Oct  9 17:41 emacs.etags.man -> /usr/share/man/man1/etags.emacs.1.gz
+< lrwxrwxrwx. 1 root root 22 Sep 17 11:51 ifdown -> /usr/libexec/nm-ifdown
+< lrwxrwxrwx. 1 root root 20 Sep 17 11:51 ifup -> /usr/libexec/nm-ifup
+< lrwxrwxrwx. 1 root root 15 Sep 17 11:52 ld -> /usr/bin/ld.bfd
+< lrwxrwxrwx. 1 root root 34 Sep 17 11:51 libnssckbi.so.x86_64 -> /usr/lib64/pkcs11/p11-kit-trust.so
+< lrwxrwxrwx. 1 root root 45 Sep 17 11:54 libwbclient.so.0.15-64 -> /usr/lib64/samba/wbclient/libwbclient.so.0.15
+< lrwxrwxrwx. 1 root root 22 Oct  9 17:48 mta -> /usr/bin/esmtp-wrapper
+< lrwxrwxrwx. 1 root root 22 Oct  9 17:48 mta-mailq -> /usr/bin/esmtp-wrapper
+< lrwxrwxrwx. 1 root root 30 Oct  9 17:48 mta-mailqman -> /usr/share/man/man1/esmtp.1.gz
+< lrwxrwxrwx. 1 root root 22 Oct  9 17:48 mta-sendmail -> /usr/bin/esmtp-wrapper
+< lrwxrwxrwx. 1 root root 30 Oct  9 17:48 mta-sendmailman -> /usr/share/man/man1/esmtp.1.gz
+< lrwxrwxrwx. 1 root root 29 Sep 17 11:52 ncman -> /usr/share/man/man1/ncat.1.gz
+< lrwxrwxrwx. 1 root root 13 Sep 17 11:52 nmap -> /usr/bin/ncat
+< lrwxrwxrwx. 1 root root 16 Oct  9 17:48 pip-3 -> /usr/bin/pip-3.6
+< lrwxrwxrwx. 1 root root 15 Oct  9 17:48 pip3 -> /usr/bin/pip3.6
+< lrwxrwxrwx. 1 root root 17 Oct  9 17:48 pydoc-3 -> /usr/bin/pydoc3.6
+< lrwxrwxrwx. 1 root root 17 Oct  9 17:48 pydoc3 -> /usr/bin/pydoc3.6
+< lrwxrwxrwx. 1 root root 22 Sep 17 11:51 python -> /usr/libexec/no-python
+< lrwxrwxrwx. 1 root root 18 Oct  9 17:48 python3 -> /usr/bin/python3.6
+< lrwxrwxrwx. 1 root root 34 Oct  9 17:48 python3-man -> /usr/share/man/man1/python3.6.1.gz
+< lrwxrwxrwx. 1 root root 19 Oct  9 17:48 pyvenv-3 -> /usr/bin/pyvenv-3.6
+< lrwxrwxrwx. 1 root root 43 Sep 17 11:51 unversioned-python-man -> /usr/share/man/man1/unversioned-python.1.gz
+<
+< /etc/audit:
+< total 16
+< -rw-r-----. 1 root root 856 Apr 23  2020 auditd.conf
+< -rw-r-----. 1 root root 479 Nov 20 10:13 audit.rules
+< -rw-r-----. 1 root root 143 Nov 20 10:13 audit.rules.prev
+< -rw-r-----. 1 root root 127 Apr 23  2020 audit-stop.rules
+< drwxr-x---. 2 root root  49 Sep 17 11:52 plugins.d
+< drwxr-x---. 2 root root  25 Nov 20 12:11 rules.d
+<
+< /etc/audit/plugins.d:
+< total 8
+< -rw-r-----. 1 root root 358 Apr 23  2020 af_unix.conf
+< -rw-r--r--. 1 root root 170 Feb 12  2021 sedispatch.conf
+<
+< /etc/audit/rules.d:
+< total 4
+< -rw-------. 1 root root 1408 Nov 20 10:11 audit.rules
+<
+< /etc/authselect:
+< total 40
+< -rw-r--r--. 1 root root   42 Sep 17 11:55 authselect.conf
+< drwxr-xr-x. 2 root root    6 Mar 18  2021 custom
+< -rw-r--r--. 1 root root  230 Sep 17 11:55 dconf-db
+< -rw-r--r--. 1 root root  260 Sep 17 11:55 dconf-locks
+< -rw-r--r--. 1 root root 1201 Sep 17 11:55 fingerprint-auth
+< -rw-r--r--. 1 root root 3069 Sep 17 11:55 nsswitch.conf
+< -rw-r--r--. 1 root root 1932 Sep 17 11:55 password-auth
+< -rw-r--r--. 1 root root  393 Sep 17 11:55 postlogin
+< -rw-r--r--. 1 root root   91 Sep 17 11:55 smartcard-auth
+< -rw-r--r--. 1 root root 2004 Sep 17 11:55 system-auth
+< -rw-r--r--. 1 root root 2215 Sep 17 11:54 user-nsswitch.conf
+<
+< /etc/authselect/custom:
+< total 0
+<
+< /etc/bash_completion.d:
+< total 76
+< -rw-r--r--. 1 root root  6481 Nov 25  2020 authselect-completion.sh
+< -rw-r--r--. 1 root root 42759 Sep 15 11:50 bpftool
+< -rw-r--r--. 1 root root   829 May  8  2020 iprconfig
+< -rw-r--r--. 1 root root  1465 May 11  2019 redefine_filedir
+< -rw-r--r--. 1 root root   104 Jan 24  2021 tracer
+< -rw-r--r--. 1 root root  5109 Oct 12  2020 vdo
+< -rw-r--r--. 1 root root  1187 Oct 12  2020 vdostats
+<
+< /etc/binfmt.d:
+< total 0
+<
+< /etc/chkconfig.d:
+< total 0
+<
+< /etc/cifs-utils:
+< total 0
+< lrwxrwxrwx. 1 root root 35 Sep 17 11:52 idmap-plugin -> /etc/alternatives/cifs-idmap-plugin
+<
+< /etc/cni:
+< total 0
+< drwxr-xr-x. 2 root root 39 Sep 17 11:52 net.d
+<
+< /etc/cni/net.d:
+< total 4
+< -rw-r--r--. 1 root root 639 Jul 29 06:59 87-podman-bridge.conflist
+<
+< /etc/cockpit:
+< total 0
+< drwxr-xr-x. 2 root root 6 Mar 15  2021 machines.d
+< drwxr-xr-x. 2 root root 6 Mar 15  2021 ws-certs.d
+<
+< /etc/cockpit/machines.d:
+< total 0
+<
+< /etc/cockpit/ws-certs.d:
+< total 0
+<
+< /etc/containers:
+< total 20
+< drwxr-xr-x. 2 root root    6 Aug 10 16:58 certs.d
+< drwxr-xr-x. 3 root root   21 Aug 10 16:58 oci
+< -rw-r--r--. 1 root root  256 Aug 10 16:58 policy.json
+< -rw-r--r--. 1 root root 5945 Aug 10 16:58 registries.conf
+< drwxr-xr-x. 2 root root  107 Oct 21 17:09 registries.conf.d
+< drwxr-xr-x. 2 root root   96 Aug 10 16:58 registries.d
+< -rw-r--r--. 1 root root 7834 Aug 10 16:58 storage.conf
+<
+< /etc/containers/certs.d:
+< total 0
+<
+< /etc/containers/oci:
+< total 0
+< drwxr-xr-x. 2 root root 6 Aug 10 16:58 hooks.d
+<
+< /etc/containers/oci/hooks.d:
+< total 0
+<
+< /etc/containers/registries.conf.d:
+< total 160
+< -rw-r--r--. 1 root root   2866 Aug 10 16:58 000-shortnames.conf
+< -rw-r--r--. 1 root root 154012 Aug 10 16:58 001-rhel-shortnames.conf
+< -rw-r--r--. 1 root root    337 Aug 10 16:58 002-rhel-shortnames-overrides.conf
+<
+< /etc/containers/registries.d:
+< total 12
+< -rw-r--r--. 1 root root 894 Aug 10 16:58 default.yaml
+< -rw-r--r--. 1 root root 120 Aug 10 16:58 registry.access.redhat.com.yaml
+< -rw-r--r--. 1 root root  99 Aug 10 16:58 registry.redhat.io.yaml
+<
+< /etc/cron.d:
+< total 8
+< -rw-r--r--. 1 root root 128 Nov  8  2019 0hourly
+< -rw-r--r--. 1 root root 108 Aug 10 11:24 raid-check
+<
+< /etc/cron.daily:
+< total 4
+< -rwxr-xr-x. 1 root root 189 Jan  4  2018 logrotate
+<
+< /etc/cron.hourly:
+< total 4
+< -rwxr-xr-x. 1 root root 575 Nov  8  2019 0anacron
+<
+< /etc/cron.monthly:
+< total 0
+<
+< /etc/cron.weekly:
+< total 0
+<
+< /etc/crypto-policies:
+< total 4
+< drwxr-xr-x. 2 root root 259 Oct 21 17:09 back-ends
+< -rw-r--r--. 1 root root   8 Sep 17 11:51 config
+< drwxr-xr-x. 2 root root  32 Sep 17 11:52 local.d
+< drwxr-xr-x. 3 root root  21 Sep 17 11:51 policies
+< drwxr-xr-x. 2 root root  40 Oct 21 17:09 state
+<
+< /etc/crypto-policies/back-ends:
+< total 4
+< lrwxrwxrwx. 1 root root  43 Oct 21 17:09 bind.config -> /usr/share/crypto-policies/DEFAULT/bind.txt
+< lrwxrwxrwx. 1 root root  45 Oct 21 17:09 gnutls.config -> /usr/share/crypto-policies/DEFAULT/gnutls.txt
+< lrwxrwxrwx. 1 root root  43 Oct 21 17:09 java.config -> /usr/share/crypto-policies/DEFAULT/java.txt
+< lrwxrwxrwx. 1 root root  43 Oct 21 17:09 krb5.config -> /usr/share/crypto-policies/DEFAULT/krb5.txt
+< lrwxrwxrwx. 1 root root  48 Oct 21 17:09 libreswan.config -> /usr/share/crypto-policies/DEFAULT/libreswan.txt
+< lrwxrwxrwx. 1 root root  45 Oct 21 17:09 libssh.config -> /usr/share/crypto-policies/DEFAULT/libssh.txt
+< -rw-r--r--. 1 root root 429 Oct 21 17:09 nss.config
+< lrwxrwxrwx. 1 root root  46 Oct 21 17:09 openssh.config -> /usr/share/crypto-policies/DEFAULT/openssh.txt
+< lrwxrwxrwx. 1 root root  52 Oct 21 17:09 opensshserver.config -> /usr/share/crypto-policies/DEFAULT/opensshserver.txt
+< lrwxrwxrwx. 1 root root  49 Oct 21 17:09 opensslcnf.config -> /usr/share/crypto-policies/DEFAULT/opensslcnf.txt
+< lrwxrwxrwx. 1 root root  46 Oct 21 17:09 openssl.config -> /usr/share/crypto-policies/DEFAULT/openssl.txt
+<
+< /etc/crypto-policies/local.d:
+< total 4
+< -rw-r--r--. 1 root root 46 Jul  9 15:57 nss-p11-kit.config
+<
+< /etc/crypto-policies/policies:
+< total 0
+< drwxr-xr-x. 2 root root 6 Apr  7  2021 modules
+<
+< /etc/crypto-policies/policies/modules:
+< total 0
+<
+< /etc/crypto-policies/state:
+< total 8
+< -rw-r--r--. 1 root root    8 Oct 21 17:09 current
+< -rw-r--r--. 1 root root 1530 Oct 21 17:09 CURRENT.pol
+<
+< /etc/dbus-1:
+< total 12
+< -rw-r--r--. 1 root root  838 May 27 11:49 session.conf
+< drwxr-xr-x. 2 root root    6 May 27 11:49 session.d
+< -rw-r--r--. 1 root root  833 May 27 11:49 system.conf
+< drwxr-xr-x. 2 root root 4096 Oct 21 17:09 system.d
+<
+< /etc/dbus-1/session.d:
+< total 0
+<
+< /etc/dbus-1/system.d:
+< total 68
+< -rw-r--r--. 1 root root  587 Dec 17  2020 com.redhat.tuned.conf
+< -rw-r--r--. 1 root root  491 Feb  1  2021 nm-dispatcher.conf
+< -rw-r--r--. 1 root root  354 Feb  8  2021 nm-ifcfg-rh.conf
+< -rw-r--r--. 1 root root 2429 Dec 16  2020 oddjob.conf
+< -rw-r--r--. 1 root root 1863 Dec 14  2020 oddjob-mkhomedir.conf
+< -rw-r--r--. 1 root root 2079 Feb 12  2021 org.fedoraproject.Setroubleshootd.conf
+< -rw-r--r--. 1 root root  771 Feb 12  2021 org.fedoraproject.SetroubleshootFixit.conf
+< -rw-r--r--. 1 root root  687 Feb 12  2021 org.fedoraproject.SetroubleshootPrivileged.conf
+< -rw-r--r--. 1 root root  711 Jan 26  2021 org.freedesktop.GeoClue2.Agent.conf
+< -rw-r--r--. 1 root root 1411 Jan 26  2021 org.freedesktop.GeoClue2.conf
+< -rw-r--r--. 1 root root 8150 Feb  8  2021 org.freedesktop.NetworkManager.conf
+< -rw-r--r--. 1 root root 1331 Jun 15  2020 org.freedesktop.PackageKit.conf
+< -rw-r--r--. 1 root root  638 Jun  4 16:39 org.freedesktop.PolicyKit1.conf
+< -rw-r--r--. 1 root root  404 Dec  8  2020 org.freedesktop.realmd.conf
+< -rw-r--r--. 1 root root  535 Mar 19  2021 org.selinux.conf
+< -rw-r--r--. 1 root root  409 Jul 26  2020 teamd.conf
+<
+< /etc/dconf:
+< total 0
+< drwxr-xr-x. 5 root root 90 Oct  9 17:41 db
+< drwxr-xr-x. 2 root root 18 Oct  9 17:41 profile
+<
+< /etc/dconf/db:
+< total 12
+< -rw-r--r--. 1 root root 731 Oct  9 17:41 distro
+< drwxr-xr-x. 3 root root  40 Dec  1  2020 distro.d
+< -rw-r--r--. 1 root root 104 Oct  9 17:41 local
+< drwxr-xr-x. 3 root root  19 Oct  9 17:41 local.d
+< -rw-r--r--. 1 root root 104 Oct  9 17:41 site
+< drwxr-xr-x. 3 root root  19 Oct  9 17:41 site.d
+<
+< /etc/dconf/db/distro.d:
+< total 0
+< lrwxrwxrwx. 1 root root 24 Sep 17 11:55 20-authselect -> /etc/authselect/dconf-db
+< drwxr-xr-x. 2 root root 27 Dec  1  2020 locks
+<
+< /etc/dconf/db/distro.d/locks:
+< total 0
+< lrwxrwxrwx. 1 root root 27 Sep 17 11:55 20-authselect -> /etc/authselect/dconf-locks
+<
+< /etc/dconf/db/local.d:
+< total 0
+< drwxr-xr-x. 2 root root 6 Dec  1  2020 locks
+<
+< /etc/dconf/db/local.d/locks:
+< total 0
+<
+< /etc/dconf/db/site.d:
+< total 0
+< drwxr-xr-x. 2 root root 6 Dec  1  2020 locks
+<
+< /etc/dconf/db/site.d/locks:
+< total 0
+<
+< /etc/dconf/profile:
+< total 4
+< -rw-r--r--. 1 root root 61 Dec  1  2020 user
+<
+< /etc/default:
+< total 8
+< -rw-r--r--. 1 root root 322 Oct 21 17:09 grub
+< -rw-r--r--. 1 root root 119 Dec  1  2020 useradd
+<
+< /etc/depmod.d:
+< total 8
+< -rw-r--r--. 1 root root 116 Jan 20  2021 dist.conf
+< -rw-r--r--. 1 root root 115 Mar 23  2021 kvdo.conf
+<
+< /etc/dhcp:
+< total 4
+< -rw-r--r--. 1 root root 513 Jan 18  2021 dhclient.conf
+< drwxr-xr-x. 2 root root  23 Sep 17 11:52 dhclient.d
+<
+< /etc/dhcp/dhclient.d:
+< total 4
+< -rwxr-xr-x. 1 root root 417 Mar  2  2021 chrony.sh
+<
+< /etc/dnf:
+< total 4
+< drwxr-xr-x. 2 root root   6 Mar 11  2021 aliases.d
+< -rw-r--r--. 1 root root 108 Nov  9  2020 dnf.conf
+< drwxr-xr-x. 2 root root 161 Oct  9 18:21 modules.d
+< drwxr-xr-x. 2 root root   6 Mar 11  2021 modules.defaults.d
+< drwxr-xr-x. 3 root root  86 Sep 17 11:52 plugins
+< drwxr-xr-x. 2 root root  93 Sep 17 11:52 protected.d
+< drwxr-xr-x. 2 root root  37 Sep 17 11:51 vars
+<
+< /etc/dnf/aliases.d:
+< total 0
+<
+< /etc/dnf/modules.d:
+< total 24
+< -rw-r--r--. 1 root root 76 Sep 17 11:50 container-tools.module
+< -rw-r--r--. 1 root root 82 Sep 18 09:55 perl-IO-Socket-SSL.module
+< -rw-r--r--. 1 root root 77 Sep 18 09:55 perl-libwww-perl.module
+< -rw-r--r--. 1 root root 53 Sep 18 09:55 perl.module
+< -rw-r--r--. 1 root root 60 Oct  9 17:48 python36.module
+< -rw-r--r--. 1 root root 52 Oct  9 18:21 ruby.module
+<
+< /etc/dnf/modules.defaults.d:
+< total 0
+<
+< /etc/dnf/plugins:
+< total 12
+< -rw-r--r--. 1 root root 351 Oct  6  2020 copr.conf
+< drwxr-xr-x. 2 root root   6 Mar 11  2021 copr.d
+< -rw-r--r--. 1 root root  30 Oct  6  2020 debuginfo-install.conf
+< -rw-r--r--. 1 root root  24 Jan 13  2021 kpatch.conf
+<
+< /etc/dnf/plugins/copr.d:
+< total 0
+<
+< /etc/dnf/protected.d:
+< total 20
+< -rw-r--r--. 1 root root  4 Nov  9  2020 dnf.conf
+< -rw-r--r--. 1 root root  6 May 15  2020 setup.conf
+< -rw-r--r--. 1 root root  5 Feb  4  2021 sudo.conf
+< -rw-r--r--. 1 root root 21 Aug 10 11:31 systemd.conf
+< -rw-r--r--. 1 root root  4 Nov  9  2020 yum.conf
+<
+< /etc/dnf/vars:
+< total 8
+< -rw-r--r--. 1 root root 7 Sep 14 21:12 contentdir
+< -rw-r--r--. 1 root root 6 Sep 14 21:12 infra
+<
+< /etc/dracut.conf.d:
+< total 0
+<
+< /etc/egl:
+< total 0
+< drwxr-xr-x. 2 root root 6 Nov 18  2020 egl_external_platform.d
+<
+< /etc/egl/egl_external_platform.d:
+< total 0
+<
+< /etc/fail2ban:
+< total 80
+< drwxr-xr-x. 2 root root  4096 Oct  9 17:48 action.d
+< -rw-r--r--. 1 root root  2816 Nov 24  2020 fail2ban.conf
+< drwxr-xr-x. 2 root root     6 Nov 24  2020 fail2ban.d
+< drwxr-xr-x. 3 root root  4096 Oct  9 17:48 filter.d
+< -rw-r--r--. 1 root root 24996 Nov 24  2020 jail.conf
+< drwxr-xr-x. 2 root root    31 Oct  9 17:48 jail.d
+< -rwxr-xr-x. 1 root root 25012 Oct  9 18:15 jail.local
+< -rw-r--r--. 1 root root  2827 Nov 24  2020 paths-common.conf
+< -rw-r--r--. 1 root root   930 Nov 24  2020 paths-fedora.conf
+<
+< /etc/fail2ban/action.d:
+< total 224
+< -rw-r--r--. 1 root root  3748 Nov 24  2020 abuseipdb.conf
+< -rw-r--r--. 1 root root   587 Nov 24  2020 apf.conf
+< -rw-r--r--. 1 root root   629 Nov 24  2020 badips.conf
+< -rw-r--r--. 1 root root 11574 Nov 24  2020 badips.py
+< -rw-r--r--. 1 root root  2715 Nov 24  2020 blocklist_de.conf
+< -rw-r--r--. 1 root root  2970 Nov 24  2020 cloudflare.conf
+< -rw-r--r--. 1 root root  7668 Nov 24  2020 dshield.conf
+< -rw-r--r--. 1 root root  1717 Nov 24  2020 dummy.conf
+< -rw-r--r--. 1 root root  1501 Nov 24  2020 firewallcmd-allports.conf
+< -rw-r--r--. 1 root root  2649 Nov 24  2020 firewallcmd-common.conf
+< -rw-r--r--. 1 root root  2719 Nov 24  2020 firewallcmd-ipset.conf
+< -rw-r--r--. 1 root root  1322 Nov 24  2020 firewallcmd-multiport.conf
+< -rw-r--r--. 1 root root  1950 Nov 24  2020 firewallcmd-new.conf
+< -rw-r--r--. 1 root root  1021 Nov 24  2020 firewallcmd-rich-logging.conf
+< -rw-r--r--. 1 root root  1801 Nov 24  2020 firewallcmd-rich-rules.conf
+< -rw-r--r--. 1 root root   592 Nov 24  2020 helpers-common.conf
+< -rw-r--r--. 1 root root  1514 Nov 24  2020 iptables-allports.conf
+< -rw-r--r--. 1 root root  2738 Nov 24  2020 iptables-common.conf
+< -rw-r--r--. 1 root root  1427 Nov 24  2020 iptables.conf
+< -rw-r--r--. 1 root root  2088 Nov 24  2020 iptables-ipset-proto4.conf
+< -rw-r--r--. 1 root root  2742 Nov 24  2020 iptables-ipset-proto6-allports.conf
+< -rw-r--r--. 1 root root  2785 Nov 24  2020 iptables-ipset-proto6.conf
+< -rw-r--r--. 1 root root  1508 Nov 24  2020 iptables-multiport.conf
+< -rw-r--r--. 1 root root  2170 Nov 24  2020 iptables-multiport-log.conf
+< -rw-r--r--. 1 root root  1585 Nov 24  2020 iptables-new.conf
+< -rw-r--r--. 1 root root  2672 Nov 24  2020 iptables-xt_recent-echo.conf
+< -rw-r--r--. 1 root root  1051 Nov 24  2020 mail-whois-common.conf
+< -rw-r--r--. 1 root root  5321 Nov 24  2020 mynetwatchman.conf
+< -rw-r--r--. 1 root root  1493 Nov 24  2020 netscaler.conf
+< -rw-r--r--. 1 root root   383 Nov 24  2020 nftables-allports.conf
+< -rw-r--r--. 1 root root  6318 Nov 24  2020 nftables.conf
+< -rw-r--r--. 1 root root   384 Nov 24  2020 nftables-multiport.conf
+< -rw-r--r--. 1 root root  3746 Nov 24  2020 nginx-block-map.conf
+< -rw-r--r--. 1 root root  1524 Nov 24  2020 npf.conf
+< -rw-r--r--. 1 root root  3234 Nov 24  2020 nsupdate.conf
+< -rw-r--r--. 1 root root  1023 Nov 24  2020 route.conf
+< -rw-r--r--. 1 root root  2806 Nov 24  2020 sendmail-buffered.conf
+< -rw-r--r--. 1 root root  1938 Nov 24  2020 sendmail-common.conf
+< -rw-r--r--. 1 root root   829 Nov 24  2020 sendmail.conf
+< -rw-r--r--. 1 root root  1761 Nov 24  2020 sendmail-geoip-lines.conf
+< -rw-r--r--. 1 root root   950 Nov 24  2020 sendmail-whois.conf
+< -rw-r--r--. 1 root root  1055 Nov 24  2020 sendmail-whois-ipjailmatches.conf
+< -rw-r--r--. 1 root root  1036 Nov 24  2020 sendmail-whois-ipmatches.conf
+< -rw-r--r--. 1 root root  1299 Nov 24  2020 sendmail-whois-lines.conf
+< -rw-r--r--. 1 root root  1000 Nov 24  2020 sendmail-whois-matches.conf
+< -rw-r--r--. 1 root root  3521 Nov 24  2020 shorewall-ipset-proto6.conf
+< -rw-r--r--. 1 root root  6277 Nov 24  2020 smtp.py
+< -rw-r--r--. 1 root root  1418 Nov 24  2020 symbiosis-blacklist-allports.conf
+< -rw-r--r--. 1 root root  6443 Nov 24  2020 xarf-login-attack.conf
+<
+< /etc/fail2ban/fail2ban.d:
+< total 0
+<
+< /etc/fail2ban/filter.d:
+< total 364
+< -rw-r--r--. 1 root root  467 Nov 24  2020 3proxy.conf
+< -rw-r--r--. 1 root root 3228 Nov 24  2020 apache-auth.conf
+< -rw-r--r--. 1 root root 2831 Nov 24  2020 apache-badbots.conf
+< -rw-r--r--. 1 root root 1265 Nov 24  2020 apache-botsearch.conf
+< -rw-r--r--. 1 root root 1619 Nov 24  2020 apache-common.conf
+< -rw-r--r--. 1 root root  324 Nov 24  2020 apache-fakegooglebot.conf
+< -rw-r--r--. 1 root root  511 Nov 24  2020 apache-modsecurity.conf
+< -rw-r--r--. 1 root root  596 Nov 24  2020 apache-nohome.conf
+< -rw-r--r--. 1 root root 1246 Nov 24  2020 apache-noscript.conf
+< -rw-r--r--. 1 root root 2184 Nov 24  2020 apache-overflows.conf
+< -rw-r--r--. 1 root root  362 Nov 24  2020 apache-pass.conf
+< -rw-r--r--. 1 root root 1020 Nov 24  2020 apache-shellshock.conf
+< -rw-r--r--. 1 root root 3492 Nov 24  2020 assp.conf
+< -rw-r--r--. 1 root root 2369 Nov 24  2020 asterisk.conf
+< -rw-r--r--. 1 root root  427 Nov 24  2020 bitwarden.conf
+< -rw-r--r--. 1 root root  522 Nov 24  2020 botsearch-common.conf
+< -rw-r--r--. 1 root root  307 Nov 24  2020 centreon.conf
+< -rw-r--r--. 1 root root 2775 Nov 24  2020 common.conf
+< -rw-r--r--. 1 root root  244 Nov 24  2020 counter-strike.conf
+< -rw-r--r--. 1 root root  429 Nov 24  2020 courier-auth.conf
+< -rw-r--r--. 1 root root  512 Nov 24  2020 courier-smtp.conf
+< -rw-r--r--. 1 root root  444 Nov 24  2020 cyrus-imap.conf
+< -rw-r--r--. 1 root root  338 Nov 24  2020 directadmin.conf
+< -rw-r--r--. 1 root root 2107 Nov 24  2020 domino-smtp.conf
+< -rw-r--r--. 1 root root 2453 Nov 24  2020 dovecot.conf
+< -rw-r--r--. 1 root root 1730 Nov 24  2020 dropbear.conf
+< -rw-r--r--. 1 root root  557 Nov 24  2020 drupal-auth.conf
+< -rw-r--r--. 1 root root 1572 Nov 24  2020 ejabberd-auth.conf
+< -rw-r--r--. 1 root root  516 Nov 24  2020 exim-common.conf
+< -rw-r--r--. 1 root root 2875 Nov 24  2020 exim.conf
+< -rw-r--r--. 1 root root 2158 Nov 24  2020 exim-spam.conf
+< -rw-r--r--. 1 root root 1922 Nov 24  2020 freeswitch.conf
+< -rw-r--r--. 1 root root 1210 Nov 24  2020 froxlor-auth.conf
+< -rw-r--r--. 1 root root  236 Nov 24  2020 gitlab.conf
+< -rw-r--r--. 1 root root  388 Nov 24  2020 grafana.conf
+< -rw-r--r--. 1 root root  236 Nov 24  2020 groupoffice.conf
+< -rw-r--r--. 1 root root  322 Nov 24  2020 gssftpd.conf
+< -rw-r--r--. 1 root root 1447 Nov 24  2020 guacamole.conf
+< -rw-r--r--. 1 root root 1170 Nov 24  2020 haproxy-http-auth.conf
+< -rw-r--r--. 1 root root  404 Nov 24  2020 horde.conf
+< drwxr-xr-x. 2 root root   34 Oct  9 17:48 ignorecommands
+< -rw-r--r--. 1 root root  938 Nov 24  2020 kerio.conf
+< -rw-r--r--. 1 root root  333 Nov 24  2020 lighttpd-auth.conf
+< -rw-r--r--. 1 root root 2279 Nov 24  2020 mongodb-auth.conf
+< -rw-r--r--. 1 root root  787 Nov 24  2020 monit.conf
+< -rw-r--r--. 1 root root  927 Nov 24  2020 murmur.conf
+< -rw-r--r--. 1 root root  953 Nov 24  2020 mysqld-auth.conf
+< -rw-r--r--. 1 root root  400 Nov 24  2020 nagios.conf
+< -rw-r--r--. 1 root root 1496 Nov 24  2020 named-refused.conf
+< -rw-r--r--. 1 root root  681 Nov 24  2020 nginx-botsearch.conf
+< -rw-r--r--. 1 root root  485 Nov 24  2020 nginx-http-auth.conf
+< -rw-r--r--. 1 root root 1454 Nov 24  2020 nginx-limit-req.conf
+< -rw-r--r--. 1 root root  760 Nov 24  2020 nsd.conf
+< -rw-r--r--. 1 root root  452 Nov 24  2020 openhab.conf
+< -rw-r--r--. 1 root root  495 Nov 24  2020 openwebmail.conf
+< -rw-r--r--. 1 root root 1937 Nov 24  2020 oracleims.conf
+< -rw-r--r--. 1 root root  947 Nov 24  2020 pam-generic.conf
+< -rw-r--r--. 1 root root  568 Nov 24  2020 perdition.conf
+< -rw-r--r--. 1 root root  278 Nov 24  2020 phpmyadmin-syslog.conf
+< -rw-r--r--. 1 root root  891 Nov 24  2020 php-url-fopen.conf
+< -rw-r--r--. 1 root root  242 Nov 24  2020 portsentry.conf
+< -rw-r--r--. 1 root root 3164 Nov 24  2020 postfix.conf
+< -rw-r--r--. 1 root root 1163 Nov 24  2020 proftpd.conf
+< -rw-r--r--. 1 root root 2409 Nov 24  2020 pure-ftpd.conf
+< -rw-r--r--. 1 root root  795 Nov 24  2020 qmail.conf
+< -rw-r--r--. 1 root root 1374 Nov 24  2020 recidive.conf
+< -rw-r--r--. 1 root root 1499 Nov 24  2020 roundcube-auth.conf
+< -rw-r--r--. 1 root root  821 Nov 24  2020 screensharingd.conf
+< -rw-r--r--. 1 root root  538 Nov 24  2020 selinux-common.conf
+< -rw-r--r--. 1 root root  570 Nov 24  2020 selinux-ssh.conf
+< -rw-r--r--. 1 root root  776 Nov 24  2020 sendmail-auth.conf
+< -rw-r--r--. 1 root root 2949 Nov 24  2020 sendmail-reject.conf
+< -rw-r--r--. 1 root root  371 Nov 24  2020 sieve.conf
+< -rw-r--r--. 1 root root  706 Nov 24  2020 slapd.conf
+< -rw-r--r--. 1 root root  451 Nov 24  2020 softethervpn.conf
+< -rw-r--r--. 1 root root  722 Nov 24  2020 sogo-auth.conf
+< -rw-r--r--. 1 root root 1094 Nov 24  2020 solid-pop3d.conf
+< -rw-r--r--. 1 root root  260 Nov 24  2020 squid.conf
+< -rw-r--r--. 1 root root  191 Nov 24  2020 squirrelmail.conf
+< -rw-r--r--. 1 root root 7518 Nov 24  2020 sshd.conf
+< -rw-r--r--. 1 root root  363 Nov 24  2020 stunnel.conf
+< -rw-r--r--. 1 root root  649 Nov 24  2020 suhosin.conf
+< -rw-r--r--. 1 root root  890 Nov 24  2020 tine20.conf
+< -rw-r--r--. 1 root root 2390 Nov 24  2020 traefik-auth.conf
+< -rw-r--r--. 1 root root  374 Nov 24  2020 uwimap-auth.conf
+< -rw-r--r--. 1 root root  637 Nov 24  2020 vsftpd.conf
+< -rw-r--r--. 1 root root  444 Nov 24  2020 webmin-auth.conf
+< -rw-r--r--. 1 root root  520 Nov 24  2020 wuftpd.conf
+< -rw-r--r--. 1 root root  521 Nov 24  2020 xinetd-fail.conf
+< -rw-r--r--. 1 root root  912 Nov 24  2020 znc-adminlog.conf
+< -rw-r--r--. 1 root root  524 Nov 24  2020 zoneminder.conf
+<
+< /etc/fail2ban/filter.d/ignorecommands:
+< total 4
+< -rwxr-xr-x. 1 root root 1065 Nov 24  2020 apache-fakegooglebot
+<
+< /etc/fail2ban/jail.d:
+< total 4
+< -rw-r--r--. 1 root root 366 Nov 24  2020 00-firewalld.conf
+<
+< /etc/firewalld:
+< total 8
+< -rw-r--r--. 1 root root 2747 Jun 29 13:27 firewalld.conf
+< drwxr-x---. 2 root root    6 Jun 29 13:27 helpers
+< drwxr-x---. 2 root root    6 Jun 29 13:27 icmptypes
+< drwxr-x---. 2 root root    6 Jun 29 13:27 ipsets
+< -rw-r--r--. 1 root root  283 Jun 29 13:27 lockdown-whitelist.xml
+< drwxr-x---. 2 root root    6 Jun 29 13:27 services
+< drwxr-x---. 2 root root   46 Jun 29 13:27 zones
+<
+< /etc/firewalld/helpers:
+< total 0
+<
+< /etc/firewalld/icmptypes:
+< total 0
+<
+< /etc/firewalld/ipsets:
+< total 0
+<
+< /etc/firewalld/services:
+< total 0
+<
+< /etc/firewalld/zones:
+< total 8
+< -rw-r--r--. 1 root root 431 Sep 19 19:32 public.xml
+< -rw-r--r--. 1 root root 407 Sep 19 19:18 public.xml.old
+<
+< /etc/fonts:
+< total 8
+< drwxr-xr-x. 2 root root 4096 Sep 17 11:51 conf.d
+< -rw-r--r--. 1 root root 2643 May 11  2019 fonts.conf
+<
+< /etc/fonts/conf.d:
+< total 4
+< lrwxrwxrwx. 1 root root  55 May 11  2019 10-hinting-slight.conf -> /usr/share/fontconfig/conf.avail/10-hinting-slight.conf
+< lrwxrwxrwx. 1 root root  59 May 11  2019 10-scale-bitmap-fonts.conf -> /usr/share/fontconfig/conf.avail/10-scale-bitmap-fonts.conf
+< lrwxrwxrwx. 1 root root  70 Dec 15  2020 20-unhint-small-dejavu-sans-mono.conf -> /usr/share/fontconfig/conf.avail/20-unhint-small-dejavu-sans-mono.conf
+< lrwxrwxrwx. 1 root root  58 May 11  2019 20-unhint-small-vera.conf -> /usr/share/fontconfig/conf.avail/20-unhint-small-vera.conf
+< lrwxrwxrwx. 1 root root  56 May 11  2019 25-unhint-nonlatin.conf -> /usr/share/fontconfig/conf.avail/25-unhint-nonlatin.conf
+< lrwxrwxrwx. 1 root root  55 May 11  2019 30-metric-aliases.conf -> /usr/share/fontconfig/conf.avail/30-metric-aliases.conf
+< lrwxrwxrwx. 1 root root  50 Dec 28  2020 31-cantarell.conf -> /usr/share/fontconfig/conf.avail/31-cantarell.conf
+< lrwxrwxrwx. 1 root root  49 May 11  2019 40-nonlatin.conf -> /usr/share/fontconfig/conf.avail/40-nonlatin.conf
+< lrwxrwxrwx. 1 root root  48 May 11  2019 45-generic.conf -> /usr/share/fontconfig/conf.avail/45-generic.conf
+< lrwxrwxrwx. 1 root root  46 May 11  2019 45-latin.conf -> /usr/share/fontconfig/conf.avail/45-latin.conf
+< lrwxrwxrwx. 1 root root  50 May 11  2019 49-sansserif.conf -> /usr/share/fontconfig/conf.avail/49-sansserif.conf
+< lrwxrwxrwx. 1 root root  45 May 11  2019 50-user.conf -> /usr/share/fontconfig/conf.avail/50-user.conf
+< lrwxrwxrwx. 1 root root  46 May 11  2019 51-local.conf -> /usr/share/fontconfig/conf.avail/51-local.conf
+< lrwxrwxrwx. 1 root root  57 Dec 15  2020 57-dejavu-sans-mono.conf -> /usr/share/fontconfig/conf.avail/57-dejavu-sans-mono.conf
+< lrwxrwxrwx. 1 root root  48 May 11  2019 60-generic.conf -> /usr/share/fontconfig/conf.avail/60-generic.conf
+< lrwxrwxrwx. 1 root root  46 May 11  2019 60-latin.conf -> /usr/share/fontconfig/conf.avail/60-latin.conf
+< lrwxrwxrwx. 1 root root  54 May 11  2019 65-fonts-persian.conf -> /usr/share/fontconfig/conf.avail/65-fonts-persian.conf
+< lrwxrwxrwx. 1 root root  49 May 11  2019 65-nonlatin.conf -> /usr/share/fontconfig/conf.avail/65-nonlatin.conf
+< lrwxrwxrwx. 1 root root  48 May 11  2019 69-unifont.conf -> /usr/share/fontconfig/conf.avail/69-unifont.conf
+< lrwxrwxrwx. 1 root root  50 May 11  2019 80-delicious.conf -> /usr/share/fontconfig/conf.avail/80-delicious.conf
+< lrwxrwxrwx. 1 root root  50 May 11  2019 90-synthetic.conf -> /usr/share/fontconfig/conf.avail/90-synthetic.conf
+< -rw-r--r--. 1 root root 978 Jun 14  2018 README
+<
+< /etc/gcrypt:
+< total 4
+< -rw-r--r--. 1 root root 157 Jul 20  2020 random.conf
+<
+< /etc/geoclue:
+< total 4
+< -rw-r--r--. 1 root root 3379 Jan 26  2021 geoclue.conf
+<
+< /etc/glvnd:
+< total 0
+< drwxr-xr-x. 2 root root 6 Nov 18  2020 egl_vendor.d
+<
+< /etc/glvnd/egl_vendor.d:
+< total 0
+<
+< /etc/gnupg:
+< total 0
+<
+< /etc/groff:
+< total 0
+< drwxr-xr-x. 2 root root  6 May 28  2019 site-font
+< drwxr-xr-x. 2 root root 41 Sep 17 11:51 site-tmac
+<
+< /etc/groff/site-font:
+< total 0
+<
+< /etc/groff/site-tmac:
+< total 8
+< -rw-r--r--. 1 root root 118 May 28  2019 man.local
+< -rw-r--r--. 1 root root 112 May 28  2019 mdoc.local
+<
+< /etc/grub.d:
+< total 92
+< -rwxr-xr-x. 1 root root  8958 Sep 21 15:37 00_header
+< -rwxr-xr-x. 1 root root  1043 Dec 17  2020 00_tuned
+< -rwxr-xr-x. 1 root root   232 Sep 21 15:37 01_users
+< -rwxr-xr-x. 1 root root   832 Sep 21 15:37 08_fallback_counting
+< -rwxr-xr-x. 1 root root 14088 Sep 21 15:37 10_linux
+< -rwxr-xr-x. 1 root root   830 Sep 21 15:37 10_reset_boot_success
+< -rwxr-xr-x. 1 root root   889 Sep 21 15:37 12_menu_auto_hide
+< -rwxr-xr-x. 1 root root 11696 Sep 21 15:37 20_linux_xen
+< -rwxr-xr-x. 1 root root  2559 Sep 21 15:37 20_ppc_terminfo
+< -rwxr-xr-x. 1 root root 10670 Sep 21 15:37 30_os-prober
+< -rwxr-xr-x. 1 root root  1412 Sep 21 15:37 30_uefi-firmware
+< -rwxr-xr-x. 1 root root   214 Sep 21 15:37 40_custom
+< -rwxr-xr-x. 1 root root   216 Sep 21 15:37 41_custom
+< -rw-r--r--. 1 root root   483 Sep 21 15:37 README
+<
+< /etc/gss:
+< total 0
+< drwxr-xr-x. 2 root root 6 Sep 21 16:29 mech.d
+<
+< /etc/gss/mech.d:
+< total 0
+<
+< /etc/iproute2:
+< total 36
+< -rw-r--r--. 1 root root  85 Mar 15  2021 bpf_pinning
+< -rw-r--r--. 1 root root  81 Mar 15  2021 ematch_map
+< -rw-r--r--. 1 root root  31 Mar 15  2021 group
+< -rw-r--r--. 1 root root 262 Mar 15  2021 nl_protos
+< -rw-r--r--. 1 root root 735 Mar 15  2021 rt_dsfield
+< -rw-r--r--. 1 root root 210 Mar 15  2021 rt_protos
+< -rw-r--r--. 1 root root 112 Mar 15  2021 rt_realms
+< -rw-r--r--. 1 root root  92 Mar 15  2021 rt_scopes
+< -rw-r--r--. 1 root root  87 Mar 15  2021 rt_tables
+<
+< /etc/iscsi:
+< total 20
+< -rw-r--r--. 1 root root    50 Sep 17 11:52 initiatorname.iscsi
+< -rw-------. 1 root root 13187 Mar 19  2021 iscsid.conf
+<
+< /etc/issue.d:
+< total 0
+< lrwxrwxrwx. 1 root root 17 Mar 15  2021 cockpit.issue -> /run/cockpit/motd
+<
+< /etc/kdump:
+< total 0
+< drwxr-xr-x. 2 root root 6 Aug 10 11:31 post.d
+< drwxr-xr-x. 2 root root 6 Aug 10 11:31 pre.d
+<
+< /etc/kdump/post.d:
+< total 0
+<
+< /etc/kdump/pre.d:
+< total 0
+<
+< /etc/kernel:
+< total 0
+< drwxr-xr-x. 2 root root 61 Aug 10 11:31 install.d
+< drwxr-xr-x. 2 root root 42 Sep 17 11:52 postinst.d
+<
+< /etc/kernel/install.d:
+< total 0
+< -rw-r--r--. 1 root root 0 Sep 21 15:41 20-grubby.install
+< -rw-r--r--. 1 root root 0 Sep 21 15:41 90-loaderentry.install
+<
+< /etc/kernel/postinst.d:
+< total 4
+< -rwxr-xr-x. 1 root root 1566 Feb 12  2021 51-dracut-rescue-postinst.sh
+<
+< /etc/krb5.conf.d:
+< total 4
+< lrwxrwxrwx. 1 root root  42 Sep 21 16:29 crypto-policies -> /etc/crypto-policies/back-ends/krb5.config
+< -rw-r--r--. 1 root root 494 Aug 16 10:25 kcm_default_ccache
+<
+< /etc/ld.so.conf.d:
+< total 12
+< -rw-r--r--. 1 root root 26 May 27 16:49 bind-export-x86_64.conf
+< -r--r--r--. 1 root root 67 Sep 15 11:48 kernel-4.18.0-305.19.1.el8_4.x86_64.conf
+< -r--r--r--. 1 root root 67 Jun  1 12:22 kernel-4.18.0-305.3.1.el8.x86_64.conf
+<
+< /etc/libblockdev:
+< total 0
+< drwxr-xr-x. 2 root root 28 Sep 17 11:51 conf.d
+<
+< /etc/libblockdev/conf.d:
+< total 4
+< -rw-r--r--. 1 root root 885 Sep  9  2019 00-default.cfg
+<
+< /etc/libibverbs.d:
+< total 48
+< -rw-r--r--. 1 root root 15 Feb  1  2021 bnxt_re.driver
+< -rw-r--r--. 1 root root 13 Feb  1  2021 cxgb4.driver
+< -rw-r--r--. 1 root root 11 Feb  1  2021 efa.driver
+< -rw-r--r--. 1 root root 17 Feb  1  2021 hfi1verbs.driver
+< -rw-r--r--. 1 root root 11 Feb  1  2021 hns.driver
+< -rw-r--r--. 1 root root 13 Feb  1  2021 i40iw.driver
+< -rw-r--r--. 1 root root 12 Feb  1  2021 mlx4.driver
+< -rw-r--r--. 1 root root 12 Feb  1  2021 mlx5.driver
+< -rw-r--r--. 1 root root 12 Feb  1  2021 qedr.driver
+< -rw-r--r--. 1 root root 11 Feb  1  2021 rxe.driver
+< -rw-r--r--. 1 root root 11 Feb  1  2021 siw.driver
+< -rw-r--r--. 1 root root 18 Feb  1  2021 vmw_pvrdma.driver
+<
+< /etc/libnl:
+< total 8
+< -rw-r--r--. 1 root root 1130 Apr  6  2020 classid
+< -rw-r--r--. 1 root root 1532 Apr  6  2020 pktloc
+<
+< /etc/libreport:
+< total 0
+< drwxr-xr-x. 2 root root  6 Aug 24  2020 events
+< drwxr-xr-x. 2 root root 54 Oct 21 17:09 events.d
+< drwxr-xr-x. 2 root root  6 Aug 24  2020 plugins
+< drwxr-xr-x. 2 root root  6 Aug 24  2020 workflows.d
+<
+< /etc/libreport/events:
+< total 0
+<
+< /etc/libreport/events.d:
+< total 8
+< -rw-r--r--. 1 root root 813 Nov  9  2020 collect_dnf.conf
+< -rw-r--r--. 1 root root 157 Aug 10 11:27 mdadm_event.conf
+<
+< /etc/libreport/plugins:
+< total 0
+<
+< /etc/libreport/workflows.d:
+< total 0
+<
+< /etc/libssh:
+< total 8
+< -rw-r--r--. 1 root root 178 Jul 21  2020 libssh_client.config
+< -rw-r--r--. 1 root root  99 Jul 21  2020 libssh_server.config
+<
+< /etc/logrotate.d:
+< total 56
+< -rw-r--r--. 1 root root  91 Feb  1  2021 bootlog
+< -rw-r--r--. 1 root root 130 Feb 19  2018 btmp
+< -rw-r--r--. 1 root root 160 May 10  2019 chrony
+< -rw-r--r--. 1 root root  88 Mar 11  2021 dnf
+< -rw-r--r--. 1 root root 363 Nov 24  2020 fail2ban
+< -rw-r--r--. 1 root root  93 Jun 29 13:27 firewalld
+< -rw-r--r--. 1 root root 172 Oct  8  2020 iscsiuiolog
+< -rw-r--r--. 1 root root 162 Sep 15 11:50 kvm_stat
+< -rw-r--r--. 1 root root 408 May 11  2019 psacct
+< -rw-r--r--. 1 root root 155 Aug 10 11:36 samba
+< -rw-r--r--. 1 root root 237 Aug 16 10:25 sssd
+< -rw-r--r--. 1 root root 226 Jun  1 16:28 syslog
+< -rw-r--r--. 1 root root 188 Nov 16  2020 vsftpd
+< -rw-r--r--. 1 root root 145 Feb 19  2018 wtmp
+<
+< /etc/lsm:
+< total 4
+< -rw-r--r--. 1 root root 36 Dec  8  2020 lsmd.conf
+< drwxr-xr-x. 2 root root 22 Sep 17 11:51 pluginconf.d
+<
+< /etc/lsm/pluginconf.d:
+< total 4
+< -rw-r--r--. 1 root root 32 Dec  8  2020 sim.conf
+<
+< /etc/lvm:
+< total 108
+< drwx------. 2 root root     36 Sep 17 11:56 archive
+< drwx------. 2 root root     16 Sep 17 11:56 backup
+< drwx------. 2 root root      6 Mar 10  2021 cache
+< -rw-r--r--. 1 root root 103867 Mar 10  2021 lvm.conf
+< -rw-r--r--. 1 root root   2301 Mar 10  2021 lvmlocal.conf
+< drwxr-xr-x. 2 root root    245 Sep 17 11:51 profile
+<
+< /etc/lvm/archive:
+< total 4
+< -rw-------. 1 root root 1730 Sep 17 11:56 cl_00000-1762162662.vg
+<
+< /etc/lvm/backup:
+< total 4
+< -rw-------. 1 root root 1729 Sep 17 11:56 cl
+<
+< /etc/lvm/cache:
+< total 0
+<
+< /etc/lvm/profile:
+< total 32
+< -r--r--r--. 1 root root  531 Jan  8  2021 cache-mq.profile
+< -r--r--r--. 1 root root  339 Jan  8  2021 cache-smq.profile
+< -r--r--r--. 1 root root 3020 Mar 10  2021 command_profile_template.profile
+< -r--r--r--. 1 root root 2309 Jan  8  2021 lvmdbusd.profile
+< -r--r--r--. 1 root root  828 Mar 10  2021 metadata_profile_template.profile
+< -r--r--r--. 1 root root   76 Jan  8  2021 thin-generic.profile
+< -r--r--r--. 1 root root   80 Jan  8  2021 thin-performance.profile
+< -r--r--r--. 1 root root  563 Jan  8  2021 vdo-small.profile
+<
+< /etc/mcelog:
+< total 4
+< -rw-r--r--. 1 root root 1509 Nov 18  2020 mcelog.conf
+< drwxr-xr-x. 2 root root  120 Sep 17 11:52 triggers
+<
+< /etc/mcelog/triggers:
+< total 16
+< -rwxr-xr-x. 1 root root 1035 Nov 16  2020 cache-error-trigger
+< -rwxr-xr-x. 1 root root 1213 Nov 16  2020 dimm-error-trigger
+< -rwxr-xr-x. 1 root root 1308 Nov 16  2020 page-error-trigger
+< -rwxr-xr-x. 1 root root 1057 Nov 16  2020 socket-memory-error-trigger
+<
+< /etc/microcode_ctl:
+< total 0
+< drwxr-xr-x. 2 root root 6 Aug  9 09:56 ucode_with_caveats
+<
+< /etc/microcode_ctl/ucode_with_caveats:
+< total 0
+<
+< /etc/modprobe.d:
+< total 16
+< -rw-r--r--. 1 root root  158 Jun 29 13:27 firewalld-sysctls.conf
+< -rw-r--r--. 1 root root 1004 Oct 29  2020 mlx4.conf
+< -rw-r--r--. 1 root root   92 Feb  1  2021 truescale.conf
+< -rw-r--r--. 1 root root  674 Dec 17  2020 tuned.conf
+<
+< /etc/modules-load.d:
+< total 0
+<
+< /etc/motd.d:
+< total 0
+< lrwxrwxrwx. 1 root root 17 Mar 15  2021 cockpit -> /run/cockpit/motd
+<
+< /etc/multipath:
+< total 0
+<
+< /etc/NetworkManager:
+< total 4
+< drwxr-xr-x. 2 root root    6 Aug 10 11:32 conf.d
+< drwxr-xr-x. 5 root root   93 Aug 10 11:32 dispatcher.d
+< drwxr-xr-x. 2 root root    6 Aug 10 11:32 dnsmasq.d
+< drwxr-xr-x. 2 root root    6 Aug 10 11:32 dnsmasq-shared.d
+< -rw-r--r--. 1 root root 2187 Aug 10 11:32 NetworkManager.conf
+< drwxr-xr-x. 2 root root    6 Aug 10 11:32 system-connections
+<
+< /etc/NetworkManager/conf.d:
+< total 0
+<
+< /etc/NetworkManager/dispatcher.d:
+< total 8
+< -rwxr-xr-x. 1 root root 1062 Jan 18  2021 11-dhclient
+< -rwxr-xr-x. 1 root root  428 May 10  2019 20-chrony
+< drwxr-xr-x. 2 root root    6 Aug 10 11:32 no-wait.d
+< drwxr-xr-x. 2 root root    6 Aug 10 11:32 pre-down.d
+< drwxr-xr-x. 2 root root    6 Aug 10 11:32 pre-up.d
+<
+< /etc/NetworkManager/dispatcher.d/no-wait.d:
+< total 0
+<
+< /etc/NetworkManager/dispatcher.d/pre-down.d:
+< total 0
+<
+< /etc/NetworkManager/dispatcher.d/pre-up.d:
+< total 0
+<
+< /etc/NetworkManager/dnsmasq.d:
+< total 0
+<
+< /etc/NetworkManager/dnsmasq-shared.d:
+< total 0
+<
+< /etc/NetworkManager/system-connections:
+< total 0
+<
+< /etc/nftables:
+< total 12
+< -rw-------. 1 root root 1704 Mar 10  2021 main.nft
+< -rw-------. 1 root root  743 Mar 10  2021 nat.nft
+< drwx------. 2 root root   19 Sep 17 11:51 osf
+< -rw-------. 1 root root  407 Mar 10  2021 router.nft
+<
+< /etc/nftables/osf:
+< total 32
+< -rw-------. 1 root root 28884 Dec  2  2019 pf.os
+<
+< /etc/nvme:
+< total 8
+< -rw-r--r--. 1 root root 37 Sep 17 11:52 hostid
+< -rw-r--r--. 1 root root 69 Sep 17 11:52 hostnqn
+<
+< /etc/oddjob:
+< total 0
+<
+< /etc/oddjobd.conf.d:
+< total 8
+< -rw-r--r--. 1 root root 1203 Dec 16  2020 oddjobd-introspection.conf
+< -rw-r--r--. 1 root root 1299 Dec 14  2020 oddjobd-mkhomedir.conf
+<
+< /etc/openldap:
+< total 4
+< drwxr-xr-x. 2 root root   6 Jun 17 10:42 certs
+< -rw-r--r--. 1 root root 900 Jun 17 10:42 ldap.conf
+< drwxr-xr-x. 2 root root  26 Sep 18 09:55 schema
+<
+< /etc/openldap/certs:
+< total 0
+<
+< /etc/openldap/schema:
+< total 24
+< -rw-r--r--. 1 root root 23182 Aug 10 11:41 samba.schema
+<
+< /etc/opt:
+< total 0
+<
+< /etc/PackageKit:
+< total 8
+< -rw-r--r--. 1 root root  706 Jun 15  2020 PackageKit.conf
+< -rw-r--r--. 1 root root 1965 Jun 15  2020 Vendor.conf
+<
+< /etc/pam.d:
+< total 96
+< -rw-r--r--. 1 root root 272 May 11  2019 atd
+< -rw-r--r--. 1 root root 192 Jan 21  2021 chfn
+< -rw-r--r--. 1 root root 192 Jan 21  2021 chsh
+< -rw-r--r--. 1 root root 997 Mar 11  2021 cockpit
+< -rw-r--r--. 1 root root 232 Dec  2  2020 config-util
+< -rw-r--r--. 1 root root 328 Nov  8  2019 crond
+< lrwxrwxrwx. 1 root root  32 Sep 17 11:55 fingerprint-auth -> /etc/authselect/fingerprint-auth
+< -rw-r--r--. 1 root root 715 Jan 21  2021 login
+< -rw-r--r--. 1 root root 154 Dec  2  2020 other
+< -rw-r--r--. 1 root root 168 Apr  6  2020 passwd
+< lrwxrwxrwx. 1 root root  29 Sep 17 11:55 password-auth -> /etc/authselect/password-auth
+< -rw-r--r--. 1 root root 155 Jun  4 16:39 polkit-1
+< lrwxrwxrwx. 1 root root  25 Sep 17 11:55 postlogin -> /etc/authselect/postlogin
+< -rw-r--r--. 1 root root 640 Jan 21  2021 remote
+< -rw-r--r--. 1 root root 143 Jan 21  2021 runuser
+< -rw-r--r--. 1 root root 138 Jan 21  2021 runuser-l
+< -rw-r--r--. 1 root root 177 Aug 10 11:41 samba
+< lrwxrwxrwx. 1 root root  30 Sep 17 11:55 smartcard-auth -> /etc/authselect/smartcard-auth
+< -rw-r--r--. 1 root root 727 May 27 11:54 sshd
+< -rw-r--r--. 1 root root 214 Aug 16 10:25 sssd-shadowutils
+< -rw-r--r--. 1 root root 566 Jan 21  2021 su
+< -rw-r--r--. 1 root root 154 Feb  4  2021 sudo
+< -rw-r--r--. 1 root root 178 Feb  4  2021 sudo-i
+< -rw-r--r--. 1 root root 137 Jan 21  2021 su-l
+< lrwxrwxrwx. 1 root root  27 Sep 17 11:55 system-auth -> /etc/authselect/system-auth
+< -rw-r--r--. 1 root root 248 Aug 10 11:31 systemd-user
+< -rw-r--r--. 1 root root  84 Jul 20  2020 vlock
+< -rw-r--r--. 1 root root 159 Dec  3  2020 vmtoolsd
+< -rw-r--r--. 1 root root 335 Nov 16  2020 vsftpd
+<
+< /etc/pkcs11:
+< total 0
+< drwxr-xr-x. 2 root root 6 Jan 12  2021 modules
+<
+< /etc/pkcs11/modules:
+< total 0
+<
+< /etc/pki:
+< total 0
+< drwxr-xr-x. 4 root root  73 Oct 21 17:09 ca-trust
+< drwxr-xr-x. 2 root root  21 Oct 21 17:09 java
+< drwxr-xr-x. 2 root root 103 Jul  9 16:10 nssdb
+< drwxr-xr-x. 2 root root  99 Oct 21 17:09 rpm-gpg
+< drwx------. 2 root root   6 Jun  1 16:32 rsyslog
+< drwxr-xr-x. 5 root root 104 Oct 21 17:09 tls
+<
+< /etc/pki/ca-trust:
+< total 8
+< -rw-r--r--. 1 root root 980 Sep 22 09:53 ca-legacy.conf
+< drwxr-xr-x. 6 root root  70 Oct 21 17:09 extracted
+< -rw-r--r--. 1 root root 166 Sep 22 09:53 README
+< drwxr-xr-x. 4 root root  80 Oct 21 17:11 source
+<
+< /etc/pki/ca-trust/extracted:
+< total 4
+< drwxr-xr-x. 2 root root  39 Oct 21 17:11 edk2
+< drwxr-xr-x. 2 root root  35 Oct 21 17:11 java
+< drwxr-xr-x. 2 root root  47 Oct 21 17:11 openssl
+< drwxr-xr-x. 2 root root 101 Oct 21 17:11 pem
+< -rw-r--r--. 1 root root 560 Sep 22 09:53 README
+<
+< /etc/pki/ca-trust/extracted/edk2:
+< total 148
+< -r--r--r--. 1 root root 145596 Oct 21 17:11 cacerts.bin
+< -rw-r--r--. 1 root root    566 Sep 22 09:53 README
+<
+< /etc/pki/ca-trust/extracted/java:
+< total 148
+< -r--r--r--. 1 root root 146170 Oct 21 17:11 cacerts
+< -rw-r--r--. 1 root root    726 Sep 22 09:53 README
+<
+< /etc/pki/ca-trust/extracted/openssl:
+< total 244
+< -r--r--r--. 1 root root 243169 Oct 21 17:11 ca-bundle.trust.crt
+< -rw-r--r--. 1 root root    787 Sep 22 09:53 README
+<
+< /etc/pki/ca-trust/extracted/pem:
+< total 352
+< -r--r--r--. 1 root root 153694 Oct 21 17:11 email-ca-bundle.pem
+< -r--r--r--. 1 root root      0 Oct 21 17:11 objsign-ca-bundle.pem
+< -rw-r--r--. 1 root root    898 Sep 22 09:53 README
+< -r--r--r--. 1 root root 200578 Oct 21 17:11 tls-ca-bundle.pem
+<
+< /etc/pki/ca-trust/source:
+< total 4
+< drwxr-xr-x. 2 root root   6 Sep 22 09:54 anchors
+< drwxr-xr-x. 2 root root   6 Sep 22 09:54 blacklist
+< lrwxrwxrwx. 1 root root  59 Oct 21 17:11 ca-bundle.legacy.crt -> /usr/share/pki/ca-trust-legacy/ca-bundle.legacy.default.crt
+< -rw-r--r--. 1 root root 932 Sep 22 09:53 README
+<
+< /etc/pki/ca-trust/source/anchors:
+< total 0
+<
+< /etc/pki/ca-trust/source/blacklist:
+< total 0
+<
+< /etc/pki/java:
+< total 0
+< lrwxrwxrwx. 1 root root 40 Sep 22 09:54 cacerts -> /etc/pki/ca-trust/extracted/java/cacerts
+<
+< /etc/pki/nssdb:
+< total 124
+< -rw-r--r--. 1 root root 65536 Jul  9 15:57 cert8.db
+< -rw-r--r--. 1 root root  9216 Jul  9 15:57 cert9.db
+< -rw-r--r--. 1 root root 16384 Jul  9 15:57 key3.db
+< -rw-r--r--. 1 root root 11264 Jul  9 15:57 key4.db
+< -rw-r--r--. 1 root root   451 Jul  9 15:57 pkcs11.txt
+< -rw-r--r--. 1 root root 16384 Jul  9 15:57 secmod.db
+<
+< /etc/pki/rpm-gpg:
+< total 12
+< -rw-r--r--. 1 root root 1683 Sep 14 21:11 RPM-GPG-KEY-centosofficial
+< -rw-r--r--. 1 root root 1687 Sep 14 21:11 RPM-GPG-KEY-centostesting
+< -rw-r--r--. 1 root root 1627 Sep  4 13:28 RPM-GPG-KEY-EPEL-8
+<
+< /etc/pki/rsyslog:
+< total 0
+<
+< /etc/pki/tls:
+< total 16
+< lrwxrwxrwx. 1 root root    49 Sep 22 09:54 cert.pem -> /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
+< drwxr-xr-x. 2 root root    54 Oct 21 17:09 certs
+< -rw-r--r--. 1 root root   412 Mar 30  2021 ct_log_list.cnf
+< drwxr-xr-x. 2 root root     6 Mar 30  2021 misc
+< -rw-r--r--. 1 root root 11225 Mar 30  2021 openssl.cnf
+< drwxr-xr-x. 2 root root     6 Mar 30  2021 private
+<
+< /etc/pki/tls/certs:
+< total 0
+< lrwxrwxrwx. 1 root root 49 Sep 22 09:54 ca-bundle.crt -> /etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
+< lrwxrwxrwx. 1 root root 55 Sep 22 09:54 ca-bundle.trust.crt -> /etc/pki/ca-trust/extracted/openssl/ca-bundle.trust.crt
+<
+< /etc/pki/tls/misc:
+< total 0
+<
+< /etc/pki/tls/private:
+< total 0
+<
+< /etc/plymouth:
+< total 4
+< -rw-r--r--. 1 root root 72 May 30  2020 plymouthd.conf
+<
+< /etc/pm:
+< total 0
+< drwxr-xr-x. 2 root root 6 Nov  3  2020 config.d
+< drwxr-xr-x. 2 root root 6 Nov  3  2020 power.d
+< drwxr-xr-x. 2 root root 6 Nov  3  2020 sleep.d
+<
+< /etc/pm/config.d:
+< total 0
+<
+< /etc/pm/power.d:
+< total 0
+<
+< /etc/pm/sleep.d:
+< total 0
+<
+< /etc/polkit-1:
+< total 0
+< drwxr-x---. 7 root    polkitd 98 Sep 17 11:51 localauthority
+< drwxr-xr-x. 2 root    root     6 May 11  2019 localauthority.conf.d
+< drwx------. 2 polkitd root    65 Oct 21 17:09 rules.d
+<
+< /etc/polkit-1/localauthority:
+< total 0
+< drwxr-xr-x. 2 root root 6 May 11  2019 10-vendor.d
+< drwxr-xr-x. 2 root root 6 May 11  2019 20-org.d
+< drwxr-xr-x. 2 root root 6 May 11  2019 30-site.d
+< drwxr-xr-x. 2 root root 6 May 11  2019 50-local.d
+< drwxr-xr-x. 2 root root 6 May 11  2019 90-mandatory.d
+<
+< /etc/polkit-1/localauthority/10-vendor.d:
+< total 0
+<
+< /etc/polkit-1/localauthority/20-org.d:
+< total 0
+<
+< /etc/polkit-1/localauthority/30-site.d:
+< total 0
+<
+< /etc/polkit-1/localauthority/50-local.d:
+< total 0
+<
+< /etc/polkit-1/localauthority/90-mandatory.d:
+< total 0
+<
+< /etc/polkit-1/localauthority.conf.d:
+< total 0
+<
+< /etc/polkit-1/rules.d:
+< total 8
+< -rw-r--r--. 1 root root 974 May 11  2019 49-polkit-pkla-compat.rules
+< -rw-r--r--. 1 root root 326 Sep  4  2017 50-default.rules
+<
+< /etc/popt.d:
+< total 0
+<
+< /etc/prelink.conf.d:
+< total 4
+< -rw-r--r--. 1 root root 220 Sep 21 15:37 grub2.conf
+<
+< /etc/profile.d:
+< total 84
+< -rw-r--r--. 1 root root  664 May 11  2019 bash_completion.sh
+< -rw-r--r--. 1 root root  196 May 10  2019 colorgrep.csh
+< -rw-r--r--. 1 root root  201 May 10  2019 colorgrep.sh
+< -rw-r--r--. 1 root root 1741 Apr 26  2020 colorls.csh
+< -rw-r--r--. 1 root root 1606 Apr 26  2020 colorls.sh
+< -rw-r--r--. 1 root root  162 May 10  2019 colorxzgrep.csh
+< -rw-r--r--. 1 root root  183 May 10  2019 colorxzgrep.sh
+< -rw-r--r--. 1 root root  216 Jan 13  2021 colorzgrep.csh
+< -rw-r--r--. 1 root root  220 Jan 13  2021 colorzgrep.sh
+< -rw-r--r--. 1 root root   80 May 15  2020 csh.local
+< -rw-r--r--. 1 root root 1107 Dec 14  2017 gawk.csh
+< -rw-r--r--. 1 root root  757 Dec 14  2017 gawk.sh
+< -rw-r--r--. 1 root root 2486 May 15  2020 lang.csh
+< -rw-r--r--. 1 root root 2312 May 15  2020 lang.sh
+< -rw-r--r--. 1 root root  500 May 11  2019 less.csh
+< -rw-r--r--. 1 root root  253 May 11  2019 less.sh
+< -rw-r--r--. 1 root root   81 May 15  2020 sh.local
+< -rw-r--r--. 1 root root  106 Jun 18  2020 vim.csh
+< -rw-r--r--. 1 root root  248 Jun 18  2020 vim.sh
+< -rw-r--r--. 1 root root  120 Apr  6  2020 which2.csh
+< -rw-r--r--. 1 root root  333 Apr  6  2020 which2.sh
+<
+< /etc/rc.d:
+< total 4
+< drwxr-xr-x. 2 root root  37 Aug 10 11:31 init.d
+< drwxr-xr-x. 2 root root   6 Apr 26  2020 rc0.d
+< drwxr-xr-x. 2 root root   6 Apr 26  2020 rc1.d
+< drwxr-xr-x. 2 root root   6 Apr 26  2020 rc2.d
+< drwxr-xr-x. 2 root root   6 Apr 26  2020 rc3.d
+< drwxr-xr-x. 2 root root   6 Apr 26  2020 rc4.d
+< drwxr-xr-x. 2 root root   6 Apr 26  2020 rc5.d
+< drwxr-xr-x. 2 root root   6 Apr 26  2020 rc6.d
+< -rw-r--r--. 1 root root 474 Aug 10 11:31 rc.local
+<
+< /etc/rc.d/init.d:
+< total 24
+< -rw-r--r--. 1 root root 18434 Feb 15  2021 functions
+< -rw-r--r--. 1 root root  1161 Aug 10 11:30 README
+<
+< /etc/rc.d/rc0.d:
+< total 0
+<
+< /etc/rc.d/rc1.d:
+< total 0
+<
+< /etc/rc.d/rc2.d:
+< total 0
+<
+< /etc/rc.d/rc3.d:
+< total 0
+<
+< /etc/rc.d/rc4.d:
+< total 0
+<
+< /etc/rc.d/rc5.d:
+< total 0
+<
+< /etc/rc.d/rc6.d:
+< total 0
+<
+< /etc/rdma:
+< total 4
+< -rw-r--r--. 1 root root 1245 Feb  1  2021 mlx4.conf
+< drwxr-xr-x. 2 root root   97 Sep 17 11:51 modules
+<
+< /etc/rdma/modules:
+< total 20
+< -rw-r--r--. 1 root root 299 Oct 29  2020 infiniband.conf
+< -rw-r--r--. 1 root root  74 Oct 29  2020 iwarp.conf
+< -rw-r--r--. 1 root root 253 Oct 29  2020 opa.conf
+< -rw-r--r--. 1 root root 455 Feb  1  2021 rdma.conf
+< -rw-r--r--. 1 root root  99 Oct 29  2020 roce.conf
+<
+< /etc/rhsm:
+< total 0
+< drwxr-xr-x. 2 root root 31 Oct 21 17:08 syspurpose
+<
+< /etc/rhsm/syspurpose:
+< total 4
+< -rw-r--r--. 1 root root 276 Sep 21 16:47 valid_fields.json
+<
+< /etc/rpm:
+< total 4
+< -rw-r--r--. 1 root root 66 May 27 09:20 macros.dist
+<
+< /etc/rsyslog.d:
+< total 0
+<
+< /etc/rwtab.d:
+< total 8
+< -rw-r--r--. 1 root root 24 May 15  2020 logrotate
+< -rw-r--r--. 1 root root 18 Aug 16 10:25 sssd
+<
+< /etc/samba:
+< total 20
+< -rw-r--r--. 1 root root    20 Aug 10 11:36 lmhosts
+< -rw-r--r--. 1 root root   969 Sep 18 11:38 smb.conf
+< -rw-r--r--. 1 root root 11327 Aug 10 11:36 smb.conf.example
+<
+< /etc/sasl2:
+< total 0
+<
+< /etc/security:
+< total 56
+< -rw-r--r--. 1 root root 4564 Dec  2  2020 access.conf
+< -rw-r--r--. 1 root root   82 Dec  2  2020 chroot.conf
+< drwxr-xr-x. 2 root root    6 Dec  2  2020 console.apps
+< -rw-r--r--. 1 root root  624 Dec  2  2020 console.handlers
+< -rw-r--r--. 1 root root  939 Dec  2  2020 console.perms
+< drwxr-xr-x. 2 root root    6 Dec  2  2020 console.perms.d
+< -rw-r--r--. 1 root root 2232 Dec  2  2020 faillock.conf
+< -rw-r--r--. 1 root root 3635 Dec  2  2020 group.conf
+< -rw-r--r--. 1 root root 2422 Dec  2  2020 limits.conf
+< drwxr-xr-x. 2 root root    6 Dec  2  2020 limits.d
+< -rw-r--r--. 1 root root 1440 Dec  2  2020 namespace.conf
+< drwxr-xr-x. 2 root root    6 Dec  2  2020 namespace.d
+< -rwxr-xr-x. 1 root root 1016 Dec  2  2020 namespace.init
+< -rw-------. 1 root root    0 Dec  2  2020 opasswd
+< -rw-r--r--. 1 root root 2972 Dec  2  2020 pam_env.conf
+< -rw-r--r--. 1 root root 2674 Aug  3  2020 pwquality.conf
+< drwxr-xr-x. 2 root root    6 Feb 23  2021 pwquality.conf.d
+< -rw-r--r--. 1 root root  419 Dec  2  2020 sepermit.conf
+< -rw-r--r--. 1 root root 2179 Dec  2  2020 time.conf
+<
+< /etc/security/console.apps:
+< total 0
+<
+< /etc/security/console.perms.d:
+< total 0
+<
+< /etc/security/limits.d:
+< total 0
+<
+< /etc/security/namespace.d:
+< total 0
+<
+< /etc/security/pwquality.conf.d:
+< total 0
+<
+< /etc/selinux:
+< total 8
+< -rw-r--r--. 1 root root  548 Sep 17 11:51 config
+< -rw-r--r--. 1 root root 2647 Feb  3  2021 semanage.conf
+< drwxr-xr-x. 5 root root  133 Oct 21 17:08 targeted
+<
+< /etc/selinux/targeted:
+< total 16
+< -rw-r--r--. 1 root root 2367 Sep 21 16:07 booleans.subs_dist
+< drwxr-xr-x. 4 root root 4096 Oct 21 17:08 contexts
+< drwxr-xr-x. 2 root root    6 Sep 21 16:07 logins
+< drwxr-xr-x. 2 root root   23 Oct 21 17:08 policy
+< -rw-r--r--. 1 root root  607 Sep 21 16:07 setrans.conf
+< -rw-r--r--. 1 root root   73 Oct 21 17:08 seusers
+<
+< /etc/selinux/targeted/contexts:
+< total 68
+< -rw-r--r--. 1 root root  262 Oct 21 17:08 customizable_types
+< -rw-r--r--. 1 root root  195 Sep 21 16:06 dbus_contexts
+< -rw-r--r--. 1 root root 1111 Sep 21 16:06 default_contexts
+< -rw-r--r--. 1 root root  114 Sep 21 16:06 default_type
+< -rw-r--r--. 1 root root   29 Sep 21 16:06 failsafe_context
+< drwxr-xr-x. 2 root root  213 Oct 21 17:09 files
+< -rw-r--r--. 1 root root   30 Sep 21 16:06 initrc_context
+< -rw-r--r--. 1 root root  372 Sep 21 16:06 lxc_contexts
+< -rw-r--r--. 1 root root   27 Sep 21 16:06 openssh_contexts
+< -rw-r--r--. 1 root root   33 Sep 21 16:06 removable_context
+< -rw-r--r--. 1 root root   74 Sep 21 16:07 securetty_types
+< -rw-r--r--. 1 root root 1170 Sep 21 16:06 sepgsql_contexts
+< -rw-r--r--. 1 root root   53 Sep 21 16:06 snapperd_contexts
+< -rw-r--r--. 1 root root   57 Sep 21 16:06 systemd_contexts
+< -rw-r--r--. 1 root root   33 Sep 21 16:06 userhelper_context
+< drwxr-xr-x. 2 root root  114 Sep 21 16:06 users
+< -rw-r--r--. 1 root root   62 Sep 21 16:06 virtual_domain_context
+< -rw-r--r--. 1 root root   71 Sep 21 16:06 virtual_image_context
+< -rw-r--r--. 1 root root 2920 Sep 21 16:06 x_contexts
+<
+< /etc/selinux/targeted/contexts/files:
+< total 1004
+< -rw-r--r--. 1 root root 406049 Oct 21 17:08 file_contexts
+< -rw-r--r--. 1 root root 572205 Oct 21 17:08 file_contexts.bin
+< -rw-r--r--. 1 root root  14594 Oct 21 17:08 file_contexts.homedirs
+< -rw-r--r--. 1 root root  19983 Oct 21 17:08 file_contexts.homedirs.bin
+< -rw-r--r--. 1 root root      0 Sep 21 16:07 file_contexts.local
+< -rw-r--r--. 1 root root      0 Sep 21 16:07 file_contexts.subs
+< -rw-r--r--. 1 root root    565 Sep 21 16:07 file_contexts.subs_dist
+< -rw-r--r--. 1 root root    139 Sep 21 16:06 media
+<
+< /etc/selinux/targeted/contexts/users:
+< total 28
+< -rw-r--r--. 1 root root 342 Sep 21 16:06 guest_u
+< -rw-r--r--. 1 root root 724 Sep 21 16:06 root
+< -rw-r--r--. 1 root root 562 Sep 21 16:06 staff_u
+< -rw-r--r--. 1 root root 589 Sep 21 16:06 sysadm_u
+< -rw-r--r--. 1 root root 612 Sep 21 16:06 unconfined_u
+< -rw-r--r--. 1 root root 381 Sep 21 16:06 user_u
+< -rw-r--r--. 1 root root 400 Sep 21 16:06 xguest_u
+<
+< /etc/selinux/targeted/logins:
+< total 0
+<
+< /etc/selinux/targeted/policy:
+< total 8640
+< -rw-r--r--. 1 root root 8845283 Oct 21 17:08 policy.31
+<
+< /etc/setroubleshoot:
+< total 8
+< -rw-r--r--. 1 root root 5646 Feb 12  2021 setroubleshoot.conf
+<
+< /etc/sgml:
+< total 0
+< drwxr-xr-x. 2 root root 24 Oct  9 17:41 docbook
+<
+< /etc/sgml/docbook:
+< total 4
+< -rw-r--r--. 1 root root 236 May 11  2019 xmlcatalog
+<
+< /etc/skel:
+< total 0
+<
+< /etc/smartmontools:
+< total 16
+< -rw-r--r--. 1 root root 6774 May 15  2020 smartd.conf
+< drwxr-xr-x. 2 root root    6 May 15  2020 smartd_warning.d
+< -rwxr-xr-x. 1 root root 5586 May 15  2020 smartd_warning.sh
+<
+< /etc/smartmontools/smartd_warning.d:
+< total 0
+<
+< /etc/sos:
+< total 4
+< drwxr-xr-x. 2 root root    6 Sep 22 10:26 cleaner
+< -rw-r--r--. 1 root root 1263 Sep 22 10:26 sos.conf
+<
+< /etc/sos/cleaner:
+< total 0
+<
+< /etc/ssh:
+< total 600
+< -rw-r--r--. 1 root root     577388 May 27 11:54 moduli
+< -rw-r--r--. 1 root root       1770 May 27 11:54 ssh_config
+< drwxr-xr-x. 2 root root         28 May 27 11:54 ssh_config.d
+< -rw-------. 1 root root       4269 May 27 11:54 sshd_config
+< -rw-r-----. 1 root ssh_keys    492 Sep 17 11:56 ssh_host_ecdsa_key
+< -rw-r--r--. 1 root root        162 Sep 17 11:56 ssh_host_ecdsa_key.pub
+< -rw-r-----. 1 root ssh_keys    387 Sep 17 11:56 ssh_host_ed25519_key
+< -rw-r--r--. 1 root root         82 Sep 17 11:56 ssh_host_ed25519_key.pub
+< -rw-r-----. 1 root ssh_keys   2578 Sep 17 11:56 ssh_host_rsa_key
+< -rw-r--r--. 1 root root        554 Sep 17 11:56 ssh_host_rsa_key.pub
+<
+< /etc/ssh/ssh_config.d:
+< total 4
+< -rw-r--r--. 1 root root 831 May 27 11:54 05-redhat.conf
+<
+< /etc/ssl:
+< total 0
+< lrwxrwxrwx. 1 root root 16 Sep 22 09:54 certs -> ../pki/tls/certs
+<
+< /etc/sssd:
+< total 0
+< drwx--x--x. 2 sssd sssd 6 Aug 16 10:25 conf.d
+< drwx--x--x. 2 root root 6 Aug 16 10:25 pki
+<
+< /etc/sssd/conf.d:
+< total 0
+<
+< /etc/sssd/pki:
+< total 0
+<
+< /etc/sudoers.d:
+< total 0
+<
+< /etc/sysconfig:
+< total 88
+< -rw-r--r--. 1 root root  112 Sep 17 11:55 anaconda
+< -rw-r--r--. 1 root root  403 May 11  2019 atd
+< -rw-r--r--. 1 root root   46 Mar  2  2021 chronyd
+< drwxr-xr-x. 2 root root    6 Feb 19  2021 console
+< -rw-r--r--. 1 root root  150 Sep 15 11:50 cpupower
+< -rw-r--r--. 1 root root  110 Nov  8  2019 crond
+< -rw-------. 1 root root  417 Jan 28  2021 ebtables-config
+< -rw-r--r--. 1 root root   73 Jun 29 13:27 firewalld
+< lrwxrwxrwx. 1 root root   15 Sep 21 15:37 grub -> ../default/grub
+< -rw-------. 1 root root 2134 Jan 28  2021 ip6tables-config
+< -rw-r--r--. 1 root root 1039 Nov  6 16:07 iptables
+< -rw-------. 1 root root 2116 Jan 28  2021 iptables-config
+< -rw-r--r--. 1 root root  903 Feb  2  2021 irqbalance
+< -rw-r--r--. 1 root root 2478 Aug 10 11:31 kdump
+< -rw-r--r--. 1 root root  185 Oct 21 17:09 kernel
+< -rw-r--r--. 1 root root  310 May 11  2019 man-db
+< drwxr-xr-x. 2 root root    6 Feb 19  2021 modules
+< -rw-r--r--. 1 root root   22 Sep 17 11:55 network
+< drwxr-xr-x. 2 root root   25 Aug 10 11:32 network-scripts
+< -rw-------. 1 root root  364 Mar 10  2021 nftables.conf
+< -rw-r--r--. 1 root root 2915 Aug 10 11:24 raid-check
+< -rw-r--r--. 1 root root  196 Jun  1 16:28 rsyslog
+< -rw-r--r--. 1 root root    0 Jan 12  2021 run-parts
+< -rw-r--r--. 1 root root  428 Aug 10 11:36 samba
+< lrwxrwxrwx. 1 root root   17 Sep 17 11:51 selinux -> ../selinux/config
+< -rw-r--r--. 1 root root  186 May 15  2020 smartmontools
+< -rw-r-----. 1 root root  591 May 27 11:54 sshd
+< -rw-r--r--. 1 root root  161 Sep 17 11:55 sshd-permitrootlogin
+<
+< /etc/sysconfig/console:
+< total 0
+<
+< /etc/sysconfig/modules:
+< total 0
+<
+< /etc/sysconfig/network-scripts:
+< total 4
+< -rw-r--r--. 1 root root 246 Sep 17 11:55 ifcfg-ens33
+<
+< /etc/sysctl.d:
+< total 0
+< lrwxrwxrwx. 1 root root 14 Aug 10 11:31 99-sysctl.conf -> ../sysctl.conf
+<
+< /etc/systemd:
+< total 28
+< -rw-r--r--.  1 root root  615 Jun 22  2018 coredump.conf
+< -rw-r--r--.  1 root root 1027 Jun 22  2018 journald.conf
+< -rw-r--r--.  1 root root 1041 Aug 10 11:30 logind.conf
+< -rw-r--r--.  1 root root  631 Aug 10 11:30 resolved.conf
+< drwxr-xr-x. 13 root root 4096 Aug 10 11:31 system
+< -rw-r--r--.  1 root root 1713 Aug 10 11:30 system.conf
+< drwxr-xr-x.  2 root root    6 Aug 10 11:31 user
+< -rw-r--r--.  1 root root 1130 Jun 22  2018 user.conf
+<
+< /etc/systemd/system:
+< total 4
+< drwxr-xr-x. 2 root root   31 Sep 17 11:52 basic.target.wants
+< lrwxrwxrwx. 1 root root   41 Sep 17 11:52 dbus-org.fedoraproject.FirewallD1.service -> /usr/lib/systemd/system/firewalld.service
+< lrwxrwxrwx. 1 root root   57 Sep 17 11:51 dbus-org.freedesktop.nm-dispatcher.service -> /usr/lib/systemd/system/NetworkManager-dispatcher.service
+< lrwxrwxrwx. 1 root root   41 Sep 17 11:52 dbus-org.freedesktop.timedate1.service -> /usr/lib/systemd/system/timedatex.service
+< lrwxrwxrwx. 1 root root   41 Sep 17 11:55 default.target -> /usr/lib/systemd/system/multi-user.target
+< drwxr-xr-x. 2 root root   45 Sep 17 11:52 default.target.wants
+< drwxr-xr-x. 2 root root   32 Sep 17 11:51 getty.target.wants
+< drwxr-xr-x. 2 root root   29 Sep 17 11:52 graphical.target.wants
+< drwxr-xr-x. 2 root root 4096 Oct  9 18:10 multi-user.target.wants
+< drwxr-xr-x. 2 root root   48 Sep 17 11:51 network-online.target.wants
+< drwxr-xr-x. 2 root root   27 Sep 17 11:52 remote-fs.target.wants
+< drwxr-xr-x. 2 root root  121 Sep 17 11:52 sockets.target.wants
+< drwxr-xr-x. 2 root root  241 Sep 17 11:52 sysinit.target.wants
+< lrwxrwxrwx. 1 root root   39 Sep 17 11:51 syslog.service -> /usr/lib/systemd/system/rsyslog.service
+< lrwxrwxrwx. 1 root root    9 May 11  2019 systemd-timedated.service -> /dev/null
+< drwxr-xr-x. 2 root root   61 Sep 17 11:52 timers.target.wants
+< drwxr-xr-x. 2 root root   29 Sep 17 11:52 vmtoolsd.service.requires
+<
+< /etc/systemd/system/basic.target.wants:
+< total 0
+< lrwxrwxrwx. 1 root root 41 Sep 17 11:52 microcode.service -> /usr/lib/systemd/system/microcode.service
+<
+< /etc/systemd/system/default.target.wants:
+< total 0
+< lrwxrwxrwx. 1 root root 55 Sep 17 11:52 nvmefc-boot-connections.service -> /usr/lib/systemd/system/nvmefc-boot-connections.service
+<
+< /etc/systemd/system/getty.target.wants:
+< total 0
+< lrwxrwxrwx. 1 root root 38 Sep 17 11:51 getty@tty1.service -> /usr/lib/systemd/system/getty@.service
+<
+< /etc/systemd/system/graphical.target.wants:
+< total 0
+< lrwxrwxrwx. 1 root root 39 Sep 17 11:52 udisks2.service -> /usr/lib/systemd/system/udisks2.service
+<
+< /etc/systemd/system/multi-user.target.wants:
+< total 0
+< lrwxrwxrwx. 1 root root 35 Sep 17 11:52 atd.service -> /usr/lib/systemd/system/atd.service
+< lrwxrwxrwx. 1 root root 38 Sep 17 11:51 auditd.service -> /usr/lib/systemd/system/auditd.service
+< lrwxrwxrwx. 1 root root 39 Sep 17 11:52 chronyd.service -> /usr/lib/systemd/system/chronyd.service
+< lrwxrwxrwx. 1 root root 37 Sep 17 11:51 crond.service -> /usr/lib/systemd/system/crond.service
+< lrwxrwxrwx. 1 root root 40 Oct  9 18:10 fail2ban.service -> /usr/lib/systemd/system/fail2ban.service
+< lrwxrwxrwx. 1 root root 41 Sep 17 11:52 firewalld.service -> /usr/lib/systemd/system/firewalld.service
+< lrwxrwxrwx. 1 root root 42 Sep 17 11:52 irqbalance.service -> /usr/lib/systemd/system/irqbalance.service
+< lrwxrwxrwx. 1 root root 37 Sep 17 11:52 kdump.service -> /usr/lib/systemd/system/kdump.service
+< lrwxrwxrwx. 1 root root 46 Sep 17 11:51 libstoragemgmt.service -> /usr/lib/systemd/system/libstoragemgmt.service
+< lrwxrwxrwx. 1 root root 38 Sep 17 11:52 mcelog.service -> /usr/lib/systemd/system/mcelog.service
+< lrwxrwxrwx. 1 root root 41 Sep 17 11:52 mdmonitor.service -> /usr/lib/systemd/system/mdmonitor.service
+< lrwxrwxrwx. 1 root root 46 Sep 17 11:51 NetworkManager.service -> /usr/lib/systemd/system/NetworkManager.service
+< lrwxrwxrwx. 1 root root 35 Sep 18 09:57 nmb.service -> /usr/lib/systemd/system/nmb.service
+< lrwxrwxrwx. 1 root root 40 Sep 17 11:51 remote-fs.target -> /usr/lib/systemd/system/remote-fs.target
+< lrwxrwxrwx. 1 root root 39 Sep 17 11:51 rsyslog.service -> /usr/lib/systemd/system/rsyslog.service
+< lrwxrwxrwx. 1 root root 38 Sep 17 11:52 smartd.service -> /usr/lib/systemd/system/smartd.service
+< lrwxrwxrwx. 1 root root 35 Sep 18 09:57 smb.service -> /usr/lib/systemd/system/smb.service
+< lrwxrwxrwx. 1 root root 36 Sep 17 11:52 sshd.service -> /usr/lib/systemd/system/sshd.service
+< lrwxrwxrwx. 1 root root 36 Sep 17 11:52 sssd.service -> /usr/lib/systemd/system/sssd.service
+< lrwxrwxrwx. 1 root root 37 Sep 17 11:52 tuned.service -> /usr/lib/systemd/system/tuned.service
+< lrwxrwxrwx. 1 root root 35 Sep 17 11:52 vdo.service -> /usr/lib/systemd/system/vdo.service
+< lrwxrwxrwx. 1 root root 40 Sep 17 11:52 vmtoolsd.service -> /usr/lib/systemd/system/vmtoolsd.service
+< lrwxrwxrwx. 1 root root 38 Sep 18 18:06 vsftpd.service -> /usr/lib/systemd/system/vsftpd.service
+<
+< /etc/systemd/system/network-online.target.wants:
+< total 0
+< lrwxrwxrwx. 1 root root 58 Sep 17 11:51 NetworkManager-wait-online.service -> /usr/lib/systemd/system/NetworkManager-wait-online.service
+<
+< /etc/systemd/system/remote-fs.target.wants:
+< total 0
+< lrwxrwxrwx. 1 root root 37 Sep 17 11:52 iscsi.service -> /usr/lib/systemd/system/iscsi.service
+<
+< /etc/systemd/system/sockets.target.wants:
+< total 0
+< lrwxrwxrwx. 1 root root 39 Sep 17 11:51 dm-event.socket -> /usr/lib/systemd/system/dm-event.socket
+< lrwxrwxrwx. 1 root root 37 Sep 17 11:52 iscsid.socket -> /usr/lib/systemd/system/iscsid.socket
+< lrwxrwxrwx. 1 root root 39 Sep 17 11:52 iscsiuio.socket -> /usr/lib/systemd/system/iscsiuio.socket
+< lrwxrwxrwx. 1 root root 41 Sep 17 11:52 multipathd.socket -> /usr/lib/systemd/system/multipathd.socket
+< lrwxrwxrwx. 1 root root 39 Sep 17 11:52 sssd-kcm.socket -> /usr/lib/systemd/system/sssd-kcm.socket
+<
+< /etc/systemd/system/sysinit.target.wants:
+< total 0
+< lrwxrwxrwx. 1 root root 44 Sep 17 11:51 import-state.service -> /usr/lib/systemd/system/import-state.service
+< lrwxrwxrwx. 1 root root 44 Sep 17 11:52 iscsi-onboot.service -> /usr/lib/systemd/system/iscsi-onboot.service
+< lrwxrwxrwx. 1 root root 43 Sep 17 11:51 loadmodules.service -> /usr/lib/systemd/system/loadmodules.service
+< lrwxrwxrwx. 1 root root 44 Sep 17 11:51 lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket
+< lrwxrwxrwx. 1 root root 44 Sep 17 11:51 lvm2-monitor.service -> /usr/lib/systemd/system/lvm2-monitor.service
+< lrwxrwxrwx. 1 root root 42 Sep 17 11:52 multipathd.service -> /usr/lib/systemd/system/multipathd.service
+< lrwxrwxrwx. 1 root root 46 Sep 17 11:52 nis-domainname.service -> /usr/lib/systemd/system/nis-domainname.service
+< lrwxrwxrwx. 1 root root 56 Sep 17 11:51 selinux-autorelabel-mark.service -> /usr/lib/systemd/system/selinux-autorelabel-mark.service
+<
+< /etc/systemd/system/timers.target.wants:
+< total 0
+< lrwxrwxrwx. 1 root root 43 Sep 17 11:52 dnf-makecache.timer -> /usr/lib/systemd/system/dnf-makecache.timer
+< lrwxrwxrwx. 1 root root 44 Sep 17 11:51 unbound-anchor.timer -> /usr/lib/systemd/system/unbound-anchor.timer
+<
+< /etc/systemd/system/vmtoolsd.service.requires:
+< total 0
+< lrwxrwxrwx. 1 root root 39 Sep 17 11:52 vgauthd.service -> /usr/lib/systemd/system/vgauthd.service
+<
+< /etc/systemd/user:
+< total 0
+<
+< /etc/temp4audit:
+< total 4
+< -rw-r--r--. 1 root root 15 Nov 20 12:22 test.log
+<
+< /etc/terminfo:
+< total 0
+<
+< /etc/tmpfiles.d:
+< total 0
+<
+< /etc/tuned:
+< total 16
+< -rw-r--r--. 1 root root   14 Oct 21 17:09 active_profile
+< -rw-r--r--. 1 root root 1111 Dec 17  2020 bootcmdline
+< -rw-r--r--. 1 root root    0 Oct 21 17:09 post_loaded_profile
+< -rw-r--r--. 1 root root    5 Oct 21 17:09 profile_mode
+< drwxr-xr-x. 2 root root    6 Jun  1 15:47 recommend.d
+< -rw-r--r--. 1 root root 1730 Jun  1 15:47 tuned-main.conf
+<
+< /etc/tuned/recommend.d:
+< total 0
+<
+< /etc/udev:
+< total 8936
+< -r--r--r--. 1 root root 9143418 Oct 21 17:11 hwdb.bin
+< drwxr-xr-x. 2 root root       6 Aug 10 11:31 hwdb.d
+< drwxr-xr-x. 2 root root      72 Aug 10 11:31 rules.d
+< -rw-r--r--. 1 root root     215 Jun 22  2018 udev.conf
+<
+< /etc/udev/hwdb.d:
+< total 0
+<
+< /etc/udev/rules.d:
+< total 8
+< -rw-r--r--. 1 root root  67 Oct 12  2020 69-vdo-start-by-dev.rules
+< -rw-r--r--. 1 root root 628 Oct 29  2020 70-persistent-ipoib.rules
+<
+< /etc/udisks2:
+< total 8
+< -rw-r--r--. 1 root root 2452 Jan 28  2021 mount_options.conf.example
+< -rw-r--r--. 1 root root  251 Jan 28  2021 udisks2.conf
+<
+< /etc/unbound:
+< total 20
+< -rw-r--r--. 1 root root 13026 Dec  9  2020 icannbundle.pem
+< -rw-r--r--. 1 root root   555 Dec  9  2020 root.key
+<
+< /etc/vmware-tools:
+< total 52
+< -rwxr-xr-x. 1 root root  4364 Dec  3  2020 poweroff-vm-default
+< -rwxr-xr-x. 1 root root  4364 Dec  3  2020 poweron-vm-default
+< -rwxr-xr-x. 1 root root  4364 Dec  3  2020 resume-vm-default
+< drwxr-xr-x. 3 root root    20 Sep 17 11:52 scripts
+< -rwxr-xr-x. 1 root root  1478 Sep 23  2020 statechange.subr
+< -rwxr-xr-x. 1 root root  4364 Dec  3  2020 suspend-vm-default
+< -rw-r--r--. 1 root root 11220 Sep 23  2020 tools.conf.example
+< drwxr-xr-x. 3 root root    21 Sep 17 11:52 vgauth
+< -rw-r--r--. 1 root root   113 Dec  3  2020 vgauth.conf
+<
+< /etc/vmware-tools/scripts:
+< total 0
+< drwxr-xr-x. 2 root root 21 Sep 17 11:52 vmware
+<
+< /etc/vmware-tools/scripts/vmware:
+< total 16
+< -rwxr-xr-x. 1 root root 15148 Sep 23  2020 network
+<
+< /etc/vmware-tools/vgauth:
+< total 0
+< drwxr-xr-x. 2 root root 265 Sep 17 11:52 schemas
+<
+< /etc/vmware-tools/vgauth/schemas:
+< total 176
+< -rw-r--r--. 1 root root   473 Sep 23  2020 catalog.xml
+< -rw-r--r--. 1 root root  6356 Sep 23  2020 datatypes.dtd
+< -rw-r--r--. 1 root root 13160 Sep 23  2020 saml-schema-assertion-2.0.xsd
+< -rw-r--r--. 1 root root  5146 Sep 23  2020 xenc-schema.xsd
+< -rw-r--r--. 1 root root 10144 Sep 23  2020 xmldsig-core-schema.xsd
+< -rw-r--r--. 1 root root 16072 Sep 23  2020 XMLSchema.dtd
+< -rw-r--r--. 1 root root  5783 Sep 23  2020 XMLSchema-hasFacetAndProperty.xsd
+< -rw-r--r--. 1 root root  1215 Sep 23  2020 XMLSchema-instance.xsd
+< -rw-r--r--. 1 root root 86435 Sep 23  2020 XMLSchema.xsd
+< -rw-r--r--. 1 root root  8768 Sep 23  2020 xml.xsd
+<
+< /etc/vsftpd:
+< total 28
+< -rw-------. 1 root root  125 Nov 16  2020 ftpusers
+< -rw-------. 1 root root  361 Nov 16  2020 user_list
+< -rw-------. 1 root root 5091 Oct 16 21:19 vsftpd.conf
+< -rwxr--r--. 1 root root  348 Nov 16  2020 vsftpd_conf_migrate.sh
+< -rw-------. 1 root root 5039 Sep 18 18:09 vsftpd.conf.original
+<
+< /etc/X11:
+< total 0
+< drwxr-xr-x. 2 root root  6 Nov  3  2020 applnk
+< drwxr-xr-x. 2 root root  6 Nov  3  2020 fontpath.d
+< drwxr-xr-x. 3 root root 23 Sep 17 11:51 xinit
+< drwxr-xr-x. 2 root root 30 Sep 17 11:55 xorg.conf.d
+<
+< /etc/X11/applnk:
+< total 0
+<
+< /etc/X11/fontpath.d:
+< total 0
+<
+< /etc/X11/xinit:
+< total 0
+< drwxr-xr-x. 2 root root 32 Sep 17 11:51 xinitrc.d
+<
+< /etc/X11/xinit/xinitrc.d:
+< total 4
+< -rwxr-xr-x. 1 root root 203 Jun 22  2018 50-systemd-user.sh
+<
+< /etc/X11/xorg.conf.d:
+< total 4
+< -rw-r--r--. 1 root root 311 Sep 17 11:55 00-keyboard.conf
+<
+< /etc/xdg:
+< total 0
+< drwxr-xr-x. 2 root root 71 Oct  9 17:41 autostart
+< drwxr-xr-x. 2 root root 18 Aug 10 11:31 systemd
+<
+< /etc/xdg/autostart:
+< total 8
+< -rw-r--r--. 1 root root 296 May 13  2019 at-spi-dbus-bus.desktop
+< -rw-r--r--. 1 root root 227 Jan 26  2021 geoclue-demo-agent.desktop
+<
+< /etc/xdg/systemd:
+< total 0
+< lrwxrwxrwx. 1 root root 18 Aug 10 11:31 user -> ../../systemd/user
+<
+< /etc/xinetd.d:
+< total 0
+<
+< /etc/xml:
+< total 4
+< -rw-r--r--. 1 root root 1728 May 11  2019 catalog
+<
+< /etc/yum:
+< total 0
+< lrwxrwxrwx. 1 root root 14 Mar 11  2021 pluginconf.d -> ../dnf/plugins
+< lrwxrwxrwx. 1 root root 18 Mar 11  2021 protected.d -> ../dnf/protected.d
+< lrwxrwxrwx. 1 root root 11 Mar 11  2021 vars -> ../dnf/vars
+<
+< /etc/yum.repos.d:
+< total 68
+< -rw-r--r--. 1 root root  719 Sep 14 21:11 CentOS-Linux-AppStream.repo
+< -rw-r--r--. 1 root root  704 Sep 14 21:11 CentOS-Linux-BaseOS.repo
+< -rw-r--r--. 1 root root 1130 Sep 14 21:11 CentOS-Linux-ContinuousRelease.repo
+< -rw-r--r--. 1 root root  318 Sep 14 21:11 CentOS-Linux-Debuginfo.repo
+< -rw-r--r--. 1 root root  732 Sep 14 21:11 CentOS-Linux-Devel.repo
+< -rw-r--r--. 1 root root  704 Sep 14 21:11 CentOS-Linux-Extras.repo
+< -rw-r--r--. 1 root root  719 Sep 14 21:11 CentOS-Linux-FastTrack.repo
+< -rw-r--r--. 1 root root  740 Sep 14 21:11 CentOS-Linux-HighAvailability.repo
+< -rw-r--r--. 1 root root  693 Sep 14 21:11 CentOS-Linux-Media.repo
+< -rw-r--r--. 1 root root  706 Sep 14 21:11 CentOS-Linux-Plus.repo
+< -rw-r--r--. 1 root root  724 Sep 14 21:11 CentOS-Linux-PowerTools.repo
+< -rw-r--r--. 1 root root 1124 Sep 14 21:11 CentOS-Linux-Sources.repo
+< -rw-r--r--. 1 root root 1485 Sep  4 13:28 epel-modular.repo
+< -rw-r--r--. 1 root root 1564 Sep  4 13:28 epel-playground.repo
+< -rw-r--r--. 1 root root 1422 Sep  4 13:28 epel.repo
+< -rw-r--r--. 1 root root 1584 Sep  4 13:28 epel-testing-modular.repo
+< -rw-r--r--. 1 root root 1521 Sep  4 13:28 epel-testing.repo

@@ -1,0 +1,43 @@
+Notes from part 3 of assignment 
+https://access.redhat.com/solutions/10107
+https://www.tecmint.com/linux-system-auditing-with-auditd-tool-on-centos-rhel/
+https://www.tecmint.com/query-audit-logs-using-ausearch-tool-on-centos-rhel/
+https://linuxhint.com/auditd_linux_tutorial/
+
+Login as root
+# Ensure auditd is running
+$ chkconfig auditd
+
+/etc/audit/rules.d/audit.rules
+Added in - 
+## Set rules for auditd
+-w /etc/hosts -p a -k monitor-hosts
+
+
+auditctl -w /logs/logins -p rwa -k temp4logins
+ls
+
+sudo ausearch -k passwd_changes -i
+sudo ausearch -k group_changes -i
+sudo ausearch -k shadow_changes -i
+sudo ausearch -k sudoers_changes -i
+
+sudo ausearch -k passwd_changes -i   #results below
+
+type=PROCTITLE msg=audit(11/20/2021 10:21:29.524:8759) : proctitle=adduser bobross
+type=PATH msg=audit(11/20/2021 10:21:29.524:8759) : item=0 name=/etc/shadow inode=17180762 dev=fd:00 mode=file,000 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:shadow_t:s0 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(11/20/2021 10:21:29.524:8759) : cwd=/home/kreagan
+type=SYSCALL msg=audit(11/20/2021 10:21:29.524:8759) : arch=x86_64 syscall=openat success=yes exit=13 a0=0xffffff9c a1=0x5635401cf040 a2=O_RDWR|O_NOCTTY|O_NONBLOCK|O_NOFOLLOW a3=0x0 items=1 ppid=93019 pid=93021 auid=kreagan uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts0 ses=27 comm=adduser exe=/usr/sbin/useradd subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 key=shadow_changes
+----
+type=PROCTITLE msg=audit(11/20/2021 13:55:31.395:9860) : proctitle=passwd
+type=PATH msg=audit(11/20/2021 13:55:31.395:9860) : item=4 name=/etc/shadow inode=17179259 dev=fd:00 mode=file,000 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:shadow_t:s0 nametype=CREATE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(11/20/2021 13:55:31.395:9860) : item=3 name=/etc/shadow inode=16786424 dev=fd:00 mode=file,000 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:shadow_t:s0 nametype=DELETE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(11/20/2021 13:55:31.395:9860) : item=2 name=/etc/nshadow inode=17179259 dev=fd:00 mode=file,000 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:shadow_t:s0 nametype=DELETE cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(11/20/2021 13:55:31.395:9860) : item=1 name=/etc/ inode=16777345 dev=fd:00 mode=dir,755 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:etc_t:s0 nametype=PARENT cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0
+type=PATH msg=audit(11/20/2021 13:55:31.395:9860) : item=0 name=/etc/ inode=16777345 dev=fd:00 mode=dir,755 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:etc_t:s0 nametype=PARENT cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(11/20/2021 13:55:31.395:9860) : cwd=/logs/logins
+type=SYSCALL msg=audit(11/20/2021 13:55:31.395:9860) : arch=x86_64 syscall=rename success=yes exit=0 a0=0x7f3b2bff26e5 a1=0x7f3b2bff266d a2=0x55aa52ff1d90 a3=0x0 items=5 ppid=93080 pid=93986 auid=bobross uid=bobross gid=bobross euid=root suid=root fsuid=root egid=bobross sgid=bobross fsgid=bobross tty=pts1 ses=28 comm=passwd exe=/usr/bin/passwd subj=unconfined_u:unconfined_r:passwd_t:s0-s0:c0.c1023 key=shadow_changes
+
+
+At 11/20/2021 10:21:29.524:8759, you can see that user bobross was created (proctitle=adduser bobross), created by user kreagan (auid=kreagan) with root access. 
+Later at 13:55:31.395:9860 user bobross decided to change his password
