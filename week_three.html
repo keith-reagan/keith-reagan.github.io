@@ -89,7 +89,7 @@ $ awk ‘sub{(/(Samwise Gamgee)/, “Sean Astin”); print $0}’ AwkLab.data
 			</div>
 				
 			<div>
-				<p>This is my attempt at the an awk script. There are three loops in here, one is for listing anyone with the last name Took and the sum of their individual contributions. The second is to retrieve all of Bullroarers contributions. Lastly is to retrieve all the names of people in the dataset that contributed more than $175 in the last month. Below the code you can see the what the script printed out. Though the information is there, I couldn't let that be the end of <a target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/blob/main/scripts/facts.awk">the script.</a> </p>
+				<p>This is my attempt at an awk script. There are three loops in here, one is for listing anyone with the last name Took and the sum of their individual contributions. The second is to retrieve all of Bullroarers contributions. Lastly is to retrieve all the names of people in the dataset that contributed more than $175 in the last month. Below the code you can see the what the script printed out. Though the information is there, I couldn't let that be the end of <a target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/blob/main/scripts/facts.awk">the script.</a> </p>
 				<pre>
 					<code class="coding">#Keith Reagan
 #10/17/21
@@ -116,10 +116,95 @@ bullroarer=$1;	# Declare var "bullroarer" associating it with the first column
         printf "%s %s\n","Paid more than $175 on their last contribution: ", $1
     }
 }
-</code>
+					</code>
 				</pre>
 			</div>				
-				
+			<div>
+				<p>Here's the script result:</p>
+				<pre>
+					<code class="coding">[kreagan@acme-centos ~]$ awk -f facts.awk AwkLab.data
+Paid more than $175 on their last contribution:  Ponder Stibbons
+Paid more than $175 on their last contribution:  Adora Belle Dearheart
+Peregrin Took                  $280
+Paid more than $175 on their last contribution:  Samwise Gamgee
+Paid more than $175 on their last contribution:  A.A. Milne
+Adalgrim Took                  $5240
+Paid more than $175 on their last contribution:  Adalgrim Took
+Bandobras "Bullroarer" Took    $11794
+Bandobras "Bullroarer" Took   $6753  $368    $4673
+Paid more than $175 on their last contribution:  Bandobras "Bullroarer" Took
+Belladonna Took                $778
+Eglantine Took                 $5315
+Paid more than $175 on their last contribution:  Eglantine Took
+Mirabella Took                 $1521
+Ferumbras III Took             $3807
+Paid more than $175 on their last contribution:  Ferumbras III Took
+Gerontius Took                 $5775
+Paid more than $175 on their last contribution:  Gerontius Took
+[kreagan@acme-centos ~]$
+					</code>
+				</pre>
+			</div>			
+			<div>
+				<p>After doing some research and consulting a friend I was able to get the script output looking legible. With awk loops it doesn't act like how you expect it would. Instead, it will read your dataset and run each line against all the loops and output the information to the screen or file before moving to the next line the dataset and repeating until complete. To compensate for this each loop was brought into an array using sprint so it would not be printed to the screen and saved until the END statement. Here a header would be printed out and a for loop would exhaust any content in the array printing that to the screen as well.</p>
+				<pre>
+					<code class="coding">#Keith Reagan
+#10/17/21
+#!/usr/bin/awk -f
+BEGIN{
+    FS="[:]"	# Declare that the field separator will be a colon, will take place all through the script with being put in the BEGIN statement
+}
+{
+lastname=$1;
+total=$3+$4+$5;
+	if($1 ~ /Took/){ # Prints the name of the Tooks followed by their total campaign contributions
+            # "i" is the array key, each time the it loops the entry will be added to the array
+            i++
+            # Assign value to array position "i" in array "tooks", sprintf will hold this info and not print to the screen 
+            tooks[i]=sprintf("%-30s $%s",lastname,total) # Formatting with %s to give 30 spaces until it prints the total
+		}
+	}
+{
+bullroarer=$1;
+	if ($1 ~ /Bullroarer/){ # Prints "Bullroarer"'s contributions
+	        # "i" is the array key, each time the it loops the entry will be added to the array
+	        j++
+	        # Assign value to array position "j" in array "bullroarers"
+		    bullroarers[j]=sprintf("%-30s$%-6s$%-6s $%s",bullroarer,$3,$4,$5)
+		}
+	}
+{
+	if($5>175){ #to print those who contributed more than $175 in the last contribution
+	    # "i" is the array key, each time the it loops the entry will be added to the array
+	    k++
+		# Assign value to array position "k" in array "overs" 
+		overs[k]=sprintf($1)
+	}
+}
+# The END statement will print out the arrays one by one in a clean format and only once unlike in the main body
+END {
+	printf "\033[1;4mTotal contributions from the Tooks:\033[0m\n"
+	# Starting at 0, run the array "i" array until it reaches the last entry, incrementing each time the for loop passes through
+    for (position = 0; position <= i; position++) {
+        # Print the "tooks" array at array key "position"
+        print tooks[position]
+    }
+	printf "\n\033[1;4mAll contributions from Bullroarer:\033[0m\n"
+   # Starting at 0, run the array "j" array until it reaches the last entry, incrementing each time the for loop passes through
+    for (position = 0; position <= j; position++) {
+        # Print the "bullroarers" array at array key "position"
+        print bullroarers[position]
+    }
+	printf "\n\033[1;4mPaid more than $175 on their last contribution:\033[0m\n"
+    # Starting at 0, run the array "k" array until it reaches the last entry, incrementing each time the for loop passes through
+    for (position = 0; position <= k; position++) {
+        # Print the "overs" array at array key "position"
+        print overs[position]
+    }
+}
+					</code>
+				</pre>
+			</div>							
 			<footer>
 				Created 2021 by <a href="mailto:reagan.keith@gmail.com">Keith Reagan</a> 
 				<a target="_blank" href="https://linkedin.com/in/keith-reagan-8a35a8a2"><img alt="LinkedIn" id="social_icon" src="images/social_icon.png"></a>
