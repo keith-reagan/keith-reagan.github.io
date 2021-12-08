@@ -122,7 +122,7 @@ bullroarer=$1;	# Declare var "bullroarer" associating it with the first column
 			<div>
 				<p>Here's the script result:</p>
 				<pre>
-					<code class="coding">[kreagan@acme-centos ~]$ awk -f facts.awk AwkLab.data
+					<code class="coding">
 Paid more than $175 on their last contribution:  Ponder Stibbons
 Paid more than $175 on their last contribution:  Adora Belle Dearheart
 Peregrin Took                  $280
@@ -141,12 +141,11 @@ Ferumbras III Took             $3807
 Paid more than $175 on their last contribution:  Ferumbras III Took
 Gerontius Took                 $5775
 Paid more than $175 on their last contribution:  Gerontius Took
-[kreagan@acme-centos ~]$
 					</code>
 				</pre>
 			</div>			
 			<div>
-				<p>After doing some research and consulting a friend I was able to get the script output looking legible. With awk loops it doesn't act like how you expect it would. Instead, it will read your dataset and run each line against all the loops and output the information to the screen or file before moving to the next line the dataset and repeating until complete. To compensate for this each loop was brought into an array using sprint so it would not be printed to the screen and saved until the END statement. Here a header would be printed out and a for loop would exhaust any content in the array printing that to the screen as well.</p>
+				<p>After doing some research and consulting a friend I was able to get <a target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/blob/main/scripts/betterFacts.awk">the script.</a> output looking legible. With awk loops it doesn't act like how you expect it would. Instead, it will read your dataset and run each line against all the loops and output the information to the screen or file before moving to the next line the dataset and repeating until complete. To compensate for this each loop was brought into an array using sprint so it would not be printed to the screen and saved until the END statement. Here a header would be printed out and a for loop would exhaust any content in the array printing that to the screen as well.</p>
 				<pre>
 					<code class="coding">#Keith Reagan
 #10/17/21
@@ -204,7 +203,91 @@ END {
 }
 					</code>
 				</pre>
-			</div>							
+			</div>	
+			<div>
+				<p>Here's the script result minus the underlined headers:</p>
+				<pre>
+					<code class="coding">Total contributions from the Tooks:
+
+Peregrin Took                  $280
+Adalgrim Took                  $5240
+Bandobras "Bullroarer" Took    $11794
+Belladonna Took                $778
+Eglantine Took                 $5315
+Mirabella Took                 $1521
+Ferumbras III Took             $3807
+Gerontius Took                 $5775
+
+All contributions from Bullroarer:
+
+Bandobras "Bullroarer" Took   $6753  $368    $4673
+
+Paid more than $175 on their last contribution:
+
+Ponder Stibbons
+Adora Belle Dearheart
+Samwise Gamgee
+A.A. Milne
+Adalgrim Took
+Bandobras "Bullroarer" Took
+Eglantine Took
+Ferumbras III Took
+Gerontius Took
+					</code>
+				</pre>
+			</div>			
+			<div>
+				<p>After taking a step back and seeing everything that went into it, I decided to write a <a target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/blob/main/scripts/lies.sh">shell script</a> using only awk line commands. You'll notice that not only is it a lot less code, but also displays only the first name of the person in the first loop like it was requested.</p>
+				<pre>
+					<code class="coding">#Keith Reagan
+#12/8/21
+#!/usr/bin/bash
+NORMAL=$(tput sgr0)		# Var for removing formatting if there is any 
+UNDERLINE=$(tput smul)	# Var for underlining words
+# Print header
+printf "\n${UNDERLINE}Total contributions from the Tooks:${NORMAL}\n"
+# Find each person with the last name Took and get their first name, piping into printing first name and sum of contributions
+awk -F":" '/Took/ {print $1" "$3" "$4" "$5 }' AwkLab.data  | awk '{print $1" $" $2+$3+$4}'
+# Print header
+printf "\n${UNDERLINE}All contributions from Bullroarer:${NORMAL}\n"
+# Find Bullroarer and display each contribution
+awk  '/Bullroarer/ {print $2" "$3" "$4" "$5 }' AwkLab.data  | awk -F":" '{print $1" $"$3" $"$4" $"$5 }'
+# Print header
+printf "\n${UNDERLINE}Paid more than 175 on their last contribution:${NORMAL}\n"
+# Find anyone that contributed more than 175 on their last contribution
+awk -F":" '$5 >175{print $1}' AwkLab.data
+					</code>
+				</pre>
+			</div>	
+			<div>
+				<p>Here's the script result minus the underlined headers:</p>
+				<pre>
+					<code class="coding">Total contributions from the Tooks:
+Peregrin $145
+Adalgrim $4773
+Bandobras $6753
+Belladonna $603
+Eglantine $948
+Mirabella $1346
+Ferumbras $250
+Gerontius $1213
+
+All contributions from Bullroarer:
+"Bullroarer" Took $6753 $368 $4673
+
+Paid more than 175 on their last contribution:
+Ponder Stibbons
+Adora Belle Dearheart
+Samwise Gamgee
+A.A. Milne
+Adalgrim Took
+Bandobras "Bullroarer" Took
+Eglantine Took
+Ferumbras III Took
+Gerontius Took
+					</code>
+				</pre>
+			</div>						
 			<footer>
 				Created 2021 by <a href="mailto:reagan.keith@gmail.com">Keith Reagan</a> 
 				<a target="_blank" href="https://linkedin.com/in/keith-reagan-8a35a8a2"><img alt="LinkedIn" id="social_icon" src="images/social_icon.png"></a>
