@@ -63,8 +63,9 @@
 			</div>
 			
 			<div>
-					<pre>
-						<code class="coding">$ sed -n ‘/:[1-9]*\/[1-7]\/[[:digit:]]/p’ datebook
+				<p>Here's a few short examples of single line sed and awk commands</p>
+				<pre>
+					<code class="coding">$ sed -n ‘/:[1-9]*\/[1-7]\/[[:digit:]]/p’ datebook
 # RegEx is your friend as I've said before. With sed you do need to change things up a bit in order for it to work properly and not just 
 # how you would generate it in it's usual format.
 
@@ -83,10 +84,42 @@ $ awk -F”:” ‘{print$1 “  “$2 “  “ $3}’ AwkLab.data | awk ‘$NF 
 
 $ awk ‘sub{(/(Samwise Gamgee)/, “Sean Astin”); print $0}’ AwkLab.data
 # Using a sub string to change out a first and last name with another first and last name
-
+					</code>
+				</pre>
+			</div>
+				
+			<div>
+				<p>This is my attempt at the an awk script. There are three loops in here, one is for listing anyone with the last name Took and the sum of their individual contributions. The second is to retrieve all of Bullroarers contributions. Lastly is to retrieve all the names of people in the dataset that contributed more than $175 in the last month. Below the code you can see the what the script printed out. Though the information is there, I couldn't let that be the end of <a target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/blob/main/scripts/facts.awk">the script.</a> </p>
+				<pre>
+					<code class="coding">#Keith Reagan
+#10/17/21
+#!/usr/bin/awk -f
+BEGIN{
+    FS="[:]" # Declare that the field separator will be a colon, will take place all through the script with being put in the BEGIN statement
+}
+{
+lastname=$1;	# Declare var "lastname", associating it with the first column
+total=$3+$4+$5;	# Declare var "sum", adding columns 3 through 5 together
+    if($1 ~ /Took/){ # If regex search finds "Took" in column 1 the following will happen -
+		# Below %s is the spacing with \n breaking to a new line. %-30s making the 2nd column print 30 spaces after the first one does for clean formatting
+        printf "%-30s $%s\n", lastname,total # Prints the name of the Tooks followed by their total campaign contributions
+        }
+    }
+{
+bullroarer=$1;	# Declare var "bullroarer" associating it with the first column
+    if ($1 ~ /Bullroarer/){ # Prints "Bullroarer"'s contributions # Check file for Bullroarer
+        printf "%-30s$%-6s$%-6s $%s\n", bullroarer,$3,$4,$5  # Print Bullroarer contributions using columns 3 through 5
+    }
+}
+{
+    if($5>175){ # Print those who contributed more than $175 in the last contribution
+        printf "%s %s\n","Paid more than $175 on their last contribution: ", $1
+    }
+}
 </code>
-					</pre>
-				</div>
+				</pre>
+			</div>				
+				
 			<footer>
 				Created 2021 by <a href="mailto:reagan.keith@gmail.com">Keith Reagan</a> 
 				<a target="_blank" href="https://linkedin.com/in/keith-reagan-8a35a8a2"><img alt="LinkedIn" id="social_icon" src="images/social_icon.png"></a>
