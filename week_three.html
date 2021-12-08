@@ -62,7 +62,7 @@
 				<p>I wasn't familiar with sed or awk before starting the class, looking at the requests for the data on the assignments I didn't think it would be too bad. I was horribly mistaken. I'm still working on one final part of the awk assignment, that one being making the actual awk script. I've been able to get everything working on the single command line but still haven't worked out thing with the script file. Another harsh lesson learned was making sure that you're in the directory that you want to be in to remove temporary files when you execute "sudo rm *" and not your home directory. I can't stress enough the importance of this.</p>
 			</div>
 			
-			<div>
+			<div id="codebox">
 				<p>Here's a few short examples of single line sed and awk commands</p>
 				<pre>
 					<code class="coding">$ sed -n ‘/:[1-9]*\/[1-7]\/[[:digit:]]/p’ datebook
@@ -88,7 +88,7 @@ $ awk ‘sub{(/(Samwise Gamgee)/, “Sean Astin”); print $0}’ AwkLab.data
 				</pre>
 			</div>
 				
-			<div>
+			<div id="codebox">
 				<p>This is my attempt at an awk script. There are three loops in here, one is for listing anyone with the last name Took and the sum of their individual contributions. The second is to retrieve all of Bullroarers contributions. Lastly is to retrieve all the names of people in the dataset that contributed more than $175 in the last month. Below the code you can see the what the script printed out. Though the information is there, I couldn't let that be the end of <a target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/blob/main/scripts/facts.awk">the script.</a> </p>
 				<pre>
 					<code class="coding">#Keith Reagan
@@ -119,7 +119,7 @@ bullroarer=$1;	# Declare var "bullroarer" associating it with the first column
 					</code>
 				</pre>
 			</div>				
-			<div>
+			<div id="codebox">
 				<p>Here's the script result:</p>
 				<pre>
 					<code class="coding">
@@ -144,7 +144,7 @@ Paid more than $175 on their last contribution:  Gerontius Took
 					</code>
 				</pre>
 			</div>			
-			<div>
+			<div id="codebox">
 				<p>After doing some research and consulting a friend I was able to get <a target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/blob/main/scripts/betterFacts.awk">the script.</a> output looking legible. With awk loops it doesn't act like how you expect it would. Instead, it will read your dataset and run each line against all the loops and output the information to the screen or file before moving to the next line the dataset and repeating until complete. To compensate for this each loop was brought into an array using sprint so it would not be printed to the screen and saved until the END statement. Here a header would be printed out and a for loop would exhaust any content in the array printing that to the screen as well.</p>
 				<pre>
 					<code class="coding">#Keith Reagan
@@ -204,7 +204,7 @@ END {
 					</code>
 				</pre>
 			</div>	
-			<div>
+			<div id="codebox">
 				<p>Here's the script result minus the underlined headers:</p>
 				<pre>
 					<code class="coding">Total contributions from the Tooks:
@@ -236,7 +236,7 @@ Gerontius Took
 					</code>
 				</pre>
 			</div>			
-			<div>
+			<div id="codebox">
 				<p>After taking a step back and seeing everything that went into it, I decided to write a <a target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/blob/main/scripts/lies.sh">shell script</a> using only awk line commands. You'll notice that not only is it a lot less code, but also displays only the first name of the person in the first loop like it was requested.</p>
 				<pre>
 					<code class="coding">#Keith Reagan
@@ -259,7 +259,7 @@ awk -F":" '$5 >175{print $1}' AwkLab.data
 					</code>
 				</pre>
 			</div>	
-			<div>
+			<div id="codebox">
 				<p>Here's the script result minus the underlined headers:</p>
 				<pre>
 					<code class="coding">Total contributions from the Tooks:
