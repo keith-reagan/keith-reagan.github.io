@@ -9,7 +9,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=9">
 
-		<title>Basic shell script maker</title>
+		<title>Some grep examples</title>
 		<!-- Bootstrap core CSS -->
 		<link href="../bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/template.css" rel="stylesheet"> <!-- Custom styling sheet -->
@@ -74,31 +74,44 @@
 				</div><!-- /.container-fluid -->
 			</nav>
 			<div id="content">
-				<center><h3>Basic Shell Script Maker</h3></center><br>
-				<p>This is a short script I had created to make empty shell scripts for my Intro to Linux Class. I might not sound like much but it did save some time with assignments</p>
+				<center><h3>Week 2 - grep</h3></center><br>
+				<p>Week two wasn't too bad with grep, RegEx helped a great deal getting the data that I wanted from the datebook file</p>
 			</div>
 			
-			<div id="codebox">
+			<div>
 					<pre>
-						<code class="coding">#!/bin/bash
-if [ $# -lt 1 ]
-then
-	echo "Enter name for your script"
-	read filename
-else
-	filename=$1
-fi
-case $filename in 
-	*.sh)
-		echo "Creating: $filename"
-		touch $filename
-		chmod 755 $filename;;
-	*)
-		echo "Creating: $filename".sh""
-		touch $filename".sh"
-		chmod 755 $filename".sh"
-esac
-echo "File created"		</code>
+						<code class="coding">$ grep Street datebook
+#"grep" being the command, "Street" is the specific string I'm looking for in the file "datebook"
+
+$ grep '^M' datebook
+# Using RegEx inside the single qoutes the ^ anchor searches for the first letter in each line for an M, '^M' in databook
+
+$ grep '000$' datebook
+# Using RegEx to search for the string 000 at the end of each line with $ anchor
+ 
+$ grep -m8 -v datebook
+# I added in the -m8 so it would only search the first 8 lines and not flood the screen with results using the inverse match -v
+
+$ grep '\/23\:' datebook
+# The RegEx here show a string that starts with "/" using "\/" ("\" allowing to escape a special charact), then has "23" and ending with a ":" using "\:" in datebook
+
+$ grep '\:[8][[:digit:]]\{2\}\-' datebook
+# The "\:[8]" specifies the first part of the string needs ":8" which is the start of the area code after the persons name. "[[:digit:]]\{2\}" 
+states that the next 2 characters need to be digits with the string ending with a "-" as the last character using "\-".
+
+$ grep '[[:upper:]][[:lower:]]\{5\},[[:blank:]][[:upper:]]' datebook
+# I think the ask was for a space after the comma so I went with this. "[[:upper:]]" for the first character in the string being an upper case letter,
+#"[[:lower:]]\{5\}" for the next 5 characters to be lower case, ",[[:blank:]]" for a comma then space, and lastly [[:upper:]] for an upper case letter.
+
+$ egrep '[[:digit:]]{2,3}[[:blank:]][[:upper:]]' datebook
+# I had to go with egrep so I could use "{2,3}" after "[[:digit:]]" so it would look for two or three numbers in a row. Followed by "[[:blank:]][[:upper:]]" 
+# for a blank space and uppercase letter
+
+$ grep -n MA datebook
+# The "-n" was used to display the line number of the entry that had the state of "MA" in the datebook file
+
+$ egrep -m25 -v '(Street|ST)' datebook
+# I used "-m" again to shorten the output, "-v" to show the inverse match of the Street OR ST - "(Street|ST)" results with having to use egrep for the OR.</code>
 					</pre>
 				</div>
 			<footer>

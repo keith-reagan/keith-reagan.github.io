@@ -1,62 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--
+	<!--
 	Keith Reagan
 	template.html for portfolio
     -->
-<head>
-	<LINK REL="SHORTCUT ICON" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<head>
+		<LINK REL="SHORTCUT ICON" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
 
-	<title>Welcome to my portfolio page</title>
-	<!-- Bootstrap core CSS -->
-	<link href="../bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/template.css" rel="stylesheet"> <!-- Custom styling sheet -->
-	<script src="../bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js"></script>
+		<title>Some sed and awk</title>
+		<!-- Bootstrap core CSS -->
+		<link href="../bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/template.css" rel="stylesheet"> <!-- Custom styling sheet -->
+		<script src="../bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js"></script>
 
-</head>
-<body>
-	<div id="wrapper">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="index.html">My Portfolio</a>
-				</div>
-				<!-- nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">					
-						<li class="nav-item dropdown">		
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Coding</a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/tree/main/Python_Parser">Python XML Parser</a></li>
-								<li><hr class="dropdown-divider"></li>
-								<li><a class="dropdown-item" href="backup_script.html">Basic Backup Shell Script</a></li>
-								<li><a class="dropdown-item" href="scriptmaker.html">Basic Shell Script Maker</a></li>
-								<li><a class="dropdown-item" href="cyoa.html">CYOA Script</a></li>
-							</ul>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Server</a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="docker_export.html">Docker Export</a></li>
-							</ul>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Weekly Accomplishments </a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="week_one.html">Week One</a></li>
-								<li><a class="dropdown-item" href="week_two.html">Week Two</a></li>
-								<li><a class="dropdown-item" href="week_three.html">Week Three</a></li>
-								<li><a class="dropdown-item" href="week_four.html">Week Four</a></li>
-								<li><a class="dropdown-item" href="week_five.html">Week Five</a></li>
-								<li><a class="dropdown-item" href="week_six.html">Week Six</a></li>
-							</ul>
-						</li>												
-					</ul>
-				</div><!-- /.navbar-collapse -->
-			</div><!-- /.container-fluid -->
-		</nav>
+	</head>
+	<body>
+		<div id="wrapper">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="index.html">My Portfolio</a>
+					</div>
+					<!-- nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">					
+							<li class="nav-item dropdown">		
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Linux Coding</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">							
+									<!--<li><hr class="dropdown-divider"></li> -->
+									<li><a class="dropdown-item" href="backup_script.html">Basic Backup Shell Script</a></li>
+									<li><a class="dropdown-item" href="scriptmaker.html">Basic Shell Script Maker</a></li>
+									<li><a class="dropdown-item" href="cyoa.html">CYOA Script</a></li>
+									<li><a class="dropdown-item" href="diffhash.html">Diff and Hash Scripts</a></li>
+									<li><a class="dropdown-item" href="foryourhealth.html">For Your Health Script</a></li>
+									<li><a class="dropdown-item" href="grep.html">grep</a></li>
+									<li><a class="dropdown-item" href="intruder_detect.html">Intruder Detection Script</a></li>
+									<li><a class="dropdown-item" href="netdump.html">Netdump Script</a></li>
+									<li><a class="dropdown-item" href="sed_awk.html">sed and awk</a></li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Security</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="audit.html">audit</a></li>
+									<li><a class="dropdown-item" href="fail2ban.html">fail2ban</a></li>								
+									<li><a class="dropdown-item" href="iptables.html">iptables</a></li>
+									<li><a class="dropdown-item" href="lynis.html">Lynis</a></li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Server Config</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="basic_config.html">Basic Config</a></li>						
+									<li><a class="dropdown-item" href="Crontab.html">Crontab</a></li>
+									<li><a class="dropdown-item" href="docker.html">Docker Setup</a></li>
+									<li><a class="dropdown-item" href="docker_export.html">Docker Export</a></li>
+									<li><a class="dropdown-item" href="minikube.html">Minikube Setup</a></li>
+									<li><a class="dropdown-item" href="user_check.html">System and User Checks</a></li>									
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Misc</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" target="_blank" href="https://github.com/keith-reagan">GitHub Page</a></li>
+									<li><a class="dropdown-item" target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/tree/main/Python_Parser">Python XML Parser</a></li>
+									<li><a class="dropdown-item" href="smb_mod.html">SMB Mod</a></li>							
+								</ul>
+							</li>							
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
 			<div id="content">
 				<center><h3>Week 3 - sed, awk, and the nightmares they brought</h3></center><br>
 				<p>I wasn't familiar with sed or awk before starting the class, looking at the requests for the data on the assignments I didn't think it would be too bad. I was horribly mistaken. I'm still working on one final part of the awk assignment, that one being making the actual awk script. I've been able to get everything working on the single command line but still haven't worked out thing with the script file. Another harsh lesson learned was making sure that you're in the directory that you want to be in to remove temporary files when you execute "sudo rm *" and not your home directory. I can't stress enough the importance of this.</p>
