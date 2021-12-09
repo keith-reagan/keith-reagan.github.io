@@ -78,7 +78,7 @@
 				<p>Below are the commands I ran on the two servers with comments breaking down what each command does. "#" for comments and "$" for the command at the prompt</p>
 			</div>
 			<div id="codebox">
-				<p>CentOS:</p>
+				<p id="codebox_top">CentOS:</p>
 				<pre>
 					<code class="coding"># Open needed ports, and forward port 80 traffic to 8080 on webserver
 $ sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
