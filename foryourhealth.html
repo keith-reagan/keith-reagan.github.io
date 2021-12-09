@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!--
+	Keith Reagan
+	template.html for portfolio
+    -->
+	<head>
+		<LINK REL="SHORTCUT ICON" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+		<title>For Your Health Script</title>
+		<!-- Bootstrap core CSS -->
+		<link href="../bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/template.css" rel="stylesheet"> <!-- Custom styling sheet -->
+		<script src="../bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js"></script>
+
+	</head>
+	<body>
+		<div id="wrapper">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="index.html">My Portfolio</a>
+					</div>
+					<!-- nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">					
+							<li class="nav-item dropdown">		
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Linux Coding</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">							
+									<!--<li><hr class="dropdown-divider"></li> -->
+									<li><a class="dropdown-item" href="backup_script.html">Basic Backup Shell Script</a></li>
+									<li><a class="dropdown-item" href="scriptmaker.html">Basic Shell Script Maker</a></li>
+									<li><a class="dropdown-item" href="cyoa.html">CYOA Script</a></li>
+									<li><a class="dropdown-item" href="diffhash.html">Diff and Hash Scripts</a></li>
+									<li><a class="dropdown-item" href="foryourhealth.html">For Your Health Script</a></li>
+									<li><a class="dropdown-item" href="grep.html">grep</a></li>
+									<li><a class="dropdown-item" href="intruder_detect.html">Intruder Detection Script</a></li>
+									<li><a class="dropdown-item" href="netdump.html">Netdump Script</a></li>
+									<li><a class="dropdown-item" href="sed_awk.html">sed and awk</a></li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Security</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="audit.html">audit</a></li>
+									<li><a class="dropdown-item" href="fail2ban.html">fail2ban</a></li>								
+									<li><a class="dropdown-item" href="iptables.html">iptables</a></li>
+									<li><a class="dropdown-item" href="lynis.html">Lynis</a></li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Server Config</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="basic_config.html">Basic Config</a></li>						
+									<li><a class="dropdown-item" href="crontab.html">Crontab</a></li>
+									<li><a class="dropdown-item" href="docker.html">Docker Setup</a></li>
+									<li><a class="dropdown-item" href="docker_export.html">Docker Export</a></li>
+									<li><a class="dropdown-item" href="minikube.html">Minikube Setup</a></li>
+									<li><a class="dropdown-item" href="user_check.html">System and User Checks</a></li>									
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Misc</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" target="_blank" href="https://github.com/keith-reagan">GitHub Page</a></li>
+									<li><a class="dropdown-item" target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/tree/main/Python_Parser">Python XML Parser</a></li>
+									<li><a class="dropdown-item" href="smb_mod.html">SMB Mod</a></li>							
+								</ul>
+							</li>							
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+			<div id="content">
+				<center><h3>For Your Servers Health Script</h3></center><br>
+				<p>Ever wonder if there's a few things to help keep your server running smoothly? Here's a script that you can't live without. The script will check to see what OS you're running and will then check for package upgrades automatically install them and clean up any unused files from pacakges. Then it will check for unresponsive processes and let you know the PID (process ID) and how to kill that process. After that it will check to see what the top five processes are utilizing the CPU and memory the most. It will then check if CPU utilization was over 10% for the user or system for single processes and if there was more than 80% memory or network interface utilization from the previous day and what time they occured.</p>
+			</div>
+			<div id="codebox">
+				<p>foryourhealth.sh:</p>
+				<pre>
+					<code class="coding">#!/usr/bin/bash
+#echo start
+NORMAL=$(tput sgr0)		# Var for removing formatting if there is any 
+RED=$(tput setaf 1)		# Make txt red
+UNDERLINE=$(tput smul)	# Var for underlining words
+#echo after formatting
+pants=$(date +"%A_%B_%d_%Y_%T").log #Defines var for log file using day of the week, month, day, 24hr time
+#echo after logfile
+logDir=/logs/health #Defines var for logDir, used to check to see if dir exists before trying to write to it
+#echo after logfile dir
+osflavor=$(hostnamectl | grep Operating | awk 'BEGIN{FS=": "}; {print $2}') #Defines flavor of OS var to use with commands
+#echo after os flavor
+#echo create dir if its not there
+	[ -d /logs/health/ ] || mkdir /logs/health >/dev/null 2>&1 #Checks to see if log dir exists, if not makes it and sends error to null         
+	#echo $osflavor #created as a standalone check
+	sudo touch /logs/health/$pants #Creating the log file
+	chmod 755 /logs/health/$pants #Changing rights to the log file
+#echo start of ifs	
+
+	if [[ "$osflavor" == *"Ubuntu"* ]]; then # If running on the Ubuntu server it will run the next few commands
+echo Starting package upgrades...may take a moment
+		printf "\n${UNDERLINE}Package upgrades -${NORMAL}\n">> /logs/health/$pants;
+		sudo apt -y upgrade >> /logs/health/$pants;	# Runs upgrade on packages available to update with "-y" switch for no human intervention
+echo Starting package cleanup
+		printf "\n${UNDERLINE}Package cleanup -${NORMAL}\n">> /logs/health/$pants;
+		sudo apt-get clean >> /logs/health/$pants;		# Cleans out old unused files from packages
+	else # If running on the CentOS server it will run the next few commands
+echo Starting package upgrades...may take a moment
+		printf "\n${UNDERLINE}Package upgrades -${NORMAL}\n">> /logs/health/$pants;
+		sudo sudo dnf -y upgrade >> /logs/health/$pants;	# Runs upgrade on packages available to update with "-y" switch for no human intervention
+echo Starting package cleanup
+		printf "\n${UNDERLINE}Package cleanup -${NORMAL}\n">> /logs/health/$pants;
+		sudo dnf clean dbcache >> /logs/health/$pants;		# Cleans out old unused files from packages
+	fi
+
+echo Checking for over utilizing processes
+	printf "\n${UNDERLINE}Checking for over utilizing processes${NORMAL}\n">> /logs/health/$pants;
+	sudo ps -A | grep -i stress >> /logs/health/$pants;		# Check for unresponsive processes
+	printf "\n If there is a processes running hot, run the command 'sudo kill -9 (PID)' where (PID) is the process in question\n">> /logs/health/$pants;
+echo Checking for top five processes for cpu
+	printf "\n${UNDERLINE}Top five processes utilizing the CPU -${NORMAL}\n">> /logs/health/$pants;
+	sudo ps -eo pid,ppid,cmd,%cpu --sort=-%cpu | head -5 >> /logs/health/$pants;		# Display the top 5 process IDs with their parent process IDs and their file locations that are utilizing the CPU from most to least
+echo Checking for top five processes for mem
+	printf "\n${UNDERLINE}Top five processes utilizing the system memory -${NORMAL}\n">> /logs/health/$pants;
+	sudo ps -eo pid,ppid,cmd,%mem --sort=-%mem | head -5 >> /logs/health/$pants;		# Display the top 5 process IDs with their parent process IDs and their file locations that are utilizing system memory from most to least
+	printf "\n${UNDERLINE}Process for running iostat in the background -${NORMAL}\n">> /logs/health/$pants;
+	#sudo nohup iostat 10 3 -t -m -p sda &
+echo Checking for high cpu usage previous day	
+	if [[ "$osflavor" == *"Ubuntu"* ]]; then # If running on the Ubuntu server it will run the next few commands
+		# Pull high CPU utilization for previous day
+		File=$(sar -f /var/log/sysstat/sa$(date +%d -d yesterday) | sed 1,5d | awk '$4>10.00 || $6>10.00 { print $1" " $2" " $4" "$6}') #Remove top 5 lines, then print if user or system CPU is greater than 10 percent
+		printf "\n${RED}Processes that ran more than 10 percent of CPU utilization${NORMAL}\n">> /logs/health/$pants; 
+		printf "${UNDERLINE}%-11s%-6s%-10s\n" "Time" "User" "System${NORMAL}">> /logs/health/$pants; # Prints header for this section
+		while read -r high_cpu; #while theres lines in this file
+		do
+			printf "$high_cpu\n" >> /logs/health/$pants;	# Print each line in file
+		done < <(sar -f /var/log/sysstat/sa$(date +%d -d yesterday) | sed 1,5d | awk '$4>10.00 || $6>10.00 { print $1" " $2" " $4" "$6}') # Stops loop after all lines read
+	else
+		# Pull high CPU utilization for previous day
+		File=$(sar -f /var/log/sa/sa$(date +%d -d yesterday) | sed 1,5d | awk '$4>10.00 || $6>10.00 { print $1" " $2" " $4" "$6}') #Remove top 5 lines, then print if user or system CPU is greater than 10 percent
+		printf "\n${RED}Processes that ran more than 10 percent of CPU utilization${NORMAL}\n">> /logs/health/$pants; 
+		printf "${UNDERLINE}%-11s%-6s%-10s\n" "Time" "User" "System${NORMAL}">> /logs/health/$pants; # Prints header for this section
+		while read -r high_cpu; #while theres lines in this file
+		do
+			printf "$high_cpu\n" >> /logs/health/$pants;	# Print each line in file
+		done < <(sar -f /var/log/sa/sa$(date +%d -d yesterday) | sed 1,5d | awk '$4>10.00 || $6>10.00 { print $1" " $2" " $4" "$6}') # Stops loop after all lines read
+	fi
+echo Checking for high mem usage previous day	
+	if [[ "$osflavor" == *"Ubuntu"* ]]; then
+		# Pull high memory utilization for previous day
+		File=$(sar -r -f /var/log/sysstat/sa$(date +%d -d yesterday) | sed 1,5d | awk 'NR ==1 || $6>=80.00 { print}') #Remove top 4 lines, then print if memory usage was greater than 80 percent
+		printf "\n${RED}Times that memory at 80 percent or more utilization${NORMAL}\n">> /logs/health/$pants;
+		printf "${UNDERLINE}%-13s%-12s%-9s%-11s%-9s%-10s%-10s%-10s%-11s%-10s%-10s%-8s\n" "time" "kbmemfree" "kbavail" "kbmemused" "%memused" "kbbuffers" "kbcached" "kbcommit" "%commit" "kbactive" "kbinact" "kbdirty${NORMAL}">> /logs/health/$pants; # Prints header for this section		
+		while read -r high_mem; #while theres lines in this file
+		do
+			printf "$high_mem\n" >> /logs/health/$pants;	# Print each line in file
+		done < <(sar -r -f /var/log/sysstat/sa$(date +%d -d yesterday) | sed 1,5d | awk 'NR ==1 || $6>80.00 { print}') # Stops loop after all lines read		
+	else
+
+		# Pull high memory utilization for previous day
+		File=$(sar -r -f /var/log/sa/sa$(date +%d -d yesterday) | sed 1,5d | awk 'NR ==1 || $6>=80.00 { print}') #Remove top 4 lines, then print if memory usage was greater than 80 percent
+		printf "\n${RED}Times that memory at 80 percent or more utilization${NORMAL}\n">> /logs/health/$pants; 
+		printf "${UNDERLINE}%-13s%-12s%-9s%-11s%-9s%-10s%-10s%-10s%-11s%-10s%-10s%-8s\n" "time" "kbmemfree" "kbavail" "kbmemused" "%memused" "kbbuffers" "kbcached" "kbcommit" "%commit" "kbactive" "kbinact" "kbdirty${NORMAL}">> /logs/health/$pants; # Prints header for this section	
+		while read -r high_mem; #while theres lines in this file
+		do
+			printf "$high_mem\n" >> /logs/health/$pants;	# Print each line in file
+		done < <(sar -r -f /var/log/sa/sa$(date +%d -d yesterday) | sed 1,5d | awk 'NR ==1 || $6>=80.00 { print}') # Stops loop after all lines read		
+	fi
+echo Checking for high network usage previous day		
+	if [[ "$osflavor" == *"Ubuntu"* ]]; then
+		# Pull high network utilization for previous day
+		File=$(sar -n DEV -f /var/log/sysstat/sa$(date +%d -d yesterday) | egrep -v lo | sed 1,5d | awk 'NR ==1 || $11>=80.00 { print}')
+		printf "\n${RED}Times that utilization was 80 percent or more for network interfaces${NORMAL}\n">> /logs/health/$pants; 
+		printf "${UNDERLINE}%-16s%-10s%-9s%-11s%-10s%-10s%-10s%-10s%-10s%-9s\n" "time" "IFACE" "rxpck/s" "txpck/s" "rxkB/s" "txkB/s" "rxcmp/s" "txcmp/s" "rxmcst/s" "%ifutil${NORMAL}">> /logs/health/$pants; # Prints header for this section	
+		while read -r high_mem; #while theres lines in this file
+		do
+			printf "$high_mem\n" >> /logs/health/$pants;	# Print each line in file
+		done < <(sar -n DEV -f /var/log/sysstat/sa$(date +%d -d yesterday) | egrep -v lo | sed 1,5d | awk 'NR ==1 || $11>=80.00 { print}') # Stops loop after all lines read	
+	else	
+		# Pull high network utilization for previous day
+		File=$(sar -n DEV -f /var/log/sa/sa$(date +%d -d yesterday) | egrep -v lo | sed 1,5d | awk 'NR ==1 || $11>=80.00 { print}') #Remove all the lo interfaces, remove top 4 lines, then print if network interface utilization was greater than 80 percent
+		printf "\n${RED}Times that utilization was 80 percent or more for network interfaces${NORMAL}\n">> /logs/health/$pants; 
+		printf "${UNDERLINE}%-16s%-10s%-9s%-11s%-10s%-10s%-10s%-10s%-10s%-9s\n" "time" "IFACE" "rxpck/s" "txpck/s" "rxkB/s" "txkB/s" "rxcmp/s" "txcmp/s" "rxmcst/s" "%ifutil${NORMAL}">> /logs/health/$pants; # Prints header for this section
+		while read -r high_mem; #while theres lines in this file
+		do
+			printf "$high_mem\n" >> /logs/health/$pants;	# Print each line in file
+		done < <(sar -n DEV -f /var/log/sa/sa$(date +%d -d yesterday) | egrep -v lo | sed 1,5d | awk 'NR ==1 || $11>=80.00 { print}') # Stops loop after all lines read	
+	fi
+echo Script complete! Log file /logs/health/$pants has been created
+					</code>
+				</pre>
+			</div> <!-- /.codebox -->			
+			<div id="codebox">
+				<p>CentOS Log file results, the threshold was lowered on the utilization during testing and the log file reflects that as there wasn't much of a workload on the server:</p>
+				<pre>
+					<code class="coding">$ cat /logs/health/Saturday_December_04_2021_09\:48\:59.log
+
+Package upgrades -
+Last metadata expiration check: 0:35:17 ago on Sat 04 Dec 2021 09:13:49 AM EST.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+Package cleanup -
+15 files removed
+
+Checking for over utilizing processes
+
+ If there is a processes running hot, run the command 'sudo kill -9 (PID)' where (PID) is the process in question
+
+Top five processes utilizing the CPU -
+    PID    PPID CMD                         %CPU
+   1043       1 /usr/bin/python3.6 -s /usr/  4.7
+   2600       1 /usr/lib/systemd/systemd-ho  0.5
+      1       0 /usr/lib/systemd/systemd --  0.0
+      2       0 [kthreadd]                   0.0
+
+Top five processes utilizing the system memory -
+    PID    PPID CMD                         %MEM
+   1043       1 /usr/bin/python3.6 -s /usr/  3.7
+   1006       1 /usr/libexec/platform-pytho  1.1
+   1003     964 /usr/libexec/sssd/sssd_nss   1.0
+   1038       1 /usr/libexec/platform-pytho  0.7
+
+Process for running iostat in the background -
+
+Processes that ran more than 10 percent of CPU utilization
+Time       User  System
+09:00:25 AM 0.03 0.74
+09:10:25 AM 0.41 0.95
+09:20:25 AM 0.03 0.76
+09:30:25 AM 0.03 0.71
+09:40:25 AM 0.05 0.81
+09:50:00 AM 0.05 0.81
+10:00:00 AM 0.04 0.82
+10:10:00 AM 0.05 0.84
+10:20:00 AM 0.04 0.81
+10:30:00 AM 0.03 0.79
+10:40:00 AM 0.04 0.82
+10:50:00 AM 0.04 0.80
+11:00:00 AM 0.03 0.85
+11:10:00 AM 0.04 0.73
+11:20:00 AM 0.04 0.77
+11:30:00 AM 0.03 0.79
+11:40:00 AM 0.03 0.70
+11:50:00 AM 0.03 0.79
+12:00:00 PM 0.03 0.79
+12:10:00 PM 0.05 0.87
+12:20:00 PM 0.03 0.82
+12:30:00 PM 0.07 1.04
+12:40:00 PM 0.05 0.96
+12:50:00 PM 0.05 0.96
+01:00:00 PM 0.05 0.97
+01:10:00 PM 0.06 0.97
+01:20:00 PM 0.08 1.05
+01:30:00 PM 0.07 1.10
+01:40:00 PM 0.10 1.24
+01:50:00 PM 0.10 1.29
+02:00:00 PM 0.08 1.08
+02:10:00 PM 0.09 1.13
+02:20:00 PM 0.03 0.82
+02:30:00 PM 0.03 0.84
+02:40:00 PM 0.03 0.82
+02:50:00 PM 0.03 0.83
+03:00:00 PM 0.03 0.84
+03:10:00 PM 0.03 0.83
+03:20:00 PM 0.03 0.82
+03:30:00 PM 0.03 0.83
+03:40:00 PM 0.04 0.85
+03:50:00 PM 0.04 0.81
+04:00:00 PM 0.04 0.84
+04:10:00 PM 0.04 0.87
+04:20:00 PM 0.04 0.84
+04:23:52 PM RESTART CPU)
+04:40:00 PM 0.04 0.82
+04:50:00 PM 0.03 0.82
+05:00:00 PM 0.03 0.84
+05:10:00 PM 0.08 1.00
+05:20:00 PM 0.10 1.11
+05:30:00 PM 0.05 0.90
+05:40:00 PM 0.03 0.85
+05:50:00 PM 0.06 0.87
+06:00:00 PM 0.09 0.93
+06:10:00 PM 0.05 0.91
+06:20:00 PM 0.03 0.83
+06:30:00 PM 0.03 0.84
+06:40:00 PM 0.05 0.89
+06:50:00 PM 0.03 0.86
+07:00:00 PM 0.03 0.84
+07:10:00 PM 0.05 0.89
+07:20:00 PM 0.03 0.84
+07:30:00 PM 0.04 0.86
+07:40:00 PM 0.03 0.86
+07:50:00 PM 0.03 0.86
+08:00:00 PM 0.03 0.87
+08:10:00 PM 0.04 0.90
+08:20:00 PM 0.03 0.85
+08:30:00 PM 0.04 0.87
+08:40:00 PM 0.03 0.85
+08:50:00 PM 0.03 0.85
+09:00:00 PM 0.03 0.85
+09:10:00 PM 0.03 0.86
+09:20:00 PM 0.03 0.85
+09:30:00 PM 0.03 0.86
+09:40:00 PM 0.03 0.84
+09:50:00 PM 0.03 0.85
+10:00:00 PM 0.03 0.86
+10:10:00 PM 0.04 0.89
+10:20:00 PM 0.03 0.85
+10:30:00 PM 0.03 0.85
+10:40:00 PM 0.03 0.84
+10:50:00 PM 0.03 0.86
+11:00:00 PM 0.03 0.85
+11:10:00 PM 0.03 0.84
+11:20:00 PM 0.03 0.84
+11:30:00 PM 0.03 0.84
+11:40:00 PM 0.02 0.84
+11:50:00 PM 0.03 0.84
+
+Times that memory at 80 percent or more utilization
+time         kbmemfree   kbavail  kbmemused  %memused kbbuffers kbcached  kbcommit  %commit    kbactive  kbinact   kbdirty
+09:00:25 AM   3142556   3222536    656300     17.28      3164    257520   1816648     30.81     64588    333296         0
+Average:      2861710   3184152    937146     24.67      3164    499107   1843877     31.27    248889    412605         1
+04:23:52 PM  LINUX RESTART      (4 CPU)
+Average:      2831714   3164179    967142     25.46      3164    508688   1852879     31.43    254719    420746         0
+
+Times that utilization was 80 percent or more for network interfaces
+time            IFACE     rxpck/s  txpck/s    rxkB/s    txkB/s    rxcmp/s   txcmp/s   rxmcst/s  %ifutil
+09:00:25 AM     ens33      0.09      0.09      0.01      0.01      0.00      0.00      0.00      0.00
+					</code>
+				</pre>
+			</div> <!-- /.codebox -->
+			<div id="codebox">
+				<p>Ubuntu Log file results, the threshold was lowered on the utilization during testing and the log file reflects that as there wasn't much of a workload on the server:</p>
+				<pre>
+					<code class="coding">$ cat /logs/health/Saturday_December_04_2021_09\:49\:22.log
+
+Package upgrades -
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
+Package cleanup -
+
+Checking for over utilizing processes
+
+ If there is a processes running hot, run the command 'sudo kill -9 (PID)' where (PID) is the process in question
+
+Top five processes utilizing the CPU -
+    PID    PPID CMD                         %CPU
+  43917       1 /lib/systemd/systemd-hostna  3.0
+      1       0 /sbin/init auto automatic-u  0.0
+      2       0 [kthreadd]                   0.0
+      3       2 [rcu_gp]                     0.0
+
+Top five processes utilizing the system memory -
+    PID    PPID CMD                         %MEM
+    526       1 /lib/systemd/systemd-journa  1.9
+    947       1 /usr/lib/snapd/snapd         1.0
+   1040       1 /usr/sbin/smbd --foreground  0.6
+    960       1 /usr/bin/python3 /usr/bin/f  0.5
+
+Process for running iostat in the background -
+
+Processes that ran more than 10 percent of CPU utilization
+Time       User  System
+10:45:01 AM 0.01 0.02
+10:55:01 AM 0.01 0.03
+11:05:01 AM 0.01 0.02
+12:05:01 PM 0.01 0.03
+12:35:01 PM 0.01 0.02
+12:45:01 PM 0.01 0.02
+12:55:01 PM 0.01 0.02
+01:05:01 PM 0.01 0.02
+01:15:01 PM 0.01 0.03
+01:25:01 PM 0.01 0.02
+01:35:01 PM 0.01 0.02
+01:45:01 PM 0.01 0.02
+01:55:01 PM 0.01 0.03
+02:05:01 PM 0.01 0.03
+02:15:01 PM 0.01 0.02
+02:45:01 PM 0.01 0.03
+03:05:01 PM 0.01 0.03
+03:15:01 PM 0.02 0.06
+03:35:01 PM 0.00 0.03
+03:45:01 PM 0.01 0.02
+03:55:01 PM 0.00 0.03
+04:05:01 PM 0.01 0.02
+04:55:01 PM 0.01 0.02
+05:05:01 PM 0.01 0.02
+05:15:01 PM 0.01 0.02
+05:25:01 PM 0.01 0.03
+05:55:01 PM 0.01 0.03
+06:05:01 PM 0.02 0.04
+06:15:01 PM 0.01 0.02
+07:05:01 PM 0.01 0.02
+07:15:01 PM 0.00 0.03
+07:25:01 PM 0.01 0.02
+07:45:01 PM 0.01 0.02
+08:05:01 PM 0.01 0.02
+08:35:01 PM 0.01 0.02
+09:25:01 PM 0.01 0.03
+10:05:01 PM 0.01 0.02
+10:25:01 PM 0.01 0.02
+11:15:01 PM 0.01 0.02
+12:00:01 AM 0.00 0.04
+
+Times that memory at 80 percent or more utilization
+time         kbmemfree   kbavail  kbmemused  %memused kbbuffers kbcached  kbcommit  %commit    kbactive  kbinact   kbdirty
+10:25:01 AM   3133184   3424652    220044      5.50     59328    405876    591976      7.40    332376    219648       320
+Average:      3024574   3421741    220191      5.50     94883    474219    599899      7.50    371614    284874       366
+
+Times that utilization was 80 percent or more for network interfaces
+time            IFACE     rxpck/s  txpck/s    rxkB/s    txkB/s    rxcmp/s   txcmp/s   rxmcst/s  %ifutil
+10:25:01 AM     ens33      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+11:15:01 AM     ens33      0.98      0.73      0.09      0.09      0.00      0.00      0.00      0.00
+11:25:01 AM     ens33      0.90      0.68      0.09      0.09      0.00      0.00      0.00      0.00
+11:35:01 AM     ens33      0.73      0.58      0.07      0.07      0.00      0.00      0.00      0.00
+02:45:01 PM     ens33      1.18      1.28      0.16      1.23      0.00      0.00      0.00      0.00
+03:05:01 PM     ens33      0.79      0.60      0.07      0.13      0.00      0.00      0.00      0.00
+03:15:01 PM     ens33      0.77      0.68      0.08      0.09      0.00      0.00      0.00      0.00
+03:25:01 PM     ens33      0.79      0.55      0.07      0.10      0.00      0.00      0.00      0.00
+03:55:01 PM     ens33      0.77      0.64      0.08      0.14      0.00      0.00      0.00      0.00
+					</code>
+				</pre>
+			</div> <!-- /.codebox -->				
+			<footer>
+				Created 2021 by <a href="mailto:reagan.keith@gmail.com">Keith Reagan</a> 
+				<a target="_blank" href="https://linkedin.com/in/keith-reagan-8a35a8a2"><img alt="LinkedIn" id="social_icon" src="images/social_icon.png"></a>
+				<a target="_blank" href="https://www.credly.com/badges/241008bc-ceb8-4667-a664-e8572d6c9663/public_url"><img alt="comptia-security-ce-certification" id="comptia-security-ce-certification_icon" src="images/comptia-security-ce-certification.png"></a>
+			</footer>
+		</div> 
+	</body>
+
+</html>
