@@ -121,8 +121,8 @@ div#content ul { /*  changing bullets to image in list */
 }
 
 div#codebox p { /* formatting paragraphs above code in codebox div from content div  */
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 
@@ -168,8 +168,8 @@ td {/* added in the table data styling  */
 	}
 	
 code  {
-	margin-left: 15%;
-	margin-right: 15%;
+	margin-left: 10%;
+	margin-right: 10%;
 	border: 1pt solid;
 }
 
