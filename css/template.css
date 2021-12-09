@@ -125,6 +125,9 @@ div#codebox p { /* formatting paragraphs above code in codebox div from content 
     margin-right: 10%;
 }
 
+pre {
+	margin-bottom: 0;
+}
 
 /* table formatting */
 table {
