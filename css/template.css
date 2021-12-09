@@ -124,7 +124,12 @@ div#codebox p { /* formatting paragraphs above code in codebox div from content 
     margin-left: 10%;
     margin-right: 10%;
 }
-
+	
+	p#codebox_top {
+		margin-top: 1rem;
+	}
+	
+	
 pre {
 	margin-bottom: 0;
 }
