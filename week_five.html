@@ -59,12 +59,12 @@
 		</nav>
 			<div id="content">
 				<center><h3>Week 5 - Networking</h3></center><br>
-				<p>This assignment I do have completed and working, but I'm still making more improvements to the script to see if I can make it better. I'm not posting anything on it at this time but will be hopefully soon.</p>
+				<p><a target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/blob/main/scripts/netdump.sh">This script</a> was created to check the users operating systems and then do some basic checks on the host machine. For checks it will let you know if a firewall is running and how long it has been active for. It will then look to see if fail2ban is installed and running and how long for. Following that will be whatever ports that currently have traffic established on them. Lastely it will check if nmap is install and scan for open ports. If the programs needed are not installed the script will let you know that it is skipping that step and give you the information needed to install the package for the missing step if you choose to. All of this is printed out to a log file with the day of the week, month, date, year, and timestamp for viewing at a later date.</p>
 			</div>
 			
-			<div>
-					<pre>
-						<code class="coding">#!/usr/bin/bash
+			<div id="codebox">
+				<pre>
+					<code class="coding">#!/usr/bin/bash
 
 pants=$(date +"%A_%B_%d_%Y_%T").log #Defines var for log file using day of the week, month, day, 24hr time
 currentUser=$(whoami) #Defines currentUser var for use on greeting the user
@@ -169,9 +169,53 @@ osflavor=$(hostnamectl | grep Operating | awk 'BEGIN{FS=": "}; {print $2}') #Def
 		fi
 	fi		
 	#End nmap check		
-		echo "Thanks for running netdump! Your logfile $logDir/$pants has been created" | tee -a /logs/netdump/$pants #Complete append to log file and prints name on screen</code></code>
-					</pre>
-				</div>
+		echo "Thanks for running netdump! Your logfile $logDir/$pants has been created" | tee -a /logs/netdump/$pants #Complete append to log file and prints name on screen
+					</code>
+				</pre>
+			</div>
+			<div id="codebox">
+				<p>Here's the script result from the log file:</p>
+				<pre>
+					<code class="coding"> cat /logs/netdump/Saturday_October_30_2021_12\:47\:23.log
+Greetings root, I'm going to run a few commands on your host machine acme-centos running CentOS Linux 8 with the IP 192.168.187.129
+
+ Your current IP address is: 192.168.187.129
+
+ Printing default gateway and subnet...
+Destination     Gateway         Genmask
+default         _gateway        0.0.0.0
+192.168.187.0   0.0.0.0         255.255.255.0
+
+ Checking to see if firewall is running...
+Active: active (running) since Thu 2021-10-21 17:09:22 EDT; 1 weeks 1 days ago
+
+ Checking to see if fail2ban is running...
+Active: active (running) since Thu 2021-10-21 17:09:22 EDT; 1 weeks 1 days ago
+
+ Printing established ports with traffic...
+Netid Recv-Q Send-Q                                           Local Address     Port         Peer Address       Port  Process
+udp   0      0                                        192.168.187.129%ens33     bootpc    192.168.187.254       bootps
+tcp   0      112                                            192.168.187.129     ssh         192.168.187.1       57029
+
+ Running nmap on local host 192.168.187.129 ports... this might take a few!
+Starting Nmap 7.70 ( https://nmap.org ) at 2021-10-30 12:47 EDT
+Nmap scan report for 192.168.187.129
+Host is up (0.0000060s latency).
+Not shown: 996 closed ports
+PORT    STATE SERVICE     VERSION
+21/tcp  open  ftp         vsftpd 3.0.3
+22/tcp  open  ssh         OpenSSH 8.0 (protocol 2.0)
+139/tcp open  netbios-ssn Samba smbd 4.6.2
+445/tcp open  netbios-ssn Samba smbd 4.6.2
+Service Info: OS: Unix
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.87 seconds
+Thanks for running netdump! Your logfile /logs/netdump/Saturday_October_30_2021_12:47:23.log has been created
+					</code>
+				</pre>
+			</div>	
+			
 			<footer>
 				Created 2021 by <a href="mailto:reagan.keith@gmail.com">Keith Reagan</a> 
 				<a target="_blank" href="https://linkedin.com/in/keith-reagan-8a35a8a2"><img alt="LinkedIn" id="social_icon" src="images/social_icon.png"></a>
