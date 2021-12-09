@@ -121,8 +121,8 @@ div#content ul { /*  changing bullets to image in list */
 }
 
 div#codebox p { /* formatting paragraphs above code in codebox div from content div  */
-    margin-left: 15em;
-    margin-right: 15em;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 
