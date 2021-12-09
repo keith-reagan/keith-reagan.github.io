@@ -79,8 +79,8 @@
 			</div>
 
 			<div id="codebox">
-					<pre>
-						<code class="coding" id="docker">CONTAINER ID   IMAGE                                          COMMAND                  CREATED        STATUS        PORTS                                                                 NAMES
+				<pre>
+					<code class="coding" id="docker">CONTAINER ID   IMAGE                                          COMMAND                  CREATED        STATUS        PORTS                                                                 NAMES
 000000000000   some.website.com/something/else/nameone:1.1.0   "/run.sh"                5 days ago     Up 5 days     0000/tcp                                                              nameone
 111111111111   some.website.com/something/else/nametwo:1.1.0      "docker-php-thing"   5 days ago     Up 5 days     0000/tcp                                                              nametwo
 222222222222   some.website.com/something/else/namethree:1.1.0   "/entrypoint.sh thing"   5 days ago     Up 5 days     0.0.0.0:0000->0000/tcp, 0.0.0.0:0000->0000/tcp                           namethree
@@ -91,13 +91,14 @@
 777777777777   some-thing:ubuntu00.00                         "docker-entrypoint.thing"   4 months ago   Up 4 months   0.0.0.0:0000->0000/tcp, 0.0.0.0:0000->0000/tcp                           some-thing
 000000000000   another-thing:ubuntu00.00                          "docker-entrypoint.thing"   6 months ago   Up 6 months   0.0.0.0:0000->0000/tcp, 0.0.0.0:0000->0000/tcp                           another-thing
 999999999999   intake-forms:ubuntu00.00                        "docker-entrypoint.thing"   6 months ago   Up 6 months   0.0.0.0:0000->0000/tcp, 0.0.0.0:0000->0000/tcp                           intake-forms
-[kreagan@myserver ~]$
-[kreagan@myserver ~]$
-[kreagan@myserver ~]$
-[kreagan@myserver ~]$
-[kreagan@myserver ~]$
-[kreagan@myserver ~]$ export DOCK_FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"
-[kreagan@myserver ~]$
+					</code>
+				</pre>
+			</div> <!-- /.codebox -->
+			<div id="codebox">
+				<p>Now we'll add in the formatting whchis setup with :<br>
+				export DOCK_FORMAT="ID\t{{.ID}}\nNAME\t{{.Names}}\nIMAGE\t{{.Image}}\nPORTS\t{{.Ports}}\nCOMMAND\t{{.Command}}\nCREATED\t{{.CreatedAt}}\nSTATUS\t{{.Status}}\n"</p>
+				<pre>
+					<code class="coding" id="docker">
 [kreagan@myserver ~]$ docker ps --format=$DOCK_FORMAT
 ID      000000000000
 NAME    nameone
@@ -177,9 +178,10 @@ IMAGE   intake-forms:ubuntu00.00
 PORTS   0.0.0.0:0000->0000/tcp, 0.0.0.0:0000->0000/tcp
 COMMAND "docker-entrypoint.thing"
 CREATED 2021-04-26 11:36:53 -0400 EDT
-STATUS  Up 6 months</code>
-					</pre>
-				</div>
+STATUS  Up 6 months
+					</code>
+				</pre>
+			</div> <!-- /.codebox -->
 			<footer>
 				Created 2021 by <a href="mailto:reagan.keith@gmail.com">Keith Reagan</a> 
 				<a target="_blank" href="https://linkedin.com/in/keith-reagan-8a35a8a2"><img alt="LinkedIn" id="social_icon" src="images/social_icon.png"></a>

@@ -74,21 +74,14 @@
 				</div><!-- /.container-fluid -->
 			</nav>
 			<div id="content">
-				<center><h3>Week 4 - Dependencies and configurations </h3></center><br>
+				<center><h3>Setting up fail2ban</h3></center><br>
 				<p>Doing the installs and updates wasn't too bad with Ubuntu, everything is pretty much ready to go "right out of the box" CentOS did need some dependent packages installed to get other packages to work. While it is an inconvenience, it is a good way to keep the server light and less prone to security issues.</p>
 			</div>
-			
-			<div>
-					<pre>
-						<code class="coding">$ sudo apt install fail2ban								#Ubuntu install
-$ sudo systemctl status fail2ban							#Ubuntu check service
-$ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local 				#Makes a local copy of the config file
-$ sudo vi /etc/fail2ban/jail.local							#Ubuntu file edit
-$ sudo fail2ban-client status sshd							#Ubuntu check failed attempts
-$ sudo fail2ban-client set sshd unbandip (IP)						#Unbans the specified IP address from fail2ban
-
-$ sudo dnf install epel-release								#fail2ban isn't in the official repository, need to install epel-release first
-$ sudo dnf install fail2ban								#CentOS install
+			<div id="codebox">
+				<p>CentOS install:</p>
+				<pre>
+					<code class="coding">$ sudo dnf install epel-release								#fail2ban isn't in the official repository, need to install epel-release first
+$ sudo dnf install fail2ban								
 $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local 				#Makes a local copy of the config file 
 $ sudo chmod 755 /etc/fail2ban/jail.local
 $ sudo vi /etc/fail2ban/jail.local
@@ -100,9 +93,23 @@ $ sudo vi /etc/fail2ban/jail.local
 
 $ sudo systemctl start fail2ban
 $ sudo systemctl enable fail2ban
-$ sudo systemctl status fail2ban</code></code>
-					</pre>
-				</div>
+$ sudo systemctl status fail2ban
+					</code>
+				</pre>
+			</div> <!-- /.codebox -->			
+			<div id="codebox">
+				<p>Ubuntu install:</p>
+				<pre>
+					<code class="coding">$ sudo apt install fail2ban								
+$ sudo systemctl status fail2ban							#Ubuntu check service
+$ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local 				#Makes a local copy of the config file
+$ sudo vi /etc/fail2ban/jail.local							#Ubuntu file edit
+$ sudo fail2ban-client status sshd							#Ubuntu check failed attempts
+$ sudo fail2ban-client set sshd unbandip (IP)						#Unbans the specified IP address from fail2ban
+					</code>
+				</pre>
+			</div> <!-- /.codebox -->
+			
 			<footer>
 				Created 2021 by <a href="mailto:reagan.keith@gmail.com">Keith Reagan</a> 
 				<a target="_blank" href="https://linkedin.com/in/keith-reagan-8a35a8a2"><img alt="LinkedIn" id="social_icon" src="images/social_icon.png"></a>
