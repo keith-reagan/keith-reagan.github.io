@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!--
+	Keith Reagan
+	template.html for portfolio
+    -->
+	<head>
+		<LINK REL="SHORTCUT ICON" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+		<title>Setting up auditd rules</title>
+		<!-- Bootstrap core CSS -->
+		<link href="../bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/template.css" rel="stylesheet"> <!-- Custom styling sheet -->
+		<script src="../bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js"></script>
+
+	</head>
+	<body>
+		<div id="wrapper">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="index.html">My Portfolio</a>
+					</div>
+					<!-- nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">					
+							<li class="nav-item dropdown">		
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Linux Coding</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">							
+									<!--<li><hr class="dropdown-divider"></li> -->
+									<li><a class="dropdown-item" href="backup_script.html">Basic Backup Shell Script</a></li>
+									<li><a class="dropdown-item" href="scriptmaker.html">Basic Shell Script Maker</a></li>
+									<li><a class="dropdown-item" href="cyoa.html">CYOA Script</a></li>
+									<li><a class="dropdown-item" href="diffhash.html">Diff and Hash Scripts</a></li>
+									<li><a class="dropdown-item" href="foryourhealth.html">For Your Health Script</a></li>
+									<li><a class="dropdown-item" href="grep.html">grep</a></li>
+									<li><a class="dropdown-item" href="intruder_detect.html">Intruder Detection Script</a></li>
+									<li><a class="dropdown-item" href="netdump.html">Netdump Script</a></li>
+									<li><a class="dropdown-item" href="sed_awk.html">sed and awk</a></li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Security</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="audit.html">audit</a></li>
+									<li><a class="dropdown-item" href="fail2ban.html">fail2ban</a></li>								
+									<li><a class="dropdown-item" href="iptables.html">iptables</a></li>
+									<li><a class="dropdown-item" href="lynis.html">Lynis</a></li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Server Config</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="basic_config.html">Basic Config</a></li>						
+									<li><a class="dropdown-item" href="crontab.html">Crontab</a></li>
+									<li><a class="dropdown-item" href="docker.html">Docker Setup</a></li>
+									<li><a class="dropdown-item" href="docker_export.html">Docker Export</a></li>
+									<li><a class="dropdown-item" href="minikube.html">Minikube Setup</a></li>
+									<li><a class="dropdown-item" href="user_check.html">System and User Checks</a></li>									
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Misc</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" target="_blank" href="https://github.com/keith-reagan">GitHub Page</a></li>
+									<li><a class="dropdown-item" target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/tree/main/Python_Parser">Python XML Parser</a></li>
+									<li><a class="dropdown-item" href="smb_mod.html">SMB Mod</a></li>							
+								</ul>
+							</li>							
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+			<div id="content">
+				<center><h3>Setting up auditd rules</h3></center><br>
+				<p>CentOS comes preloaded with auditd but I did have to install it on to the Ubuntu server. A <a class="dropdown-item" href="crontab.html">cron job</a> </p>
+			</div>
+			<div id="codebox">
+				<p id="codebox_top">Ubuntu install:</p>
+				<pre>
+					<code class="coding">$ service auditd status
+Unit auditd.service could not be found.
+$ sudo apt-get install auditd audispd-plugins
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  libauparse0 libprelude28 prelude-utils
+The following NEW packages will be installed:
+  audispd-plugins auditd libauparse0 libprelude28 prelude-utils
+0 upgraded, 5 newly installed, 0 to remove and 32 not upgraded.
+Need to get 570 kB of archives.
+After this operation, 3,139 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://us.archive.ubuntu.com/ubuntu focal/main amd64 libauparse0 amd64 1:2.8.5-2ubuntu6 [49.8 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 libprelude28 amd64 5.1.1-5 [234 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 prelude-utils amd64 5.1.1-5 [36.6 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu focal/main amd64 auditd amd64 1:2.8.5-2ubuntu6 [196 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu focal/universe amd64 audispd-plugins amd64 1:2.8.5-2ubuntu6 [53.7 kB]
+Fetched 570 kB in 0s (2,040 kB/s)
+Selecting previously unselected package libauparse0:amd64.
+(Reading database ... 137898 files and directories currently installed.)
+Preparing to unpack .../libauparse0_1%3a2.8.5-2ubuntu6_amd64.deb ...
+Unpacking libauparse0:amd64 (1:2.8.5-2ubuntu6) ...
+Selecting previously unselected package libprelude28:amd64.
+Preparing to unpack .../libprelude28_5.1.1-5_amd64.deb ...
+Unpacking libprelude28:amd64 (5.1.1-5) ...
+Selecting previously unselected package prelude-utils.
+Preparing to unpack .../prelude-utils_5.1.1-5_amd64.deb ...
+Unpacking prelude-utils (5.1.1-5) ...
+Selecting previously unselected package auditd.
+Preparing to unpack .../auditd_1%3a2.8.5-2ubuntu6_amd64.deb ...
+Unpacking auditd (1:2.8.5-2ubuntu6) ...
+Selecting previously unselected package audispd-plugins.
+Preparing to unpack .../audispd-plugins_1%3a2.8.5-2ubuntu6_amd64.deb ...
+Unpacking audispd-plugins (1:2.8.5-2ubuntu6) ...
+Setting up libauparse0:amd64 (1:2.8.5-2ubuntu6) ...
+Setting up libprelude28:amd64 (5.1.1-5) ...
+Setting up auditd (1:2.8.5-2ubuntu6) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/auditd.service → /lib/systemd/system/auditd.service.
+Setting up prelude-utils (5.1.1-5) ...
+Setting up audispd-plugins (1:2.8.5-2ubuntu6) ...
+Processing triggers for systemd (245.4-4ubuntu3.13) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.2) ...
+$ service auditd status
+● auditd.service - Security Auditing Service
+     Loaded: loaded (/lib/systemd/system/auditd.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2021-11-29 15:35:49 UTC; 3min 22s ago
+       Docs: man:auditd(8)
+             https://github.com/linux-audit/audit-documentation
+   Main PID: 5525 (auditd)
+      Tasks: 2 (limit: 4583)
+     Memory: 1.7M
+     CGroup: /system.slice/auditd.service
+             └─5525 /sbin/auditd
+
+Nov 29 15:35:49 acme-ubuntu augenrules[5554]: backlog_wait_time 15000
+Nov 29 15:35:49 acme-ubuntu augenrules[5554]: enabled 1
+Nov 29 15:35:49 acme-ubuntu augenrules[5554]: failure 1
+Nov 29 15:35:49 acme-ubuntu augenrules[5554]: pid 5525
+Nov 29 15:35:49 acme-ubuntu augenrules[5554]: rate_limit 0
+Nov 29 15:35:49 acme-ubuntu augenrules[5554]: backlog_limit 8192
+Nov 29 15:35:49 acme-ubuntu augenrules[5554]: lost 0
+Nov 29 15:35:49 acme-ubuntu augenrules[5554]: backlog 1
+Nov 29 15:35:49 acme-ubuntu augenrules[5554]: backlog_wait_time 0
+Nov 29 15:35:49 acme-ubuntu systemd[1]: Started Security Auditing Service.
+					</code>
+				</pre>
+			</div> <!-- /.codebox -->			
+			<div id="codebox">
+				<p>In the audit.rules file I setup rules for /passwd, /group, /shadow, and /sudoers in the /etc directory so I could monitor who made changes and when. </p>
+				<pre>
+					<code class="coding">## Set rules for auditd
+## w – is used to specify a file or directory to watch over
+## p – permissions to be logged, r – for read access, w – for write access, x – for execute access and a – for change of file or director attribute
+## -k – allows you to set an optional string for identifying which rule created a specific log entry
+-w /etc/passwd -p wa -k passwd_changes
+-w /etc/group -p wa -k group_changes
+-w /etc/shadow -p wa -k shadow_changes
+-w /etc/sudoers -p wa -k sudoers_changes
+					</code>
+				</pre>
+			</div> <!-- /.codebox -->
+			
+			<footer>
+				Created 2021 by <a href="mailto:reagan.keith@gmail.com">Keith Reagan</a> 
+				<a target="_blank" href="https://linkedin.com/in/keith-reagan-8a35a8a2"><img alt="LinkedIn" id="social_icon" src="images/social_icon.png"></a>
+				<a target="_blank" href="https://www.credly.com/badges/241008bc-ceb8-4667-a664-e8572d6c9663/public_url"><img alt="comptia-security-ce-certification" id="comptia-security-ce-certification_icon" src="images/comptia-security-ce-certification.png"></a>
+			</footer>
+		</div> 
+	</body>
+
+</html>
