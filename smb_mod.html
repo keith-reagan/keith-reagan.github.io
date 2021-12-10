@@ -74,10 +74,10 @@
 				</div><!-- /.container-fluid -->
 			</nav>
 			<div id="content">
-				<div>
+				<div id="smb_main">
 					<center><h3>Basic Super Mario Bros ROM Hack</h3></center><br>
 					<p>This small mod was for a friend of mine that got married in 2014. I edited a few of the sprites such as making Mario blad with a goatee with what should be a flannel shirt on but due to palette limitations it was the best I could do. These instructions are old but still work today, thought I'm sure the modding community has come up with better tools to work on the ROM hacks. I do wish I could of been able to get more time with it and be able to change the title screen at least to reflect the change of the game a bit more.</p>
-					<div id="smb_main">		
+					<div id="codebox">		
 						<center><h3>Instructions</h3></center>
 						<p>This info is assuming that you're editing SMB for the NES, no other game. However, there are plenty of tools out there to work on other games as well. These are just what I used.</p>
 						<p>First things first, to make sure that you have the right board and the right chip size you can go <a target="_blank" href="http://tuxnes.sourceforge.net/nesmapper.txt">here</a></p>
@@ -86,52 +86,53 @@
 						<p>Your EPROM chips will be between 120-200ns in speed. Make sure that you're getting a size that can contain the files. Each file has its own chip that it calls its home. I used the <a target="_blank" href="https://www.jameco.com/webapp/wcs/stores/servlet/Product_10001_10001_39714_-1">IC 27C256-15 EPROM 256K-Bit 150ns</a>.There's different kinds, makers, etc. The model of this one is 27C256. This is the flavor of chip that AMD puts out. Note the last 3 numbers. 256 is your size. You'll see 128 (128kb), 512 (512kb), 1001 (1mb)etc. Just remember to make your .chr and .prg files those sizes. If you get 128kb chips then make sure that your files are 128kb. If not, you'll just get a gray screen when you go to play the cartridge.</p>
 						<p>Make sure to erase any chips you get using a UV EPROM eraser. I had a %100 failure rate with the 3 chips that I got that were used, thus the Jameco link.</p>
 						<p>The programmer that I used is no longer sold. Due to the age I could only get it to run on Windows XP, so take note of that. I wouldn’t doubt if this is because of support issues for the old EPROMs. Depending on the layout of the program the following may or may not be accurate - if you get the chip above you'll need to select it from the "chip tree". Select EPROM, then AMD, and then the model that you got. The model will be labeled on the chip as well so just look at it if you're not sure. Run the Blank test on your chip first, always make sure it's blank and your programmer can read it properly. Call your file up into the buffer, write, then verify. Label your chips with a piece of scotch tape or something of the like so you can remember what one is what.</p>
-					</div>							
-				</div>
-				<div><center><h3>Pictures of the project</h3></center><br>
+					</div>	<!-- /.codebox -->						
+				</div> <!-- /.smb_main -->
+				<center><h3>Pictures of the project</h3></center><br>
+				<div class="flex-container">
 					<div>
-						<img src="images/original_eprom.jpg" class="smb_images" alt="Donor board with original EPROMS"/>
+						<img src="images/original_eprom.jpg" class="smb_images_left" alt="Donor board with original EPROMS"/>
 						<div id="caption"  class="caption">
 							This is a donor board that I used. I had to remove as much solder as I could and then take a heat gun and carefully remove the old EPROM chips.
 						</div>
 					</div>
 					<div>
-						<img src="images/empty_board_with_new_eproms.jpg" class="smb_images" alt="Empty board with new EPROMS"/>
+						<img src="images/empty_board_with_new_eproms.jpg" class="smb_images_right" alt="Empty board with new EPROMS"/>
 						<div id="caption"  class="caption">
 							Here we have the donor board with the old EPROMS removed with the new ones prepped and ready to be soldered into place.
 						</div>
 					</div>
 					<div>
-						<img src="images/new_eproms_installed.jpg" class="smb_images" alt="Donor board with new EPROMS"/>
+						<img src="images/new_eproms_installed.jpg" class="smb_images_left" alt="Donor board with new EPROMS"/>
 						<div id="caption"  class="caption">
 							New EPROMS installed into the new board
 						</div>
 					</div>
 					<div>
-						<img src="images/title_screen.png" class="smb_images" alt="Changed title screen"/>
+						<img src="images/title_screen.png" class="smb_images_right" alt="Changed title screen"/>
 						<div id="caption"  class="caption">
 							Names have been changed to play as Tony or his brother Matt. Mario is now bald with a goatee with a (sorta) flannel shirt on
 						</div>
 					</div>
 					<div>
-						<img src="images/another_castle.png" class="smb_images" alt="End of level changed to thank Tony"/>
+						<img src="images/another_castle.png" class="smb_images_left" alt="End of level changed to thank Tony"/>
 						<div id="caption"  class="caption">
 							Toad is still Toad, but now it's Emily that's in another castle!
 						</div>
 					</div>
 					<div>
-						<img src="images/completed_game.jpeg" class="smb_images" alt="Completed cartridge with new label"/>
+						<img src="images/completed_game.jpeg" class="smb_images_right" alt="Completed cartridge with new label"/>
 						<div id="caption"  class="caption">
 							Completed cartridge with custom label. 
 						</div>
 					</div>
 					<div>
-						<img src="images/NES_Label_Template.png" id="label_template" class="smb_images" alt="NES label template"/>
+						<img src="images/NES_Label_Template.png" id="label_template_left" class="smb_images" alt="NES label template"/>
 						<div id="caption"  class="caption">
 							This label template was built in millimeters. 55mm wide, 97mm tall with a line 7mm from the top where you fold it over.
 						</div>
 					</div>					
-				</div>
+				</div> <!-- /.flex-container -->
 				
 			</div>
 			<footer>
