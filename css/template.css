@@ -149,18 +149,18 @@ div#smb_main p { /* formatting paragraphs above code in codebox div from content
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  font-size: 30px;
-  text-align: center;
+  /*font-size: 30px;
+  text-align: center;*/
 }
 
 .flex-item-left {
-  background-color: #f1f1f1;
+
   padding: 10px;
   flex: 50%;
 }
 
 .flex-item-right {
-  background-color: dodgerblue;
+
   padding: 10px;
   flex: 50%;
 }
