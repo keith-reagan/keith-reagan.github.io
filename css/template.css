@@ -213,10 +213,11 @@ fieldset { /* styling for the fieldsets */
   display: flex;
   flex-wrap: nowrap;
 
+
 }
 
 .flex-container .box {
-  /*background-color: #f1f1f1;*/
+
   width: 50%;
   margin: 10px;
 }
