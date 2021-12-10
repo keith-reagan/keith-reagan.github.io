@@ -216,7 +216,7 @@ fieldset { /* styling for the fieldsets */
 
 }
 
-.flex-container > div {
+.box{
 
   width: 50%;
   margin: 10px;
