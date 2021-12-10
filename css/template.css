@@ -161,14 +161,18 @@ div#smb_main {
 }
 
 .flex-item-left {
-
-  padding: 10px;
+  padding-top: 5em;
+  padding-left: 5em;
+  padding-bottom: 5em;
+  padding-right: 5em;
   flex: 50%;
 }
 
 .flex-item-right {
-
-  padding: 10px;
+  padding-top: 5em;
+  padding-left: 5em;
+  padding-bottom: 5em;
+  padding-right: 5em;
   flex: 50%;
 }
 
