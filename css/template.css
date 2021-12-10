@@ -208,7 +208,7 @@ fieldset { /* styling for the fieldsets */
     margin-bottom: 10px;
 	border: 1px solid #00569f;
 }
-
+/*
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -220,7 +220,23 @@ fieldset { /* styling for the fieldsets */
 
   width: 50%;
   margin: 10px;
+}*/
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
 }
+
+.flex-container .box {
+  background-color: #f1f1f1;
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+
 
 label { /* styling for the labels, making them all the same width */
 	width: 140px;
