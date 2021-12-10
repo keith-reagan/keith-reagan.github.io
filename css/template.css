@@ -221,19 +221,20 @@ fieldset { /* styling for the fieldsets */
   width: 50%;
   margin: 10px;
 }*/
-.flex-container {
-  display: flex;
-  flex-wrap: nowrap;
-  background-color: DodgerBlue;
+* {
+  box-sizing: border-box;
 }
 
-.flex-container .box {
-  background-color: #f1f1f1;
-  width: 50%;
-  margin: 10px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
+.box {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 
