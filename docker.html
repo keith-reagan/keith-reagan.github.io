@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!--
+	Keith Reagan
+	template.html for portfolio
+    -->
+	<head>
+		<LINK REL="SHORTCUT ICON" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+		<title>Setting up Docker</title>
+		<!-- Bootstrap core CSS -->
+		<link href="../bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/template.css" rel="stylesheet"> <!-- Custom styling sheet -->
+		<script src="../bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js"></script>
+
+	</head>
+	<body>
+		<div id="wrapper">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="index.html">My Portfolio</a>
+					</div>
+					<!-- nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">					
+							<li class="nav-item dropdown">		
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Linux Coding</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">							
+									<!--<li><hr class="dropdown-divider"></li> -->
+									<li><a class="dropdown-item" href="backup_script.html">Basic Backup Shell Script</a></li>
+									<li><a class="dropdown-item" href="scriptmaker.html">Basic Shell Script Maker</a></li>
+									<li><a class="dropdown-item" href="cyoa.html">CYOA Script</a></li>
+									<li><a class="dropdown-item" href="diffhash.html">Diff and Hash Scripts</a></li>
+									<li><a class="dropdown-item" href="foryourhealth.html">For Your Health Script</a></li>
+									<li><a class="dropdown-item" href="grep.html">grep</a></li>
+									<li><a class="dropdown-item" href="intruder_detect.html">Intruder Detection Script</a></li>
+									<li><a class="dropdown-item" href="netdump.html">Netdump Script</a></li>
+									<li><a class="dropdown-item" href="sed_awk.html">sed and awk</a></li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Security</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="audit.html">audit</a></li>
+									<li><a class="dropdown-item" href="fail2ban.html">fail2ban</a></li>								
+									<li><a class="dropdown-item" href="iptables.html">iptables</a></li>
+									<li><a class="dropdown-item" href="lynis.html">Lynis</a></li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Server Config</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="basic_config.html">Basic Config</a></li>						
+									<li><a class="dropdown-item" href="crontab.html">Crontab</a></li>
+									<li><a class="dropdown-item" href="docker.html">Docker Setup</a></li>
+									<li><a class="dropdown-item" href="docker_export.html">Docker Export</a></li>
+									<li><a class="dropdown-item" href="minikube.html">Minikube Setup</a></li>
+									<li><a class="dropdown-item" href="user_check.html">System and User Checks</a></li>									
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Misc</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" target="_blank" href="https://github.com/keith-reagan">GitHub Page</a></li>
+									<li><a class="dropdown-item" target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/tree/main/Python_Parser">Python XML Parser</a></li>
+									<li><a class="dropdown-item" href="smb_mod.html">SMB Mod</a></li>							
+								</ul>
+							</li>							
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+			<div id="content">
+				<center><h3>Setting up Docker</h3></center><br>
+				<p>Docker is a container package that allows you to create multiple instances of an environment without having to do a complete operating system install like you would with a virtual machine. This helps keep costs down on hardware and the OS licensing. It does not come installed with CentOS or Ubuntu and does require dependency packages to run. Below I've added the install process for both OSes with the comments proceeded by # and commands with $.</p>
+			</div>
+			<div id="codebox">
+				<p id="codebox_top">CentOS install:</p>
+				<pre>
+					<code class="coding"># Make sure extras repo list is installed and enabled 
+$ sudo dnf repolist epel
+
+# If its not installed run
+$ sudo yum install epel-release
+
+# Make sure there's no previous version installed
+$ sudo dnf remove docker
+
+# Do a check for updates
+$ sudo dnf check-update
+
+# setup the repo utility  
+$ sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+
+# Install docker engine 
+$ sudo dnf install docker-ce --nobest --allowerasing -y
+
+# Start docker daemon and check the status 
+$ sudo systemctl start docker
+$ sudo systemctl status docker
+
+# Enable it to be started at boot 
+$ sudo systemctl enable docker
+
+# Verify that docker is working correctly 
+$ sudo docker run hello-world
+					</code>
+				</pre>
+			</div> <!-- /.codebox -->			
+			<div id="codebox">
+				<p>Ubuntu install:</p>
+				<pre>
+					<code class="coding"># Check for get-apt updates 
+$ sudo apt-get update
+
+# Install required packages for installing docker 
+$ sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+# Add in official gpg key for docker, nothing will return for it 
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# Setup stable repo
+$ echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Check for updates again
+$ sudo apt-get update
+
+# Install docker 
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+
+# Enable it to be started at boot 
+$ sudo systemctl enable docker
+
+# Verify that docker is working correctly
+$ sudo docker run hello-world
+					</code>
+				</pre>
+			</div> <!-- /.codebox -->
+			
+			<footer>
+				Created 2021 by <a href="mailto:reagan.keith@gmail.com">Keith Reagan</a> 
+				<a target="_blank" href="https://linkedin.com/in/keith-reagan-8a35a8a2"><img alt="LinkedIn" id="social_icon" src="images/social_icon.png"></a>
+				<a target="_blank" href="https://www.credly.com/badges/241008bc-ceb8-4667-a664-e8572d6c9663/public_url"><img alt="comptia-security-ce-certification" id="comptia-security-ce-certification_icon" src="images/comptia-security-ce-certification.png"></a>
+			</footer>
+		</div> 
+	</body>
+
+</html>
