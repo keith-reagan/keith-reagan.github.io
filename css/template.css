@@ -129,6 +129,15 @@ div#codebox p { /* formatting paragraphs above code in codebox div from content 
 		margin-top: 2.25rem;
 	}
 	
+div#smb_main p { /* formatting paragraphs above code in codebox div from content div  */
+    margin-left: 10%;
+    margin-right: 10%;
+}
+	
+	p#smb_main_top {
+		margin-top: 2.25rem;
+	}
+
 	
 pre {
 	margin-bottom: 0;
