@@ -133,10 +133,17 @@ div#smb_main p { /* formatting paragraphs above code in codebox div from content
     margin-left: 10%;
     margin-right: 10%;
 }
+
+div#smb_main {
+    margin-top: 2.25em;
+}
+
 	
 	p#smb_main_top {
 		margin-top: 2.25rem;
 	}
+
+
 
 * {
   box-sizing: border-box;
