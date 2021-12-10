@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!--
+	Keith Reagan
+	template.html for portfolio
+    -->
+	<head>
+		<LINK REL="SHORTCUT ICON" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+		<title>Setting up minikube</title>
+		<!-- Bootstrap core CSS -->
+		<link href="../bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/template.css" rel="stylesheet"> <!-- Custom styling sheet -->
+		<script src="../bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js"></script>
+
+	</head>
+	<body>
+		<div id="wrapper">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="index.html">My Portfolio</a>
+					</div>
+					<!-- nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">					
+							<li class="nav-item dropdown">		
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Linux Coding</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">							
+									<!--<li><hr class="dropdown-divider"></li> -->
+									<li><a class="dropdown-item" href="backup_script.html">Basic Backup Shell Script</a></li>
+									<li><a class="dropdown-item" href="scriptmaker.html">Basic Shell Script Maker</a></li>
+									<li><a class="dropdown-item" href="cyoa.html">CYOA Script</a></li>
+									<li><a class="dropdown-item" href="diffhash.html">Diff and Hash Scripts</a></li>
+									<li><a class="dropdown-item" href="foryourhealth.html">For Your Health Script</a></li>
+									<li><a class="dropdown-item" href="grep.html">grep</a></li>
+									<li><a class="dropdown-item" href="intruder_detect.html">Intruder Detection Script</a></li>
+									<li><a class="dropdown-item" href="netdump.html">Netdump Script</a></li>
+									<li><a class="dropdown-item" href="sed_awk.html">sed and awk</a></li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Security</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="audit.html">audit</a></li>
+									<li><a class="dropdown-item" href="fail2ban.html">fail2ban</a></li>								
+									<li><a class="dropdown-item" href="iptables.html">iptables</a></li>
+									<li><a class="dropdown-item" href="lynis.html">Lynis</a></li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Server Config</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="basic_config.html">Basic Config</a></li>						
+									<li><a class="dropdown-item" href="crontab.html">Crontab</a></li>
+									<li><a class="dropdown-item" href="docker.html">Docker Setup</a></li>
+									<li><a class="dropdown-item" href="docker_export.html">Docker Export</a></li>
+									<li><a class="dropdown-item" href="minikube.html">Minikube Setup</a></li>
+									<li><a class="dropdown-item" href="user_check.html">System and User Checks</a></li>									
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Misc</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" target="_blank" href="https://github.com/keith-reagan">GitHub Page</a></li>
+									<li><a class="dropdown-item" target="_blank" href="https://github.com/keith-reagan/keith-reagan.github.io/tree/main/Python_Parser">Python XML Parser</a></li>
+									<li><a class="dropdown-item" href="smb_mod.html">SMB Mod</a></li>							
+								</ul>
+							</li>							
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+			<div id="content">
+				<center><h3>Setting up minikube</h3></center><br>
+				<p>minikube is a package that runs as a single node Kubernetes cluster on your local host.<a href="docker.html">Docker needs to be installed</a> as minikube is dependent on that package. Below I've added the install process for CentOS and Ubuntu with the comments proceeded by # and commands with $.</p>
+			</div>
+			<div id="codebox">
+				<p id="codebox_top">CentOS install:</p>
+				<pre>
+					<code class="coding"># Login as root
+# Make sure extras repo list is installed and enabled, repos updated, and then install snapd package 
+$ dnf install epel-release -y
+$ dnf update
+$ dnf -y install snapd
+
+# Create firewall rules
+$ firewall-cmd --zone=public --add-masquerade --permanent
+# Check firewall settings for ports 8443 and 10250
+$ firewall-cmd --list-ports
+# If they're not enabled add them and reload the firewall
+$ firewall-cmd  --permanent --add-port={8443,10250}/tcp	
+$ firewall-cmd --reload
+
+# Install conntrack, a dependancy package of minikube
+$ dnf install conntrack -y
+
+# Install Kubectl, set permissions, check version to make sure it installed
+$ curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+$ chmod +x ./kubectl
+$ mv ./kubectl /usr/local/bin/kubectl
+$ kubectl version --client
+
+# Set permissions for the Docker daemon socket, if not you will get a permissions error when trying to start 
+$ chmod 666 /var/run/docker.sock
+
+# Download latest minikube release, set permissions, make a dir for it and install, start minikube 
+$ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+$ chmod +x minikube
+$ mkdir -p /usr/local/bin/
+$ install minikube /usr/local/bin/
+$ minikube start --driver=none
+
+# Check status of minikube and get IP
+$ minikube status
+$ minikube ip
+
+# Checked cluster information, get current node information
+$ kubectl cluster-info
+$ kubectl get nodes
+
+# To test Kubernetes cluster, let try to create k8s deployment using echoserver image, it is equivalent to http web server and expose it as a service on port 8080
+$ kubectl create deployment test-minikube --image=k8s.gcr.io/echoserver:1.10
+
+# To access test-minikube deployment, expose it as service
+$ kubectl expose deployment test-minikube --type=NodePort --port=8080
+
+# Get pod info, and the test url to put into your browser
+$ kubectl get pod
+$ minikube service test-minikube --url
+					</code>
+				</pre>
+			</div> <!-- /.codebox -->			
+			<div id="codebox">
+				<p>Ubuntu install:</p>
+				<pre>
+					<code class="coding"># Check if updates are needed, and run the upgrades command
+$ sudo apt update
+$ sudo apt upgrade -y
+
+# Install the following minikube dependencies 
+$ sudo apt install -y curl wget apt-transport-https
+
+# Download latest minikube binary
+$ wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+
+# Once the binary is downloaded, copy it to the path /usr/local/bin and set the executable permissions on it, check version to check install
+$ sudo cp minikube-linux-amd64 /usr/local/bin/minikube
+$ sudo chmod +x /usr/local/bin/minikube
+$ minikube version
+
+# Kubectl is a command utility which is used to interact with Kubernetes cluster for managing deployments, curl command to download latest version of kubectl.
+$ curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+
+# Once kubectl is downloaded then set the executable permissions on kubectl binary and move it to the path /usr/local/bin.
+$ chmod +x kubectl
+$ sudo mv kubectl /usr/local/bin/
+
+# Verify the kubectl version, don't worry about the localhost connection refused error
+$ kubectl version -o yaml
+
+# Set permissions for the Docker daemon socket, if not you will get a permissions error when trying to start 
+$ chmod 666 /var/run/docker.sock
+
+# start the minikube with the docker driver 
+$ minikube start --driver=docker
+
+# Run below minikube command to check status 
+$ minikube status
+
+# Run following kubectl command to verify the Kubernetes version, node status and cluster info.
+$ kubectl cluster-info
+$ kubectl get nodes
+
+# Next, list all the container image running in the cluster with the following command:
+$ kubectl get pods --all-namespaces
+
+# To test Kubernetes cluster, let try to create k8s deployment using echoserver image, it is equivalent to http web server and expose it as a service on port 8080,
+$ kubectl create deployment test-minikube --image=k8s.gcr.io/echoserver:1.10
+# To access test-minikube deployment, expose it as service
+$ kubectl expose deployment test-minikube --type=NodePort --port=8080
+
+# Get pod info, and the test url for checking if the service is running via browser
+$ kubectl get pod
+$ minikube service test-minikube --url
+
+# To ssh into the Minikube VM:  
+$ minikube ssh
+					</code>
+				</pre>
+			</div> <!-- /.codebox -->
+			
+			<footer>
+				Created 2021 by <a href="mailto:reagan.keith@gmail.com">Keith Reagan</a> 
+				<a target="_blank" href="https://linkedin.com/in/keith-reagan-8a35a8a2"><img alt="LinkedIn" id="social_icon" src="images/social_icon.png"></a>
+				<a target="_blank" href="https://www.credly.com/badges/241008bc-ceb8-4667-a664-e8572d6c9663/public_url"><img alt="comptia-security-ce-certification" id="comptia-security-ce-certification_icon" src="images/comptia-security-ce-certification.png"></a>
+			</footer>
+		</div> 
+	</body>
+
+</html>
