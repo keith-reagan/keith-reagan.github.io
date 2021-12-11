@@ -123,10 +123,11 @@ div#content ul { /*  changing bullets to image in list */
 div#codebox p { /* formatting paragraphs above code in codebox div from content div  */
     margin-left: 10%;
     margin-right: 10%;
+	margin-bottom:0rem;
 }
 	
 	p#codebox_top {
-		margin-top: 2.25rem;
+		margin-top: 1rem;
 	}
 	
 div#smb_main p { /* formatting paragraphs above code in codebox div from content div  */
