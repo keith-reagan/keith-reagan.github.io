@@ -125,10 +125,10 @@ OOR_IPS=/tmp/oor_ips.$$.log
 #echo processing bad IP #for testing
 egrep -v '192\.168\.187\.' $SUCCESS_LOG > $OOR_IPS
 
-#FAILED_LOG=/home/kreagan/realfail.log                  # Collect the failed login attempts for testing
-#SUCCESS_LOG=/home/kreagan/realsecure.log               # Collect the successful login attempts for testing
-#OOR_IPS=/home/kreagan/oor_ips.log						# Collect the successful login attempts for testing
-#OOR_TIME=/home/kreagan/oor_time.log                    # Collect the successful login attempts for testing
+#FAILED_LOG=/home/kreagan/realfail.log				# Collect the failed login attempts for testing
+#SUCCESS_LOG=/home/kreagan/realsecure.log			# Collect the successful login attempts for testing
+#OOR_IPS=/home/kreagan/oor_ips.log					# Collect the successful login attempts for testing
+#OOR_TIME=/home/kreagan/oor_time.log				# Collect the successful login attempts for testing
 
 # extract the users who failed
 failed_users=$(cat $FAILED_LOG | awk '{ print $(NF-5) }' | sort | uniq)
