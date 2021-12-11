@@ -105,10 +105,10 @@ newEtcLs="/logs/misc/todays-etc-ls.log"							#Defines today continuously overwr
 oldEtcLs="/logs/misc/yesterdays-etc-ls.log"						#Defines yesterdays continuously overwritten file for etc ls
 
  
-if [ -f $newVarHash ] && [ -f $oldVarHash ]; then				#If loop checks for existing files
-        sudo cat $newVarHash > $oldVarHash					#Writes over old file with new file
-        sudo find /var/log/ -type f -exec md5sum {} + | LC_ALL=C sort > $newVarHash		#Gets updated info for new file
-        sudo diff $newVarHash $oldVarHash > $diffVarHash			#Then does a compare, sending the differences to a daily file
+if [ -f $newVarHash ] && [ -f $oldVarHash ]; then					#If loop checks for existing files
+        sudo cat $newVarHash > $oldVarHash						#Writes over old file with new file
+        sudo find /var/log/ -type f -exec md5sum {} + | LC_ALL=C sort > $newVarHash	#Gets updated info for new file
+        sudo diff $newVarHash $oldVarHash > $diffVarHash				#Then does a compare, sending the differences to a daily file
         #echo "did if"
 
 else 
