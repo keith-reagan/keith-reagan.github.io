@@ -117,14 +117,14 @@ chmod 755 /logs/health/$pants #Changing rights to the log file
 
 	echo Checking for over utilizing processes
 	printf "\n${UNDERLINE}Checking for over utilizing processes${NORMAL}\n">> /logs/health/$pants;
-	sudo ps -A | grep -i stress >> /logs/health/$pants;				# Check for unresponsive processes
+	sudo ps -A | grep -i stress >> /logs/health/$pants;			# Check for unresponsive processes
 	printf "\n If there is a processes running hot, run the command 'sudo kill -9 (PID)' where (PID) is the process in question\n">> /logs/health/$pants;
 	echo Checking for top five processes for cpu
 	printf "\n${UNDERLINE}Top five processes utilizing the CPU -${NORMAL}\n">> /logs/health/$pants;
-	sudo ps -eo pid,ppid,cmd,%cpu --sort=-%cpu | head -5 >> /logs/health/$pants;		# Display the top 5 process IDs with their parent process IDs and their file locations that are utilizing the CPU from most to least
+	sudo ps -eo pid,ppid,cmd,%cpu --sort=-%cpu | head -5 >> /logs/health/$pants;# Display the top 5 process IDs with their parent process IDs and their file locations that are utilizing the CPU from most to least
 	echo Checking for top five processes for mem
 	printf "\n${UNDERLINE}Top five processes utilizing the system memory -${NORMAL}\n">> /logs/health/$pants;
-	sudo ps -eo pid,ppid,cmd,%mem --sort=-%mem | head -5 >> /logs/health/$pants;		# Display the top 5 process IDs with their parent process IDs and their file locations that are utilizing system memory from most to least
+	sudo ps -eo pid,ppid,cmd,%mem --sort=-%mem | head -5 >> /logs/health/$pants;# Display the top 5 process IDs with their parent process IDs and their file locations that are utilizing system memory from most to least
 	printf "\n${UNDERLINE}Process for running iostat in the background -${NORMAL}\n">> /logs/health/$pants;
 	#sudo nohup iostat 10 3 -t -m -p sda &
 	echo Checking for high cpu usage previous day	
@@ -135,7 +135,7 @@ chmod 755 /logs/health/$pants #Changing rights to the log file
 		printf "${UNDERLINE}%-11s%-6s%-10s\n" "Time" "User" "System${NORMAL}">> /logs/health/$pants; # Prints header for this section
 		while read -r high_cpu; #while theres lines in this file
 		do
-			printf "$high_cpu\n" >> /logs/health/$pants;	# Print each line in file
+			printf "$high_cpu\n" >> /logs/health/$pants;			# Print each line in file
 		done < <(sar -f /var/log/sysstat/sa$(date +%d -d yesterday) | sed 1,5d | awk '$4>10.00 || $6>10.00 { print $1" " $2" " $4" "$6}') # Stops loop after all lines read
 	else
 		# Pull high CPU utilization for previous day
@@ -144,7 +144,7 @@ chmod 755 /logs/health/$pants #Changing rights to the log file
 		printf "${UNDERLINE}%-11s%-6s%-10s\n" "Time" "User" "System${NORMAL}">> /logs/health/$pants; # Prints header for this section
 		while read -r high_cpu; #while theres lines in this file
 		do
-			printf "$high_cpu\n" >> /logs/health/$pants;	# Print each line in file
+			printf "$high_cpu\n" >> /logs/health/$pants;			# Print each line in file
 		done < <(sar -f /var/log/sa/sa$(date +%d -d yesterday) | sed 1,5d | awk '$4>10.00 || $6>10.00 { print $1" " $2" " $4" "$6}') # Stops loop after all lines read
 	fi
 	echo Checking for high mem usage previous day	
@@ -155,7 +155,7 @@ chmod 755 /logs/health/$pants #Changing rights to the log file
 		printf "${UNDERLINE}%-13s%-12s%-9s%-11s%-9s%-10s%-10s%-10s%-11s%-10s%-10s%-8s\n" "time" "kbmemfree" "kbavail" "kbmemused" "%memused" "kbbuffers" "kbcached" "kbcommit" "%commit" "kbactive" "kbinact" "kbdirty${NORMAL}">> /logs/health/$pants; # Prints header for this section		
 		while read -r high_mem; #while theres lines in this file
 		do
-			printf "$high_mem\n" >> /logs/health/$pants;	# Print each line in file
+			printf "$high_mem\n" >> /logs/health/$pants;			# Print each line in file
 		done < <(sar -r -f /var/log/sysstat/sa$(date +%d -d yesterday) | sed 1,5d | awk 'NR ==1 || $6>80.00 { print}') # Stops loop after all lines read		
 	else
 
@@ -165,7 +165,7 @@ chmod 755 /logs/health/$pants #Changing rights to the log file
 		printf "${UNDERLINE}%-13s%-12s%-9s%-11s%-9s%-10s%-10s%-10s%-11s%-10s%-10s%-8s\n" "time" "kbmemfree" "kbavail" "kbmemused" "%memused" "kbbuffers" "kbcached" "kbcommit" "%commit" "kbactive" "kbinact" "kbdirty${NORMAL}">> /logs/health/$pants; # Prints header for this section	
 		while read -r high_mem; #while theres lines in this file
 		do
-			printf "$high_mem\n" >> /logs/health/$pants;	# Print each line in file
+			printf "$high_mem\n" >> /logs/health/$pants;			# Print each line in file
 		done < <(sar -r -f /var/log/sa/sa$(date +%d -d yesterday) | sed 1,5d | awk 'NR ==1 || $6>=80.00 { print}') # Stops loop after all lines read		
 	fi
 	echo Checking for high network usage previous day		
@@ -176,7 +176,7 @@ chmod 755 /logs/health/$pants #Changing rights to the log file
 		printf "${UNDERLINE}%-16s%-10s%-9s%-11s%-10s%-10s%-10s%-10s%-10s%-9s\n" "time" "IFACE" "rxpck/s" "txpck/s" "rxkB/s" "txkB/s" "rxcmp/s" "txcmp/s" "rxmcst/s" "%ifutil${NORMAL}">> /logs/health/$pants; # Prints header for this section	
 		while read -r high_mem; #while theres lines in this file
 		do
-			printf "$high_mem\n" >> /logs/health/$pants;	# Print each line in file
+			printf "$high_mem\n" >> /logs/health/$pants;			# Print each line in file
 		done < <(sar -n DEV -f /var/log/sysstat/sa$(date +%d -d yesterday) | egrep -v lo | sed 1,5d | awk 'NR ==1 || $11>=80.00 { print}') # Stops loop after all lines read	
 	else	
 		# Pull high network utilization for previous day
@@ -185,7 +185,7 @@ chmod 755 /logs/health/$pants #Changing rights to the log file
 		printf "${UNDERLINE}%-16s%-10s%-9s%-11s%-10s%-10s%-10s%-10s%-10s%-9s\n" "time" "IFACE" "rxpck/s" "txpck/s" "rxkB/s" "txkB/s" "rxcmp/s" "txcmp/s" "rxmcst/s" "%ifutil${NORMAL}">> /logs/health/$pants; # Prints header for this section
 		while read -r high_mem; #while theres lines in this file
 		do
-			printf "$high_mem\n" >> /logs/health/$pants;	# Print each line in file
+			printf "$high_mem\n" >> /logs/health/$pants;			# Print each line in file
 		done < <(sar -n DEV -f /var/log/sa/sa$(date +%d -d yesterday) | egrep -v lo | sed 1,5d | awk 'NR ==1 || $11>=80.00 { print}') # Stops loop after all lines read	
 	fi
 	echo Script complete! Log file /logs/health/$pants has been created
